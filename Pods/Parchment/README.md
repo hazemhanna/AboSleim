@@ -26,29 +26,29 @@
 
 Parchment lets you page between view controllers while showing any type of generic indicator that scrolls along with the content. Here are some benefits of using Parchment:
 
-* **Highly customizable** <br/> The menu items are built using
+- **Highly customizable** <br/> The menu items are built using
   `UICollectionView`, which means you can display pretty much whatever you want. You can even subclass the layout to create completely custom behaviours.
 
-* **Memory-efficient**: <br/> Parchment only allocates view controllers when they’re needed, meaning if you have a lot of view controllers you don’t have to initialize them all up-front.
+- **Memory-efficient**: <br/> Parchment only allocates view controllers when they’re needed, meaning if you have a lot of view controllers you don’t have to initialize them all up-front.
 
-* **Infinite scrolling**: <br /> Because view controllers are only allocated as you are scrolling, you can create data sources that are infinitely large. This is perfect for things like [calendars](/Documentation/infinite-data-source.md).
+- **Infinite scrolling**: <br /> Because view controllers are only allocated as you are scrolling, you can create data sources that are infinitely large. This is perfect for things like [calendars](/Documentation/infinite-data-source.md).
 
 ## Table of contents
 
-* [Getting started](#getting-started)
-  * [Basic usage](#basic-usage)
-  * [Data source](#data-source)
-  * [Infinite data source](#infinite-data-source)
-  * [Selecting items](#selecting-items)
-  * [Reloading data](#reloading-data)
-  * [Delegate](#delegate)
-  * [Size delegate](#size-delegate)
-  * [Selecting items](#selecting-items)
-* [Customization](#customization)
-* [Installation](#installation)
-* [Acknowledgements](#acknowledgements)
-* [Changelog](#changelog)
-* [Licence](#licence)
+- [Getting started](#getting-started)
+  - [Basic usage](#basic-usage)
+  - [Data source](#data-source)
+  - [Infinite data source](#infinite-data-source)
+  - [Selecting items](#selecting-items)
+  - [Reloading data](#reloading-data)
+  - [Delegate](#delegate)
+  - [Size delegate](#size-delegate)
+  - [Selecting items](#selecting-items)
+- [Customization](#customization)
+- [Installation](#installation)
+- [Acknowledgements](#acknowledgements)
+- [Changelog](#changelog)
+- [Licence](#licence)
 
 ## Getting started
 
@@ -149,7 +149,7 @@ Let’s say you want to select the first item:
 ```Swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  if let first = pagingViewController.items.first {
+  if let first = pagingViewController.children.first as? PagingItem {
     pagingViewController.select(pagingItem: first)
   }
 }
@@ -504,15 +504,15 @@ Parchment will be compatible with the lastest public release of Swift.
 
 ### Requirements
 
-* iOS 8.2+
-* Xcode 8.0+
+- iOS 9.0+
+- Xcode 8.0+
 
 ### CocoaPods
 
 Parchment is available through [CocoaPods](https://cocoapods.org). To install it, add the following to your `Podfile`:
 
 ```
-pod 'Parchment', '~> 3.0'
+pod 'Parchment', '~> 3.2'
 ```
 
 ### Swift Package Manager
@@ -520,7 +520,7 @@ pod 'Parchment', '~> 3.0'
 Parchment is available through [Swift Package Manager](https://swift.org/package-manager/). Add Parchment as a dependency to your `Package.swift`:
 
 ```Swift
-.package(url: "https://github.com/rechsteiner/Parchment", from: "3.0.0")
+.package(url: "https://github.com/rechsteiner/Parchment", from: "3.2.0")
 ```
 
 ### Carthage
@@ -528,7 +528,7 @@ Parchment is available through [Swift Package Manager](https://swift.org/package
 Parchment also supports [Carthage](https://github.com/Carthage/Carthage). To install it, add the following to your `Cartfile`:
 
 ```
-github "rechsteiner/Parchment" ~> 3.0
+github "rechsteiner/Parchment" ~> 3.2
 ```
 
 See [this guide](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for more details on using Carthage.

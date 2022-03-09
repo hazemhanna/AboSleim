@@ -14,7 +14,7 @@ open class PagingView: UIView {
     public let pageView: UIView
     public var options: PagingOptions {
         didSet {
-            heightConstraint?.constant = options.menuItemSize.height
+            heightConstraint?.constant = options.menuHeight
             collectionView.backgroundColor = options.menuBackgroundColor
         }
     }

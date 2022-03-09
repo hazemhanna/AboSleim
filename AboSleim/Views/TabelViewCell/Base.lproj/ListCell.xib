@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="161" id="KGk-i7-Jjw" customClass="ListCell" customModule="Shnp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="161"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="161"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-kC-yN8" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="403" height="145"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1AK-Cu-ky3">
+                                <rect key="frame" x="8" y="8" width="232" height="129"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nWv-Ic-SuA">
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="64.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Order Number:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTx-0P-MbN">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="64.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="1233" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hy-n1-aOB">
+                                                <rect key="frame" x="126" y="0.0" width="106" height="64.5"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="17"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s2M-0i-lQh">
+                                        <rect key="frame" x="0.0" y="64.5" width="232" height="64.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-JZ-9mE">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="64.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12/12/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlG-Ea-ICp">
+                                                <rect key="frame" x="54" y="0.0" width="178" height="64.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zp0-xV-23G" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
+                                <rect key="frame" x="267" y="52.5" width="120" height="40"/>
+                                <color key="backgroundColor" name="textColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rh4-5z-vAr"/>
+                                    <constraint firstAttribute="width" constant="120" id="hU1-W7-Uer"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Details">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="orderDetails:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0gf-9R-Tpv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="backGround"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zp0-xV-23G" secondAttribute="trailing" constant="16" id="Gcd-Bb-DwW"/>
+                            <constraint firstAttribute="bottom" secondItem="1AK-Cu-ky3" secondAttribute="bottom" constant="8" id="IBn-Q7-ScQ"/>
+                            <constraint firstItem="1AK-Cu-ky3" firstAttribute="leading" secondItem="Or7-kC-yN8" secondAttribute="leading" constant="8" id="S3o-gc-B5R"/>
+                            <constraint firstItem="zp0-xV-23G" firstAttribute="centerY" secondItem="Or7-kC-yN8" secondAttribute="centerY" id="a2G-25-EEM"/>
+                            <constraint firstItem="1AK-Cu-ky3" firstAttribute="top" secondItem="Or7-kC-yN8" secondAttribute="top" constant="8" id="yK1-Pt-uQe"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Or7-kC-yN8" secondAttribute="trailing" constant="8" id="JIT-qn-xI9"/>
+                    <constraint firstAttribute="bottom" secondItem="Or7-kC-yN8" secondAttribute="bottom" constant="8" id="TSb-KK-sDE"/>
+                    <constraint firstItem="Or7-kC-yN8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="aqt-7l-Jbk"/>
+                    <constraint firstItem="Or7-kC-yN8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="pX9-AF-uKc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="date" destination="NlG-Ea-ICp" id="LMl-8Z-QG8"/>
+                <outlet property="detailstn" destination="zp0-xV-23G" id="4oC-cP-a08"/>
+                <outlet property="orderNum" destination="9Hy-n1-aOB" id="dgi-Ge-AJf"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="122.20982142857142"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="zp0-xV-23G">
+            <size key="intrinsicContentSize" width="68.5" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="backGround">
+            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.0078431372549019607" green="0.10196078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

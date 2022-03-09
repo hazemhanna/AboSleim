@@ -74,13 +74,13 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - Parchment (3.1.0)
-  - Protobuf (3.19.1)
+  - Parchment (3.2.0)
+  - Protobuf (3.19.4)
   - SideMenu (5.0.3)
   - SVProgressHUD (2.2.5)
-  - SwiftMessages (9.0.5):
-    - SwiftMessages/App (= 9.0.5)
-  - SwiftMessages/App (9.0.5)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -149,13 +149,13 @@ SPEC CHECKSUMS:
   Kingfisher: 9c8f2cc6710334e06f32ba2b45e77707d5e2f0c9
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  Parchment: 6250722ed0456d68f6bae03118eda722a28486f3
-  Protobuf: 3724efa50cb2846d7ccebc8691c574e85fd74471
+  Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
+  Protobuf: 235750e4696ff59fb07d949a9dbbc92b3c0700fe
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftMessages: 9cca50659fa22bb523b4dd2a958d4442e843a354
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 5942a5047dafb0e0f95e9d0a430793360b545258
+PODFILE CHECKSUM: cc8d0718c73f8083aa5c55b412e838917ac6d9ee
 
 COCOAPODS: 1.11.2

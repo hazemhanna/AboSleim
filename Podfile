@@ -1,13 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Livia' do
+target 'AboSleim' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Livia
-  
-  use_frameworks!
+  # Pods for AboSleim
   pod 'SideMenu', '~> 5.0.3'
   pod 'SwiftMessages'
   pod 'DLRadioButton', '~> 1.4.12'
@@ -27,12 +25,4 @@ target 'Livia' do
   pod 'MOLH'
   pod 'FSCalendar'
 
-end
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-    # some older pods don't support some architectures, anything over iOS 11 resolves that
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
-    end
-  end
 end

@@ -154,6 +154,10 @@ final class PageViewManager {
         }
     }
 
+    func viewWillLayoutSubviews() {
+        layoutsViews()
+    }
+
     func viewWillAppear(_ animated: Bool) {
         appearanceState = .appearing(animated: animated)
         if let selectedViewController = selectedViewController {

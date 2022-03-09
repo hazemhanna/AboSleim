@@ -146,6 +146,12 @@ public final class PageViewController: UIViewController {
         }
     }
 
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        scrollView.frame = view.bounds
+        manager.viewWillLayoutSubviews()
+    }
+
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         manager.viewWillAppear(animated)
@@ -168,7 +174,6 @@ public final class PageViewController: UIViewController {
 
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("viewWillTransition: ", size)
         coordinator.animate(alongsideTransition: { _ in
             self.manager.viewWillTransitionSize()
         })
@@ -296,11 +301,6 @@ extension PageViewController: PageViewManagerDelegate {
                 break
             }
         }
-    }
-
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        scrollView.frame = view.bounds
     }
 
     func layoutViews(for viewControllers: [UIViewController], keepContentOffset: Bool) {

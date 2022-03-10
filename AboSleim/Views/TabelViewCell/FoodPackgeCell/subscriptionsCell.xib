@@ -33,19 +33,19 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="الباقة الذهبية" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy6-mp-Hiv">
                                                 <rect key="frame" x="0.0" y="0.0" width="174.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
-                                                <color key="textColor" name="navigation"/>
+                                                <color key="textColor" name="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 days " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgN-vY-zcC">
                                                 <rect key="frame" x="0.0" y="28.5" width="174.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
-                                                <color key="textColor" name="navigation"/>
+                                                <color key="textColor" name="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="من  21/2/2021 الي  21/2/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-u8-pYc">
                                                 <rect key="frame" x="0.0" y="54.5" width="174.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
-                                                <color key="textColor" name="navigation"/>
+                                                <color key="textColor" name="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -53,11 +53,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر : ٤٠ جنية" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-e0-R39">
                                         <rect key="frame" x="201" y="102.5" width="86" height="20.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                        <color key="textColor" name="navigation"/>
+                                        <color key="textColor" name="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="backGround"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="DWc-e0-R39" secondAttribute="bottom" constant="8" id="27H-v0-8ea"/>
                                     <constraint firstItem="mlV-av-Jxy" firstAttribute="leading" secondItem="ZIf-p2-0bZ" secondAttribute="leading" constant="8" id="8Ul-IU-dAs"/>
@@ -82,7 +82,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ZIf-p2-0bZ" secondAttribute="bottom" constant="8" id="4gM-ww-kgP"/>
                             <constraint firstItem="ZIf-p2-0bZ" firstAttribute="leading" secondItem="9eb-lR-XYx" secondAttribute="leading" constant="16" id="8sh-HH-LUC"/>
@@ -91,6 +91,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="9eb-lR-XYx" secondAttribute="bottom" id="9zr-3Q-6XC"/>
                     <constraint firstAttribute="trailing" secondItem="9eb-lR-XYx" secondAttribute="trailing" id="Ib3-Lz-ZVZ"/>
@@ -99,6 +100,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <point key="canvasLocation" x="116.66666666666667" y="89.397321428571431"/>
         </tableViewCell>
     </objects>
@@ -109,8 +111,11 @@
     </designables>
     <resources>
         <image name="food-1" width="2296" height="1532"/>
-        <namedColor name="navigation">
-            <color red="0.0080000003799796104" green="0.10199999809265137" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="backGround">
+            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.0078431372549019607" green="0.10196078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -26,6 +26,8 @@
 		042A538D27CB4EDB00009C21 /* MyFoodCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042A538F27CB4EDB00009C21 /* MyFoodCartCell.xib */; };
 		042C17F127BD68270037A951 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C17F027BD68270037A951 /* HealthKit.framework */; };
 		042C17F327BD6BEF0037A951 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042C17F227BD6BEF0037A951 /* HomeKit.framework */; };
+		042E489A27DA34F400ADD662 /* CategeoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E489827DA34F400ADD662 /* CategeoryCell.swift */; };
+		042E489B27DA34F400ADD662 /* CategeoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042E489927DA34F400ADD662 /* CategeoryCell.xib */; };
 		043A63AB2523B78800D1C466 /* CustomerProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A63A92523B78800D1C466 /* CustomerProfileCell.swift */; };
 		043A63B02523B7AF00D1C466 /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A63AE2523B7AF00D1C466 /* PasswordCell.swift */; };
 		04467BB627C4AB1200DA47E6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04467BB527C4AB1200DA47E6 /* SearchVC.swift */; };
@@ -206,6 +208,8 @@
 		042C17EE27BD4DAA0037A951 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Profile.strings; sourceTree = "<group>"; };
 		042C17F027BD68270037A951 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		042C17F227BD6BEF0037A951 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		042E489827DA34F400ADD662 /* CategeoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategeoryCell.swift; sourceTree = "<group>"; };
+		042E489927DA34F400ADD662 /* CategeoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategeoryCell.xib; sourceTree = "<group>"; };
 		043A63A92523B78800D1C466 /* CustomerProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerProfileCell.swift; sourceTree = "<group>"; };
 		043A63AE2523B7AF00D1C466 /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		04467BB527C4AB1200DA47E6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
@@ -666,6 +670,8 @@
 				FA36C1A924CEDAFB00E1890F /* SectionCell.xib */,
 				FAB4B92324D34EFE00FBD257 /* SettingCell.swift */,
 				FAB4B92424D34EFE00FBD257 /* SettingCell.xib */,
+				042E489827DA34F400ADD662 /* CategeoryCell.swift */,
+				042E489927DA34F400ADD662 /* CategeoryCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1057,6 +1063,7 @@
 				FADCF91324DC8EA6008C3987 /* ReservationListCell.xib in Resources */,
 				FA6B4D5E24B3549A00C25F3E /* Cairo-Bold.ttf in Resources */,
 				0415E13327C7F88400994416 /* OffersCell.xib in Resources */,
+				042E489B27DA34F400ADD662 /* CategeoryCell.xib in Resources */,
 				FA76FD9524471A5200B0792B /* RestaurantCell.xib in Resources */,
 				FA725BE724C9ADD00038C21E /* PreviousListCell.xib in Resources */,
 				FA62F5FA243328C300A7EEB9 /* OrderReceiptCell.xib in Resources */,
@@ -1192,6 +1199,7 @@
 				FADBB14124279F200044936E /* UIBarButtonItem+Badge.swift in Sources */,
 				FADBB10224276CF60044936E /* SceneDelegate.swift in Sources */,
 				FAE7CB7A24A3E972003E7A5C /* TermsAndConditionsVC.swift in Sources */,
+				042E489A27DA34F400ADD662 /* CategeoryCell.swift in Sources */,
 				040F84A327B5D7E00005241D /* HomeViewController.swift in Sources */,
 				04751230271252F400D884D4 /* RefundOrderCell.swift in Sources */,
 				048A086627CC0D0400C49D1A /* subscriptionsCell.swift in Sources */,

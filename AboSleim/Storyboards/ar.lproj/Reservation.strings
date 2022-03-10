@@ -21,7 +21,7 @@
 "A2S-Cn-UgD.normalTitle" = "تاكيد";
 
 /* Class = "UIButton"; normalTitle = "Out Door"; ObjectID = "DCS-sA-obx"; */
-"DCS-sA-obx.normalTitle" = "خارجي";
+"DCS-sA-obx.normalTitle" = "افراد";
 
 /* Class = "UILabel"; text = "Table Reservation"; ObjectID = "EM5-6L-yod"; */
 "EM5-6L-yod.text" = "حجز طاولة";
@@ -54,7 +54,7 @@
 "bSD-wZ-QA6.title" = "حجز طاولة";
 
 /* Class = "UILabel"; text = "InDoor"; ObjectID = "dje-Da-Rqk"; */
-"dje-Da-Rqk.text" = "مركب";
+"dje-Da-Rqk.text" = "عائلات";
 
 /* Class = "UIButton"; normalTitle = "Vip"; ObjectID = "dvB-J9-s6r"; */
 "dvB-J9-s6r.normalTitle" = "كبار الزوار";

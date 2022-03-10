@@ -12,7 +12,7 @@ class SectionsVC: UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
 
     @IBOutlet weak var sectionCollectionView: UICollectionView!
-    fileprivate let cellIdentifier = "SectionCell"
+    fileprivate let cellIdentifier = "CategeoryCell"
 
     var meals = [RestaurantMeal]() {
         didSet{
@@ -30,17 +30,19 @@ class SectionsVC: UIViewController {
         sectionCollectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         
         titleLbl.text = "Sections".localized
-        meals.append(RestaurantMeal(nameAr: "بيتزا ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.12 PM"), descriptionAr: "بيتزا"))
+    
+        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
+        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
+    
+        
+        meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
+        meals.append(RestaurantMeal(nameAr: "نص ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
+        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
+        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
 
-        meals.append(RestaurantMeal(nameAr: "برجر", image: #imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing"), descriptionAr: "برجر"))
-        
-        meals.append(RestaurantMeal(nameAr: "مشروبات", image:#imageLiteral(resourceName: "Set of cartoon pizzas with different stuffing-2"), descriptionAr: "سلطة"))
-        
-        meals.append(RestaurantMeal(nameAr: "فطار", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.04 PM"), descriptionAr: "بيتزا"))
-
-        meals.append(RestaurantMeal(nameAr: "سلطة ", image: #imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.58.56 PM"), descriptionAr: "بيتزا"))
-        
-        meals.append(RestaurantMeal(nameAr: "مقبلات ", image:#imageLiteral(resourceName: "Screen Shot 2022-02-27 at 10.59.20 PM"), descriptionAr: "بيتزا"))
+//        meals.append(RestaurantMeal(nameAr: "ربع كفتة ضاني", image: #imageLiteral(resourceName: "image3"), descriptionAr: "مشويات"))
+//       meals.append(RestaurantMeal(nameAr: "ربع مشكل", image: #imageLiteral(resourceName: "image4"), descriptionAr: "مشويات"))
+//
 
     }
     
@@ -55,7 +57,7 @@ class SectionsVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -73,8 +75,8 @@ extension SectionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SectionCell else { return UICollectionViewCell()}
-        cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].nameAr ?? "")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CategeoryCell else { return UICollectionViewCell()}
+        cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].descriptionAr ?? "")
         return cell
 
         
@@ -90,7 +92,7 @@ extension SectionsVC: UICollectionViewDelegateFlowLayout {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size: CGFloat = (collectionView.frame.size.width - space) / 2.1
-        return CGSize(width: size  , height: size )
+        return CGSize(width: size  , height: 150 )
     }
     
 }

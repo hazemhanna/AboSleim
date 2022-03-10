@@ -741,7 +741,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03q-Ig-c4t">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-22 at 12.36.21 PM" translatesAutoresizingMaskIntoConstraints="NO" id="E0m-Vo-JvY" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="E0m-Vo-JvY" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="REz-Rx-1dR"/>
@@ -772,7 +772,7 @@
                                                                     <constraint firstAttribute="height" constant="40" id="lB1-GA-u6f"/>
                                                                 </constraints>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="Group 488">
+                                                                <state key="normal" image="add-to-cart">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -1624,10 +1624,10 @@
     </scenes>
     <designables>
         <designable name="9Tm-yB-FgE">
-            <size key="intrinsicContentSize" width="22" height="22"/>
+            <size key="intrinsicContentSize" width="33" height="33"/>
         </designable>
         <designable name="E0m-Vo-JvY">
-            <size key="intrinsicContentSize" width="498" height="318"/>
+            <size key="intrinsicContentSize" width="1080" height="608"/>
         </designable>
         <designable name="PP8-RP-D0t">
             <size key="intrinsicContentSize" width="30.5" height="31"/>
@@ -1642,7 +1642,7 @@
             <size key="intrinsicContentSize" width="17.5" height="22"/>
         </designable>
         <designable name="gtt-6f-qI5">
-            <size key="intrinsicContentSize" width="68" height="68"/>
+            <size key="intrinsicContentSize" width="22" height="22"/>
         </designable>
         <designable name="uGd-LU-ivJ">
             <size key="intrinsicContentSize" width="35" height="37"/>
@@ -1651,16 +1651,15 @@
     <resources>
         <image name="Abo Sleim" width="216" height="60"/>
         <image name="Group 397" width="360" height="76"/>
-        <image name="Group 488" width="68" height="68"/>
         <image name="Line 41" width="2" height="66"/>
         <image name="Screen Shot 2022-02-13 at 2.39.35 AM" width="750" height="520"/>
-        <image name="Screen Shot 2022-02-22 at 12.36.21 PM" width="498" height="318"/>
         <image name="add-to-cart" width="22" height="22"/>
         <image name="back-arrow" width="22" height="22"/>
         <image name="background" width="360" height="640"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="checked" width="22" height="22"/>
+        <image name="checked" width="33" height="33"/>
         <image name="heart" width="35" height="37"/>
+        <image name="image2" width="1080" height="608"/>
         <image name="loupe-1" width="23" height="23"/>
         <image name="loupe-5" width="22" height="22"/>
         <image name="menu (1)" width="22.5" height="21"/>

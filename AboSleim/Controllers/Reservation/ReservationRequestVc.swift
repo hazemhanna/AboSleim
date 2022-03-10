@@ -14,9 +14,9 @@ import ImageSlideshow
 class ReservationRequestVc : UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
-    @IBOutlet weak var indoorBtn : UIButton!
-    @IBOutlet weak var outdoorBtn : UIButton!
-    @IBOutlet weak var bigVisitBtn : UIButton!
+    
+    @IBOutlet weak var familyImage : UIImageView!
+    @IBOutlet weak var personImageImage : UIImageView!
 
     @IBOutlet weak var selectCateDropDown: TextFieldDropDown!    
     @IBOutlet weak var noteTF: UITextField!
@@ -47,39 +47,21 @@ class ReservationRequestVc : UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
-
     }
-    
     
     @IBAction func rewardBtn(_ sender: UIButton) {
         if sender.tag == 0 {
-            self.indoorBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
-            self.outdoorBtn.backgroundColor = .white
-            self.bigVisitBtn.backgroundColor = .white
-            self.indoorBtn.setTitleColor(UIColor.white, for: .normal)
-            self.outdoorBtn.setTitleColor(UIColor.black, for: .normal)
-            self.bigVisitBtn.setTitleColor(UIColor.black, for: .normal)
-        }else if sender.tag == 1 {
-            self.outdoorBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
-            self.bigVisitBtn.backgroundColor = .white
-            self.indoorBtn.backgroundColor = .white
-            self.indoorBtn.setTitleColor(UIColor.black, for: .normal)
-            self.outdoorBtn.setTitleColor(UIColor.white, for: .normal)
-            self.bigVisitBtn.setTitleColor(UIColor.black, for: .normal)
-        }else{
-            self.bigVisitBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
-            self.indoorBtn.backgroundColor = .white
-            self.outdoorBtn.backgroundColor = .white
-            self.indoorBtn.setTitleColor(UIColor.black, for: .normal)
-            self.outdoorBtn.setTitleColor(UIColor.black, for: .normal)
-            self.bigVisitBtn.setTitleColor(UIColor.white, for: .normal)
-            
+            familyImage.image = UIImage(named: "family2")
+            personImageImage.image = UIImage(named: "family")
+        }else {
+            familyImage.image = UIImage(named: "family")
+            personImageImage.image = UIImage(named: "family2")
         }
     }
     

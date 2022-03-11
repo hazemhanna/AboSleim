@@ -105,7 +105,7 @@ class SideMenuVC: UIViewController {
         case "OrderList":
             pushSideMenu(StoryboardName: "Orders", ForController: "OrderListVC")
         case "Profile":
-            pushSideMenu(StoryboardName: "Profile", ForController: "MainProfileVC")
+            pushSideMenu(StoryboardName: "Profile", ForController: "WalletVc")
         case "foodPackages":
             pushSideMenu(StoryboardName: "Products", ForController: "FoodPackagesVC")
         case "FoodCart":

@@ -17,7 +17,6 @@
 		0415E12D27C7F48100994416 /* OffersVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E12C27C7F48100994416 /* OffersVc.swift */; };
 		0415E13127C7F7DC00994416 /* OffersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415E12F27C7F7DC00994416 /* OffersCell.swift */; };
 		0415E13327C7F88400994416 /* OffersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0415E13527C7F88400994416 /* OffersCell.xib */; };
-		041A2C3A27BC9444000FAFE2 /* ProfilePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A2C3927BC9444000FAFE2 /* ProfilePopUp.swift */; };
 		041A2C3C27BC9E01000FAFE2 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A2C3B27BC9E01000FAFE2 /* ChangeProfileVC.swift */; };
 		041A2C3E27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */; };
 		04267DD827CE3C650097C4D4 /* FiltterResaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04267DD727CE3C640097C4D4 /* FiltterResaultVC.swift */; };
@@ -194,7 +193,6 @@
 		0415E13427C7F88400994416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OffersCell.xib; sourceTree = "<group>"; };
 		0415E13727C7F89100994416 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OffersCell.strings; sourceTree = "<group>"; };
 		0415E13927C802EA00994416 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Products.strings; sourceTree = "<group>"; };
-		041A2C3927BC9444000FAFE2 /* ProfilePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePopUp.swift; sourceTree = "<group>"; };
 		041A2C3B27BC9E01000FAFE2 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
 		041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileChangePasswordVC.swift; sourceTree = "<group>"; };
 		04267DD727CE3C640097C4D4 /* FiltterResaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltterResaultVC.swift; sourceTree = "<group>"; };
@@ -503,11 +501,10 @@
 		0450BF1A27BB648400ABE2DD /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				041A2C3927BC9444000FAFE2 /* ProfilePopUp.swift */,
-				048A086027CBDB6600C49D1A /* MainProfileVC.swift */,
 				047512292712418200D884D4 /* WalletVc.swift */,
-				FA04BFDE24308BF200791CD5 /* notificationProfileVC.swift */,
 				041A2C3B27BC9E01000FAFE2 /* ChangeProfileVC.swift */,
+				048A086027CBDB6600C49D1A /* MainProfileVC.swift */,
+				FA04BFDE24308BF200791CD5 /* notificationProfileVC.swift */,
 				041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */,
 			);
 			path = profile;
@@ -1221,7 +1218,6 @@
 				FAF8BC16242B852C004AEF89 /* SectionsVC.swift in Sources */,
 				0475122A2712418200D884D4 /* WalletVc.swift in Sources */,
 				FADBB14824279F200044936E /* CustomizedView.swift in Sources */,
-				041A2C3A27BC9444000FAFE2 /* ProfilePopUp.swift in Sources */,
 				04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */,
 				042A538B27CB4C7300009C21 /* MyFoodCartCell.swift in Sources */,
 				FA5B25D32434DC1D004F52DE /* DateFSCalnder.swift in Sources */,

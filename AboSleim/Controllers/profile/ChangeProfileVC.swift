@@ -10,48 +10,30 @@
 import UIKit
 
 class ChangeProfileVC: UIViewController {
+    
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var uploadedImage: UIImageView!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         titleLbl.text = "changeProfile".localized
-
     }
     
-    @IBAction func popUpAction(_ sender: UIButton) {
-        guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfilePopUp") as? ProfilePopUp else {return}
-        sb.goToWallet = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "WalletVc") as? WalletVc else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        sb.goTochangePassword = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileChangePasswordVC") as? ProfileChangePasswordVC else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        self.present(sb, animated: true, completion: nil)
-     
-        sb.goToNotification = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "notificationProfileVC") as? notificationProfileVC else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        
-        sb.goTochangeProfile = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ChangeProfileVC") as? ChangeProfileVC else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
+    @IBAction func backBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func changeProfileAction(_ sender: UIButton) {
+        showImageActionSheet()
+    }
+    
     
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
     
-    @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-    }
-    
+
 
     @IBAction func searchButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
@@ -67,6 +49,41 @@ class ChangeProfileVC: UIViewController {
 }
 
 
+extension ChangeProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func showImageActionSheet() {
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .default) { (action) in
+                self.showImagePicker(sourceType: .photoLibrary)
+            }
+            let cameraAction = UIAlertAction(title: "Take a Picture from Camera", style: .default) { (action) in
+                self.showImagePicker(sourceType: .camera)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            AlertService.showAlert(style: .actionSheet, title: "Pick Your Picture", message: nil, actions: [chooseFromLibraryAction, cameraAction, cancelAction], completion: nil)
+    }
+    
+    func showImagePicker(sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        imagePickerController.mediaTypes = ["public.image"]
+        imagePickerController.view.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.uploadedImage.image = editedImage
+            
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.uploadedImage.image = originalImage
+        
+        }
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 

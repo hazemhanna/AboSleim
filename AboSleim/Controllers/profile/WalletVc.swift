@@ -46,15 +46,15 @@ class WalletVc: UIViewController {
     
     @IBAction func rewardBtn(_ sender: UIButton) {
         if sender.tag == 0 {
-            self.orderbtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
-            self.rewardsBtn.backgroundColor = .white
+            self.orderbtn.backgroundColor = #colorLiteral(red: 0.1333333333, green: 0.1725490196, blue: 0.2431372549, alpha: 1)
+            self.rewardsBtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9725490196, blue: 0.8901960784, alpha: 1)
             self.type = "order"
             self.orderbtn.setTitleColor(UIColor.white, for: .normal)
             self.rewardsBtn.setTitleColor(UIColor.black, for: .normal)
             self.listTableView.reloadData()
         }else{
-            self.orderbtn.backgroundColor = .white
-            self.rewardsBtn.backgroundColor = #colorLiteral(red: 1, green: 0.4078431373, blue: 0.5294117647, alpha: 1)
+            self.orderbtn.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.9725490196, blue: 0.8901960784, alpha: 1)
+            self.rewardsBtn.backgroundColor = #colorLiteral(red: 0.1333333333, green: 0.1725490196, blue: 0.2431372549, alpha: 1)
             self.type = "reward"
             self.orderbtn.setTitleColor(UIColor.black, for: .normal)
             self.rewardsBtn.setTitleColor(UIColor.white, for: .normal)
@@ -66,35 +66,13 @@ class WalletVc: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func popUpAction(_ sender: UIButton) {
-        guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfilePopUp") as? ProfilePopUp else {return}
-        sb.goToWallet = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "WalletVc") as? WalletVc else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        sb.goTochangePassword = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileChangePasswordVC") as? ProfileChangePasswordVC else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        self.present(sb, animated: true, completion: nil)
-     
-        sb.goToNotification = {
-            guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "notificationProfileVC") as? notificationProfileVC else {return}
-            self.navigationController?.pushViewController(sb, animated: true)
-        }
-        
-        sb.goTochangeProfile = {
+    @IBAction func changeProfileAction(_ sender: UIButton) {
             guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ChangeProfileVC") as? ChangeProfileVC else {return}
             self.navigationController?.pushViewController(sb, animated: true)
-        }
+        
     }
     
-    
-    @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-    }
-    
+
 
     @IBAction func searchButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
@@ -111,9 +89,9 @@ extension WalletVc: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if type == "order"{
-         return 2
+         return 4
         }else{
-         return 2
+         return 4
         }
     }
     

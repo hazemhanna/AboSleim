@@ -69,7 +69,7 @@
 "kDO-LG-DGk.title" = "Order Date";
 
 /* Class = "UIButton"; normalTitle = "in Door"; ObjectID = "kid-jL-VGQ"; */
-"kid-jL-VGQ.normalTitle" = "مركب";
+"kid-jL-VGQ.normalTitle" = "عائلات";
 
 /* Class = "UINavigationItem"; title = "Table Reservation"; ObjectID = "zKm-K0-kPE"; */
 "zKm-K0-kPE.title" = "حجز طاولة";

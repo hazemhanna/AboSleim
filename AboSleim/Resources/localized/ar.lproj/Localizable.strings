@@ -116,6 +116,9 @@
 "Enter new password" = "ادخل كلمة المرور الجديدة";
 
 "Enter confirm password" = "ادخل تأكيد كلمة المرور";
+"new password" = "كلمة المرور الجديدة";
+"confirm password" = "تأكيد كلمة المرور";
+
 "The total price includes " = "إجمالي السعر يشتمل على ";
 "VAT tax" = "ضريبة القيمة المضافة";
 
@@ -220,3 +223,7 @@
 "lat" = "خظوظ الطول";
 "long" = "دواير العرض";
 "addaddress" = "اضف عنوان جديد";
+"phone number" = "رقم الهاتف";
+"email" = "بريدك الألكتروني";
+"userName" = "اسم المستخدم";
+"search" = "البحث";

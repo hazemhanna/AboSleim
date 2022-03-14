@@ -27,13 +27,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2v-68-H6v">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 397" translatesAutoresizingMaskIntoConstraints="NO" id="qta-0x-DUX">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-re-7a9">
-                                        <rect key="frame" x="16" y="48.5" width="382" height="25"/>
+                                        <rect key="frame" x="16" y="35" width="382" height="25"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lr4-Mj-5bJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
@@ -53,8 +53,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chs-MV-WEU">
-                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="39" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -127,56 +127,27 @@
                                     <constraint firstAttribute="trailing" secondItem="qta-0x-DUX" secondAttribute="trailing" id="xsA-bO-Gt2"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-SX-pv3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HcJ-SX-pv3">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RUG-4H-kaz">
-                                <rect key="frame" x="0.0" y="105.5" width="414" height="756.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rix-u4-Y3l">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
-                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" hidden="YES" contentMode="scaleToFill" id="Rod-2g-gi9">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="772.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-YF-lZG">
-                                            <rect key="frame" x="99" y="100" width="216" height="60"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Orders Yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2El-Wl-2WU">
-                                            <rect key="frame" x="153.5" y="160" width="107" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.2117912471" green="0.2075385451" blue="0.2240747511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="g1g-YF-lZG" firstAttribute="centerX" secondItem="Rod-2g-gi9" secondAttribute="centerX" id="WXR-2u-f10"/>
-                                        <constraint firstItem="g1g-YF-lZG" firstAttribute="top" secondItem="Rod-2g-gi9" secondAttribute="top" constant="100" id="cYk-hg-Q8B"/>
-                                        <constraint firstItem="2El-Wl-2WU" firstAttribute="top" secondItem="g1g-YF-lZG" secondAttribute="bottom" id="v8e-d5-WeB"/>
-                                        <constraint firstItem="2El-Wl-2WU" firstAttribute="centerX" secondItem="Rod-2g-gi9" secondAttribute="centerX" id="vxn-Ph-e93"/>
-                                    </constraints>
-                                </view>
-                                <connections>
-                                    <outlet property="dataSource" destination="nam-ay-f1c" id="pov-Gg-gA0"/>
-                                    <outlet property="delegate" destination="nam-ay-f1c" id="GlA-qv-w7C"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lzr-6x-7te"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Lzr-6x-7te" firstAttribute="bottom" secondItem="RUG-4H-kaz" secondAttribute="bottom" id="2Zb-ee-m2Z"/>
-                            <constraint firstItem="Lzr-6x-7te" firstAttribute="trailing" secondItem="RUG-4H-kaz" secondAttribute="trailing" id="9OI-GH-wP4"/>
-                            <constraint firstItem="RUG-4H-kaz" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="GZO-12-sEh"/>
+                            <constraint firstItem="rix-u4-Y3l" firstAttribute="top" secondItem="p2v-68-H6v" secondAttribute="bottom" constant="8" id="Dca-A5-MCO"/>
                             <constraint firstItem="Lzr-6x-7te" firstAttribute="bottom" secondItem="HcJ-SX-pv3" secondAttribute="bottom" id="XhK-Sd-WWl"/>
+                            <constraint firstItem="rix-u4-Y3l" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="ajQ-1D-of1"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="width" secondItem="aLa-T4-nrR" secondAttribute="width" id="ih0-K1-yVg"/>
                             <constraint firstItem="HcJ-SX-pv3" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="j9N-3G-hK6"/>
-                            <constraint firstItem="RUG-4H-kaz" firstAttribute="top" secondItem="p2v-68-H6v" secondAttribute="bottom" constant="16" id="mpi-fi-iTv"/>
+                            <constraint firstItem="Lzr-6x-7te" firstAttribute="bottom" secondItem="rix-u4-Y3l" secondAttribute="bottom" id="jQG-24-a05"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="top" secondItem="aLa-T4-nrR" secondAttribute="top" id="q8b-jG-3kF"/>
+                            <constraint firstItem="Lzr-6x-7te" firstAttribute="trailing" secondItem="rix-u4-Y3l" secondAttribute="trailing" id="rDA-2o-qwf"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="centerX" secondItem="Lzr-6x-7te" secondAttribute="centerX" id="rnb-l3-y3Y"/>
                             <constraint firstItem="HcJ-SX-pv3" firstAttribute="trailing" secondItem="Lzr-6x-7te" secondAttribute="trailing" id="s3J-1H-KJg"/>
-                            <constraint firstItem="p2v-68-H6v" firstAttribute="height" secondItem="aLa-T4-nrR" secondAttribute="height" multiplier="0.1" id="wTM-MX-8q3"/>
                             <constraint firstItem="HcJ-SX-pv3" firstAttribute="top" secondItem="Lzr-6x-7te" secondAttribute="top" id="zRi-JA-Wc0"/>
                         </constraints>
                     </view>
@@ -187,8 +158,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="emptyView" destination="Rod-2g-gi9" id="o2J-Jf-gLl"/>
-                        <outlet property="listTableView" destination="RUG-4H-kaz" id="h2A-2Q-SEt"/>
+                        <outlet property="listTableView" destination="rix-u4-Y3l" id="3kw-dJ-oXg"/>
                         <outlet property="titleLbl" destination="chs-MV-WEU" id="bNA-nd-HHW"/>
                     </connections>
                 </viewController>
@@ -231,8 +201,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-DQ-XRp">
-                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="39" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -317,10 +287,14 @@
                                 <rect key="frame" x="0.0" y="105.5" width="414" height="790.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="QVO-Y3-Ui7">
-                                        <rect key="frame" x="99" y="100" width="216" height="60"/>
+                                        <rect key="frame" x="107" y="100" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="fmy-I7-tzY"/>
+                                            <constraint firstAttribute="height" constant="200" id="xsA-S5-srf"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد وجبات مفضلة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-vm-I8r">
-                                        <rect key="frame" x="134" y="160" width="146" height="20.5"/>
+                                        <rect key="frame" x="134" y="300" width="146" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.2117912471" green="0.2075385451" blue="0.2240747511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -426,8 +400,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU8-fj-jPx">
-                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="39" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -788,8 +762,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEI-Ss-vXa">
-                                                                <rect key="frame" x="16" y="-1.5" width="34.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="39" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -929,7 +903,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Abo Sleim" width="216" height="60"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
         <image name="Group 397" width="360" height="76"/>
         <image name="Line 41" width="2" height="66"/>
         <image name="back-arrow" width="22" height="22"/>
@@ -949,9 +923,6 @@
         <namedColor name="textColor">
             <color red="0.0078431372549019607" green="0.10196078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

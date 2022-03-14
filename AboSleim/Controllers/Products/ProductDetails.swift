@@ -14,15 +14,11 @@ class ProductDetails: UIViewController {
     @IBOutlet weak var quantityTF: UILabel!
     @IBOutlet weak var stackViewST: UIStackView!
     @IBOutlet weak var mealNameLB: UILabel!
-    @IBOutlet weak var notesTF: UITextField!
     @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var RestaurantName: UILabel!
+    @IBOutlet weak var discribtionLbl : UILabel!
+    @IBOutlet weak var typeLbl : UILabel!
     @IBOutlet weak var FavoriteBN : UIButton!
-    @IBOutlet weak var smallBtN : UIButton!
-    @IBOutlet weak var midumBtN : UIButton!
-    @IBOutlet weak var largeBtN : UIButton!
-    @IBOutlet weak var OptionTableHeight: NSLayoutConstraint!
 
     var isFavourite = Bool()
     var meals : RestaurantMeal?
@@ -37,7 +33,19 @@ class ProductDetails: UIViewController {
         mealNameLB.text = meals?.nameAr
        // RestaurantName.text = meals?.descriptionAr
         oneImageView.image = meals?.image
+        if "lang".localized == "en" {
+            price.textAlignment = .left
+            discribtionLbl.textAlignment = .left
+            typeLbl.textAlignment = .left
+            mealNameLB.textAlignment = .left
+        }else{
+            price.textAlignment = .right
+            discribtionLbl.textAlignment = .right
+            typeLbl.textAlignment = .right
+            mealNameLB.textAlignment = .right
+        }
     }
+    
     
     @IBAction func Back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

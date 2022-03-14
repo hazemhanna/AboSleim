@@ -21,15 +21,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="DTl-AQ-C3m">
-                                <rect key="frame" x="41.333333333333343" y="368" width="331.33333333333326" height="60"/>
+                                <rect key="frame" x="103.66666666666669" y="308.33333333333331" width="207" height="179.33333333333331"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0zM-Ra-qq2" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="ELG-aH-1lA"/>
-                            <constraint firstItem="DTl-AQ-C3m" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.8" id="EQ4-SH-SbR"/>
+                            <constraint firstItem="DTl-AQ-C3m" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="EQ4-SH-SbR"/>
                             <constraint firstItem="DTl-AQ-C3m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gzc-cC-Zno"/>
+                            <constraint firstItem="DTl-AQ-C3m" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.2" id="ITo-iD-ggj"/>
                             <constraint firstItem="DTl-AQ-C3m" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="XcD-Fh-8wn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0zM-Ra-qq2" secondAttribute="trailing" id="mdO-qZ-xyA"/>
                             <constraint firstItem="0zM-Ra-qq2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="nNN-J7-3FQ"/>
@@ -44,7 +45,7 @@
     </scenes>
     <resources>
         <image name="391686-PCPEP5-181" width="360" height="640"/>
-        <image name="Abo Sleim" width="216" height="60"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

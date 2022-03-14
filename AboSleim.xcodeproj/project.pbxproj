@@ -503,9 +503,9 @@
 			children = (
 				047512292712418200D884D4 /* WalletVc.swift */,
 				041A2C3B27BC9E01000FAFE2 /* ChangeProfileVC.swift */,
+				041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */,
 				048A086027CBDB6600C49D1A /* MainProfileVC.swift */,
 				FA04BFDE24308BF200791CD5 /* notificationProfileVC.swift */,
-				041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -1647,7 +1647,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AboSleim/AppFiles/Info.plist";
@@ -1676,7 +1676,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AboSleim/AppFiles/Info.plist";

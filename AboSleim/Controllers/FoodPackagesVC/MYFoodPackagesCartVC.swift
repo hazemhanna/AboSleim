@@ -15,12 +15,10 @@ import ImageSlideshow
 class MYFoodPackagesCartVC  : UIViewController {
     
     @IBOutlet weak var MealDetailsTableView: UITableView!
+    
     private let TableCellIdentifier = "MyFoodCartCell"
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var empyView : UIView!
-
-
-    
     
     var fees = Double()
     var restaurant_id = Int()
@@ -29,7 +27,6 @@ class MYFoodPackagesCartVC  : UIViewController {
     var food_price = Double()
     var total = Int()
 
-    
     var meals = [RestaurantMeal]() {
         didSet{
             DispatchQueue.main.async {
@@ -40,15 +37,14 @@ class MYFoodPackagesCartVC  : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         MealDetailsTableView.delegate = self
         MealDetailsTableView.dataSource = self
         MealDetailsTableView.estimatedRowHeight = UITableView.automaticDimension
         MealDetailsTableView.register(UINib(nibName: TableCellIdentifier, bundle: nil), forCellReuseIdentifier: TableCellIdentifier)
         titleLbl.text = "FoodCart".localized
-
         meals.append(RestaurantMeal(nameAr: "بيتزا سي فود", image: #imageLiteral(resourceName: "food-1"), descriptionAr: "بيتزا"))
 
+        
     }
     
     @IBAction func sideMenu(_ sender: Any) {

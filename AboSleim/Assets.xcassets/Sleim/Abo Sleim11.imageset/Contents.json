@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "لوجو.png",
+      "filename" : "Abo Sleim.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Abo Sleim@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

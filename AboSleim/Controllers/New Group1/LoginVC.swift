@@ -38,6 +38,14 @@ class LoginVC: UIViewController {
         
     }
     
+    @IBAction func closeBtn(_ sender: UIButton) {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        sb.selectedIndex = 0
+        window.rootViewController = sb
+        UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
+    }
+    
     private func validate()-> Bool {
         if self.EmailTF.text!.isEmpty {
             displayMessage(title: "", message: "Enter Your phone".localized , status: .error, forController: self)
@@ -56,6 +64,16 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(sb, animated: true)
     }
 
+    
+    @IBAction func forgetPass(_ sender: UIButton) {
+        guard let sb = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileChangePasswordVC") as? ProfileChangePasswordVC else {return}
+        self.navigationController?.pushViewController(sb, animated: true)
+    }
+
+    
+    
+    
+    
     
 }
 extension LoginVC{

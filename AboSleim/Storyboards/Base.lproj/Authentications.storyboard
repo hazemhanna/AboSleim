@@ -32,21 +32,31 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="251" image="391686-PCPEP5-181" translatesAutoresizingMaskIntoConstraints="NO" id="m1L-CM-oOi">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-zC-hBc">
-                                <rect key="frame" x="107" y="32" width="200" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxT-Cn-Aah">
+                                <rect key="frame" x="10" y="54" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="ZDw-Ps-UEu"/>
-                                    <constraint firstAttribute="height" constant="100" id="lsH-W4-N66"/>
+                                    <constraint firstAttribute="height" constant="30" id="Qem-Dr-v1K"/>
+                                </constraints>
+                                <state key="normal" image="remove"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="je0-FP-4ZI" eventType="touchUpInside" id="zuc-WN-SXU"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="f0A-zC-hBc">
+                                <rect key="frame" x="157" y="54" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EZf-d1-qeO"/>
+                                    <constraint firstAttribute="width" constant="100" id="yc8-Tl-cGZ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-1l-viX">
-                                <rect key="frame" x="150.5" y="148" width="113.5" height="37.5"/>
+                                <rect key="frame" x="147" y="170" width="120.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qrc-a2-5OY">
-                                <rect key="frame" x="41.5" y="217.5" width="331" height="400"/>
+                                <rect key="frame" x="41.5" y="209.5" width="331" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLD-GW-teO" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
@@ -168,7 +178,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urn-Jp-9LG" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="91.5" y="627.5" width="231" height="50"/>
+                                <rect key="frame" x="91.5" y="619.5" width="231" height="36"/>
                                 <color key="backgroundColor" name="navigation"/>
                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                 <state key="normal" title="Register">
@@ -185,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw6-8e-eyG">
-                                <rect key="frame" x="91.5" y="697.5" width="231" height="44"/>
+                                <rect key="frame" x="107.5" y="675.5" width="199" height="32"/>
                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
                                 <state key="normal" title="Have account? Login now">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,22 +210,23 @@
                         <constraints>
                             <constraint firstItem="Tdh-1l-viX" firstAttribute="top" secondItem="f0A-zC-hBc" secondAttribute="bottom" constant="16" id="2I9-2T-8fm"/>
                             <constraint firstItem="f0A-zC-hBc" firstAttribute="centerX" secondItem="UcH-uu-eWI" secondAttribute="centerX" id="2NK-KQ-9ok"/>
-                            <constraint firstItem="Qrc-a2-5OY" firstAttribute="top" secondItem="Tdh-1l-viX" secondAttribute="bottom" constant="32" id="2Os-9j-etf"/>
+                            <constraint firstItem="Qrc-a2-5OY" firstAttribute="top" secondItem="Tdh-1l-viX" secondAttribute="bottom" constant="16" id="2Os-9j-etf"/>
                             <constraint firstItem="m1L-CM-oOi" firstAttribute="top" secondItem="UcH-uu-eWI" secondAttribute="top" id="6Wv-YM-zwX"/>
                             <constraint firstAttribute="bottom" secondItem="m1L-CM-oOi" secondAttribute="bottom" id="AMv-FZ-5oa"/>
                             <constraint firstItem="Kw6-8e-eyG" firstAttribute="top" secondItem="urn-Jp-9LG" secondAttribute="bottom" constant="20" id="EjX-xP-hUf"/>
                             <constraint firstItem="m1L-CM-oOi" firstAttribute="leading" secondItem="V4P-O1-Hse" secondAttribute="leading" id="KGE-YG-Wm9"/>
                             <constraint firstItem="urn-Jp-9LG" firstAttribute="top" secondItem="Qrc-a2-5OY" secondAttribute="bottom" constant="10" id="OHL-Bo-mDs"/>
-                            <constraint firstItem="V4P-O1-Hse" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Kw6-8e-eyG" secondAttribute="bottom" constant="10" id="URv-Yr-cPY"/>
                             <constraint firstItem="Qrc-a2-5OY" firstAttribute="width" secondItem="UcH-uu-eWI" secondAttribute="width" multiplier="0.8" id="WiK-RE-BS2"/>
                             <constraint firstItem="Qrc-a2-5OY" firstAttribute="centerX" secondItem="V4P-O1-Hse" secondAttribute="centerX" id="alJ-DO-9bz"/>
-                            <constraint firstItem="f0A-zC-hBc" firstAttribute="top" secondItem="UcH-uu-eWI" secondAttribute="top" constant="32" id="brP-DJ-cyn"/>
-                            <constraint firstItem="Kw6-8e-eyG" firstAttribute="trailing" secondItem="urn-Jp-9LG" secondAttribute="trailing" id="gFo-ub-Vfg"/>
+                            <constraint firstItem="f0A-zC-hBc" firstAttribute="top" secondItem="V4P-O1-Hse" secondAttribute="top" constant="10" id="brP-DJ-cyn"/>
+                            <constraint firstItem="rxT-Cn-Aah" firstAttribute="top" secondItem="V4P-O1-Hse" secondAttribute="top" constant="10" id="c9Q-fl-kmt"/>
+                            <constraint firstItem="Kw6-8e-eyG" firstAttribute="centerX" secondItem="UcH-uu-eWI" secondAttribute="centerX" id="dop-6E-1jN"/>
+                            <constraint firstItem="rxT-Cn-Aah" firstAttribute="leading" secondItem="V4P-O1-Hse" secondAttribute="leading" constant="10" id="g6c-Un-AML"/>
                             <constraint firstItem="Tdh-1l-viX" firstAttribute="centerX" secondItem="V4P-O1-Hse" secondAttribute="centerX" id="nDP-gB-dl9"/>
+                            <constraint firstItem="rxT-Cn-Aah" firstAttribute="width" secondItem="rxT-Cn-Aah" secondAttribute="height" multiplier="1:1" id="nS8-Pg-coU"/>
                             <constraint firstItem="V4P-O1-Hse" firstAttribute="trailing" secondItem="m1L-CM-oOi" secondAttribute="trailing" id="s0F-8K-9ky"/>
                             <constraint firstItem="urn-Jp-9LG" firstAttribute="trailing" secondItem="Qrc-a2-5OY" secondAttribute="trailing" constant="-50" id="sUg-vr-wqc"/>
                             <constraint firstItem="urn-Jp-9LG" firstAttribute="leading" secondItem="Qrc-a2-5OY" secondAttribute="leading" constant="50" id="sUv-Ut-lyh"/>
-                            <constraint firstItem="Kw6-8e-eyG" firstAttribute="leading" secondItem="urn-Jp-9LG" secondAttribute="leading" id="we2-iO-IfI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registeration" id="o6a-U3-njh"/>
@@ -245,13 +256,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="1dL-W3-33y">
-                                <rect key="frame" x="87" y="114" width="240" height="179"/>
+                                <rect key="frame" x="157" y="54" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3eC-T3-kU7"/>
+                                    <constraint firstAttribute="height" constant="100" id="ibb-9R-84q"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="WtP-SQ-hfl">
-                                <rect key="frame" x="20.5" y="343" width="373" height="125"/>
+                                <rect key="frame" x="41.5" y="254" width="331" height="125"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ft-8V-RGm" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="50"/>
                                         <color key="backgroundColor" name="button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bM1-aT-Zgv"/>
@@ -276,7 +291,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-pU-Yvb" customClass="CustomTextField" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="75" width="373" height="50"/>
+                                        <rect key="frame" x="0.0" y="75" width="331" height="50"/>
                                         <color key="backgroundColor" name="button"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
@@ -300,7 +315,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jp-vU-GQU" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                <rect key="frame" x="90" y="508" width="234" height="60"/>
+                                <rect key="frame" x="90" y="419" width="234" height="60"/>
                                 <color key="backgroundColor" name="navigation"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="oDH-EE-q6f"/>
@@ -320,23 +335,24 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-VF-nLA">
-                                <rect key="frame" x="112.5" y="588" width="189" height="98"/>
+                                <rect key="frame" x="105" y="499" width="204" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yod-vb-Nu5">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="98"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="204" height="74"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSL-zA-eeq" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="189" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="204" height="32"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
                                                 <state key="normal" title="Forget Password?">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="forgetPass:" destination="mnh-HA-566" eventType="touchUpInside" id="EsY-0s-wh1"/>
                                                     <action selector="forgetPassword:" destination="mnh-HA-566" eventType="touchUpInside" id="4Y4-q8-BQb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1G-9H-DYl">
-                                                <rect key="frame" x="0.0" y="54" width="189" height="44"/>
+                                                <rect key="frame" x="0.0" y="42" width="204" height="32"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="17"/>
                                                 <state key="normal" title="No Account? Register now">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -355,7 +371,10 @@
                                     <constraint firstAttribute="width" secondItem="6zE-fl-nhi" secondAttribute="height" multiplier="1:1" id="Btd-2n-JGm"/>
                                     <constraint firstAttribute="height" constant="30" id="Xnn-QT-871"/>
                                 </constraints>
-                                <state key="normal" image="arrow-point-to-left"/>
+                                <state key="normal" image="remove"/>
+                                <connections>
+                                    <action selector="closeBtn:" destination="mnh-HA-566" eventType="touchUpInside" id="93E-JM-QNH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HCh-WR-bAu"/>
@@ -365,17 +384,15 @@
                             <constraint firstItem="3Jp-vU-GQU" firstAttribute="centerX" secondItem="HCh-WR-bAu" secondAttribute="centerX" id="6gf-9e-Xby"/>
                             <constraint firstItem="oT8-Hz-JhY" firstAttribute="leading" secondItem="HCh-WR-bAu" secondAttribute="leading" id="ASI-ho-Afv"/>
                             <constraint firstItem="6zE-fl-nhi" firstAttribute="leading" secondItem="HCh-WR-bAu" secondAttribute="leading" constant="10" id="B8d-Rg-Qaw"/>
-                            <constraint firstItem="1dL-W3-33y" firstAttribute="height" secondItem="lkW-Hw-VWa" secondAttribute="height" multiplier="0.2" id="DG9-C7-X23"/>
-                            <constraint firstItem="1dL-W3-33y" firstAttribute="top" secondItem="HCh-WR-bAu" secondAttribute="top" constant="70" id="EDZ-8W-iGl"/>
+                            <constraint firstItem="1dL-W3-33y" firstAttribute="top" secondItem="HCh-WR-bAu" secondAttribute="top" constant="10" id="EDZ-8W-iGl"/>
                             <constraint firstItem="WtP-SQ-hfl" firstAttribute="centerX" secondItem="HCh-WR-bAu" secondAttribute="centerX" id="Jcj-LC-gYC"/>
                             <constraint firstItem="oT8-Hz-JhY" firstAttribute="top" secondItem="lkW-Hw-VWa" secondAttribute="top" id="PZa-hu-i3E"/>
                             <constraint firstAttribute="bottom" secondItem="oT8-Hz-JhY" secondAttribute="bottom" id="S3T-7Y-Qmd"/>
                             <constraint firstItem="d3J-VF-nLA" firstAttribute="top" secondItem="3Jp-vU-GQU" secondAttribute="bottom" constant="20" id="X6F-S6-eB6"/>
                             <constraint firstItem="1dL-W3-33y" firstAttribute="centerX" secondItem="HCh-WR-bAu" secondAttribute="centerX" id="ZaZ-IF-Iba"/>
-                            <constraint firstItem="WtP-SQ-hfl" firstAttribute="width" secondItem="lkW-Hw-VWa" secondAttribute="width" multiplier="0.9" id="bXp-8s-2OM"/>
-                            <constraint firstItem="1dL-W3-33y" firstAttribute="width" secondItem="lkW-Hw-VWa" secondAttribute="width" multiplier="0.57971" id="ci5-P8-jxw"/>
+                            <constraint firstItem="WtP-SQ-hfl" firstAttribute="width" secondItem="lkW-Hw-VWa" secondAttribute="width" multiplier="0.8" id="bXp-8s-2OM"/>
                             <constraint firstItem="HCh-WR-bAu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="d3J-VF-nLA" secondAttribute="bottom" constant="10" id="d6d-f0-xqD"/>
-                            <constraint firstItem="WtP-SQ-hfl" firstAttribute="top" secondItem="1dL-W3-33y" secondAttribute="bottom" constant="50" id="h2d-Yh-uFI"/>
+                            <constraint firstItem="WtP-SQ-hfl" firstAttribute="top" secondItem="1dL-W3-33y" secondAttribute="bottom" constant="100" id="h2d-Yh-uFI"/>
                             <constraint firstItem="3Jp-vU-GQU" firstAttribute="leading" secondItem="HCh-WR-bAu" secondAttribute="leading" constant="90" id="oF6-iQ-Zis"/>
                             <constraint firstItem="HCh-WR-bAu" firstAttribute="trailing" secondItem="oT8-Hz-JhY" secondAttribute="trailing" id="peY-Pk-1GH"/>
                             <constraint firstItem="6zE-fl-nhi" firstAttribute="top" secondItem="HCh-WR-bAu" secondAttribute="top" constant="10" id="q1D-zf-syh"/>
@@ -391,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZf-Qc-ZfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="127"/>
+            <point key="canvasLocation" x="506" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xy6-Rv-VZX">
@@ -431,19 +448,19 @@
     </scenes>
     <designables>
         <designable name="3Jp-vU-GQU">
-            <size key="intrinsicContentSize" width="51" height="54"/>
+            <size key="intrinsicContentSize" width="52" height="38"/>
         </designable>
         <designable name="3Yk-pU-Yvb">
-            <size key="intrinsicContentSize" width="113.5" height="46"/>
+            <size key="intrinsicContentSize" width="116.5" height="34"/>
         </designable>
         <designable name="4c4-yg-u4V">
             <size key="intrinsicContentSize" width="70.5" height="34"/>
         </designable>
         <designable name="6ft-8V-RGm">
-            <size key="intrinsicContentSize" width="124" height="47"/>
+            <size key="intrinsicContentSize" width="128.5" height="34"/>
         </designable>
         <designable name="FSL-zA-eeq">
-            <size key="intrinsicContentSize" width="130" height="44"/>
+            <size key="intrinsicContentSize" width="139" height="32"/>
         </designable>
         <designable name="GLD-GW-teO">
             <size key="intrinsicContentSize" width="102.5" height="34"/>
@@ -458,7 +475,7 @@
             <size key="intrinsicContentSize" width="64.5" height="34"/>
         </designable>
         <designable name="urn-Jp-9LG">
-            <size key="intrinsicContentSize" width="73" height="50"/>
+            <size key="intrinsicContentSize" width="75" height="36"/>
         </designable>
         <designable name="wXI-xR-ef3">
             <size key="intrinsicContentSize" width="93.5" height="34"/>
@@ -466,8 +483,8 @@
     </designables>
     <resources>
         <image name="391686-PCPEP5-181" width="360" height="640"/>
-        <image name="Abo Sleim" width="216" height="60"/>
-        <image name="arrow-point-to-left" width="15" height="15"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
+        <image name="remove" width="23" height="23"/>
         <namedColor name="button">
             <color red="0.99607843137254903" green="0.97254901960784312" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -23,7 +23,7 @@ class RegisterationVC: UIViewController {
         super.viewDidLoad()
         
         address.placeholder = "address".localized
-        phone.placeholder = "phone".localized
+        phone.placeholder = "phone number".localized
 
     }
     
@@ -39,6 +39,7 @@ class RegisterationVC: UIViewController {
        
         
         guard let window = UIApplication.shared.keyWindow else { return }
+        
         let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
         sb.selectedIndex = 0
         window.rootViewController = sb
@@ -74,7 +75,15 @@ class RegisterationVC: UIViewController {
         self.navigationController?.pushViewController(sb, animated: true)
     }
     
- 
+    @IBAction func closeBtn(_ sender: UIButton) {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+        sb.selectedIndex = 0
+        window.rootViewController = sb
+        UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
+        
+        
+    }
     
     
 }

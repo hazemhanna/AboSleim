@@ -42,7 +42,7 @@
 "Gip-tM-GhL.title" = "  ";
 
 /* Class = "UILabel"; text = "Order Status:"; ObjectID = "KaM-qa-IBB"; */
-"KaM-qa-IBB.text" = "حالة الطلب";
+"KaM-qa-IBB.text" = "جاري التحضير";
 
 /* Class = "UILabel"; text = "Payment"; ObjectID = "Kbf-yt-Flz"; */
 "Kbf-yt-Flz.text" = "الدفع";

@@ -11,14 +11,12 @@
 import UIKit
 
 class SearchVC: UIViewController {
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var empyView : UIView!
-
     @IBOutlet weak var titleLbl  : UILabel!
 
-    
     private let cellIdentifier = "ValiableResturantCell"
 
     var meals = [RestaurantMeal]() {
@@ -31,7 +29,6 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.tableFooterView = UIView()
@@ -47,6 +44,8 @@ class SearchVC: UIViewController {
         meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
         meals.append(RestaurantMeal(nameAr: "نص ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
         meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
+        
+        titleLbl.text = "search".localized
     }
     
     @IBAction func backButton(_ sender: Any) {

@@ -109,8 +109,12 @@
 "Code is invalid" = "Code is invalid";
 
 "Enter new password" = "Enter new password";
-
 "Enter confirm password" = "Enter confirm password";
+
+"new password" = "new password";
+"confirm password" = "confirm password";
+
+
 
 "The total price includes " = "The total price includes ";
 "VAT tax" = "VAT tax";
@@ -215,3 +219,7 @@
 "building" = "building";
 "lat" = "lat";
 "long" = "long";
+"phone number" = "phone number";
+"email" = "email";
+"userName" = "user Name";
+"search" = "search";

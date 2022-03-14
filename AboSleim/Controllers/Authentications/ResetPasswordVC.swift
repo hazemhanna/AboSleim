@@ -43,7 +43,6 @@ class ResetPasswordVC: UIViewController {
         } else {
             return true
         }
-        
     }
     
     @IBAction func cancel(_ sender: UIButton) {

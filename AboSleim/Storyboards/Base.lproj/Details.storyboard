@@ -81,7 +81,7 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-qa-IBB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Way" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaM-qa-IBB">
                                                         <rect key="frame" x="132" y="0.0" width="231" height="81"/>
                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,7 +260,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4Z-us-tmy">
-                                        <rect key="frame" x="10" y="45.5" width="30" height="30"/>
+                                        <rect key="frame" x="10" y="47" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="J9o-OR-2iZ"/>
                                             <constraint firstAttribute="width" secondItem="T4Z-us-tmy" secondAttribute="height" multiplier="1:1" id="O0m-oH-zId"/>
@@ -271,7 +271,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygF-Hc-TWp">
-                                        <rect key="frame" x="374" y="45.5" width="30" height="30"/>
+                                        <rect key="frame" x="374" y="47" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FBV-3u-akV"/>
                                             <constraint firstAttribute="width" secondItem="ygF-Hc-TWp" secondAttribute="height" multiplier="1:1" id="z4z-Yo-ogZ"/>
@@ -283,8 +283,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKU-lX-blT">
-                                        <rect key="frame" x="50" y="46" width="103.5" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                        <rect key="frame" x="50" y="46" width="117.5" height="32"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                         <color key="textColor" name="navigation"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -381,12 +381,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="352" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Receipt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR8-3f-ifS">
-                                                <rect key="frame" x="119.5" y="8" width="113.5" height="38.5"/>
+                                                <rect key="frame" x="119.5" y="8" width="113.5" height="46.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" name="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="4mQ-ea-4Tw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="لوجو-1" translatesAutoresizingMaskIntoConstraints="NO" id="4mQ-ea-4Tw">
                                                 <rect key="frame" x="141" y="54.5" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="2D8-vs-UXG"/>
@@ -420,7 +420,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="4mQ-ea-4Tw" firstAttribute="top" secondItem="iR8-3f-ifS" secondAttribute="bottom" constant="8" id="0Vc-47-wKw"/>
+                                            <constraint firstItem="4mQ-ea-4Tw" firstAttribute="top" secondItem="iR8-3f-ifS" secondAttribute="bottom" id="0Vc-47-wKw"/>
                                             <constraint firstItem="MJv-Kk-hvk" firstAttribute="centerX" secondItem="t2z-75-lus" secondAttribute="centerX" id="1dd-Q1-6my"/>
                                             <constraint firstItem="MJv-Kk-hvk" firstAttribute="top" secondItem="4mQ-ea-4Tw" secondAttribute="bottom" constant="8" id="4Li-jo-IVF"/>
                                             <constraint firstAttribute="height" constant="170" id="6Uj-xu-SuS"/>
@@ -653,8 +653,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ome-0Q-fDc">
-                                                                <rect key="frame" x="16" y="-1.5" width="85.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="97" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -914,8 +914,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel Order" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwE-eB-SaU">
-                                                                <rect key="frame" x="16" y="-1.5" width="82.5" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="93.5" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1081,8 +1081,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Address " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m31-4S-KHH">
-                                                                <rect key="frame" x="16" y="-1.5" width="80" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="90.5" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1249,8 +1249,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add new address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pP-eK-tR9">
-                                                                <rect key="frame" x="16" y="-1.5" width="111" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="16" y="-3.5" width="126" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1929,8 +1929,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-yt-Flz">
-                                        <rect key="frame" x="48" y="39" width="58" height="38"/>
-                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                        <rect key="frame" x="48" y="42" width="66" height="32"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                         <color key="textColor" name="navigation"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1966,7 +1966,6 @@
                                     <constraint firstAttribute="trailing" secondItem="TRn-Zi-zcC" secondAttribute="trailing" id="8pH-zF-Qoe"/>
                                     <constraint firstAttribute="bottom" secondItem="TRn-Zi-zcC" secondAttribute="bottom" id="9re-OX-VpY"/>
                                     <constraint firstItem="uuL-UH-q08" firstAttribute="top" secondItem="fJr-pH-y7m" secondAttribute="top" constant="43" id="Kkl-bM-MbV"/>
-                                    <constraint firstItem="Kbf-yt-Flz" firstAttribute="top" secondItem="fJr-pH-y7m" secondAttribute="top" constant="39" id="PCn-O3-eFs"/>
                                     <constraint firstItem="TRn-Zi-zcC" firstAttribute="top" secondItem="fJr-pH-y7m" secondAttribute="top" id="SqA-Zt-IUY"/>
                                     <constraint firstItem="Ci7-Ps-UBX" firstAttribute="centerY" secondItem="uuL-UH-q08" secondAttribute="centerY" id="rve-Yx-Uwc"/>
                                     <constraint firstItem="uuL-UH-q08" firstAttribute="centerY" secondItem="Kbf-yt-Flz" secondAttribute="centerY" id="xbg-Va-QYW"/>
@@ -2011,7 +2010,7 @@
             <size key="intrinsicContentSize" width="43" height="33"/>
         </designable>
         <designable name="4oB-G4-9Rj">
-            <size key="intrinsicContentSize" width="33" height="33"/>
+            <size key="intrinsicContentSize" width="22" height="22"/>
         </designable>
         <designable name="9In-AU-ZXd">
             <size key="intrinsicContentSize" width="52" height="34"/>
@@ -2047,7 +2046,7 @@
             <size key="intrinsicContentSize" width="53" height="33"/>
         </designable>
         <designable name="hAr-Zd-ZFc">
-            <size key="intrinsicContentSize" width="33" height="33"/>
+            <size key="intrinsicContentSize" width="22" height="22"/>
         </designable>
         <designable name="hRu-k7-h5P">
             <size key="intrinsicContentSize" width="55" height="30"/>
@@ -2059,7 +2058,7 @@
             <size key="intrinsicContentSize" width="22" height="22"/>
         </designable>
         <designable name="mDd-LK-hZo">
-            <size key="intrinsicContentSize" width="33" height="33"/>
+            <size key="intrinsicContentSize" width="22" height="22"/>
         </designable>
         <designable name="t9w-4n-aYy">
             <size key="intrinsicContentSize" width="55" height="30"/>
@@ -2067,13 +2066,12 @@
     </designables>
     <resources>
         <image name="34374" width="360" height="522"/>
-        <image name="Abo Sleim" width="216" height="60"/>
         <image name="Group 397" width="360" height="76"/>
         <image name="Line 41" width="2" height="66"/>
         <image name="back-arrow" width="22" height="22"/>
         <image name="background" width="360" height="640"/>
         <image name="check" width="25" height="25"/>
-        <image name="checked" width="33" height="33"/>
+        <image name="checked" width="22" height="22"/>
         <image name="checked-green" width="22" height="22"/>
         <image name="cridateCard" width="25" height="25"/>
         <image name="loupe-1" width="23" height="23"/>
@@ -2081,6 +2079,7 @@
         <image name="menu (1)" width="22.5" height="21"/>
         <image name="open-menu" width="25" height="25"/>
         <image name="progress bar-1" width="303.5" height="70.5"/>
+        <image name="لوجو-1" width="1024" height="1024"/>
         <namedColor name="button">
             <color red="0.99607843137254903" green="0.97254901960784312" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

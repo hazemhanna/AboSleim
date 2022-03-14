@@ -168,8 +168,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="261" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-8E-tJm">
-                                                                <rect key="frame" x="8" y="-1.5" width="27" height="28.5"/>
-                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                                                <rect key="frame" x="8" y="-3.5" width="30.5" height="32"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
                                                                 <color key="textColor" name="navigation"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -599,7 +599,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Abo Sleim" width="216" height="60"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
         <image name="Group 397" width="360" height="76"/>
         <image name="Group 488" width="68" height="68"/>
         <image name="Group 492" width="23" height="23"/>

@@ -13,12 +13,26 @@ class ChangeProfileVC: UIViewController {
     
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var uploadedImage: UIImageView!
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
 
-    
+    @IBOutlet weak var usenName: UITextField!
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var Phone: UITextField!
+    @IBOutlet weak var Address: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "changeProfile".localized
+        newPassword.placeholder = "new password".localized
+        confirmPassword.placeholder = "confirm password".localized
+        usenName.placeholder = "userName".localized
+        Email.placeholder = "email".localized
+        Phone.placeholder = "phone number".localized
+        Address.placeholder = "address".localized
+        
     }
+    
     
     @IBAction func backBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -28,13 +42,10 @@ class ChangeProfileVC: UIViewController {
         showImageActionSheet()
     }
     
-    
     @IBAction func menu(_ sender: Any) {
         self.setupSideMenu()
     }
     
-
-
     @IBAction func searchButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
@@ -44,6 +55,10 @@ class ChangeProfileVC: UIViewController {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
 
+    }
+  
+    @IBAction func saveBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

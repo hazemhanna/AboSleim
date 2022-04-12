@@ -24,5 +24,6 @@ target 'AboSleim' do
   pod 'FirebaseInstanceID', '3.8.0'
   pod 'MOLH'
   pod 'FSCalendar'
-
+  pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
 end

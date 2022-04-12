@@ -23,7 +23,8 @@ class RequestTypePopUpVC: UIViewController {
     @IBOutlet weak var visa: UIButton!
     @IBOutlet weak var cach: UIButton!
     @IBOutlet weak var wallet: UIButton!
-    
+    @IBOutlet weak var titleLbl : UILabel!
+
     
     var pay : PayType?
     var OrderType : orderType = .sefry
@@ -31,6 +32,7 @@ class RequestTypePopUpVC: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLbl.text = "Payment".localized
 
     }
     
@@ -103,6 +105,17 @@ class RequestTypePopUpVC: UIViewController {
         self.setupSideMenu()
     }
     
+    
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+    }
+
+    @IBAction func notificationhButtonPressed(_ sender: Any) {
+        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
+        self.navigationController?.pushViewController(details, animated: true)
+
+    }
     
 }
 

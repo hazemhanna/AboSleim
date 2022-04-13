@@ -16,9 +16,12 @@ class SectionCell: UICollectionViewCell {
         self.sectionName.adjustsFontSizeToFitWidth = true
         self.sectionName.minimumScaleFactor = 0.5
     }
-    func config( imagePath: UIImage , name: String){
-
+ 
+    func config(name: String) {
         self.sectionName.text = name
-       }
+      //  guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        //self.sectionImage.kf.setImage(with: imageURL)
+    }
+    
 
 }

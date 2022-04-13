@@ -7,46 +7,36 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SectionsVC: UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
 
     @IBOutlet weak var sectionCollectionView: UICollectionView!
     fileprivate let cellIdentifier = "CategeoryCell"
-
-    var meals = [RestaurantMeal]() {
+   
+    var category = [Category](){
         didSet{
             DispatchQueue.main.async {
                 self.sectionCollectionView.reloadData()
             }
         }
     }
-    
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+ 
  
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionCollectionView.delegate = self
         sectionCollectionView.dataSource = self
         sectionCollectionView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
-        
         titleLbl.text = "Sections".localized
-    
-        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "نص ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-      
-        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
-  //      meals.append(RestaurantMeal(nameAr: "ربع كفتة ضاني", image: #imageLiteral(resourceName: "image3"), descriptionAr: "مشويات"))
-//       meals.append(RestaurantMeal(nameAr: "ربع مشكل ضاني", image: #imageLiteral(resourceName: "image4"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
-
+        
+        self.homeViewModel.showIndicator()
+        getCat()
     }
-    
 
     
     @IBAction func sideMenu(_ sender: Any) {
@@ -72,18 +62,34 @@ class SectionsVC: UIViewController {
 
 extension SectionsVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return meals.count
+        return category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CategeoryCell else { return UICollectionViewCell()}
-        cell.config(imagePath: meals[indexPath.row].image, name: meals[indexPath.row].descriptionAr ?? "")
+
+        if "lang".localized == "ar" {
+            cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.ar ?? "")
+        }else{
+            cell.config(imagePath: self.category[indexPath.row].image ?? "", name: self.category[indexPath.row].title?.en ?? "")
+        }
+        
         return cell
 
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
+        
+        details.catId = self.category[indexPath.row].id ?? 0
+        if "lang".localized == "ar" {
+            details.catTitle = self.category[indexPath.row].title?.ar ?? ""
+        }else{
+            details.catTitle = self.category[indexPath.row].title?.en ?? ""
+        }
+        
+
+        
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -96,4 +102,16 @@ extension SectionsVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size  , height: 150 )
     }
     
+}
+extension SectionsVC{
+
+func getCat() {
+        self.homeViewModel.getCategories().subscribe(onNext: { (data) in
+             self.homeViewModel.dismissIndicator()
+                self.category = data.data?.categories ?? []
+            
+        }, onError: { (error) in
+            self.homeViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+    }
 }

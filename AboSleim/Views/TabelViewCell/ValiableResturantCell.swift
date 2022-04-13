@@ -30,39 +30,55 @@ class ValiableResturantCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-        
-        if "lang".localized == "ar" {
-            name.textAlignment = .left
-            type.textAlignment = .left
-        }else{
-            name.textAlignment = .right
-            type.textAlignment = .right
-        }
     }
     
-  
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    func config(name: String,price: Double, imagePath: UIImage, type: String) {
-
-          //if imagePath != "" {
-          //  guard let imageURL = URL(string: imagePath) else { return }
-        self.resturantImage.image = imagePath //.kf.setImage(with: imageURL)
-           // }
-
+    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool) {
         self.name.text = name
-        self.type.text = type
+        self.type.text = type.parseHtml
+       // self.isFavourite = isWishlist
+        self.price.text = price + " " + "EGP".localized
 
         if "lang".localized == "ar" {
-            self.price.text = "\(price) جنية"
             self.name.textAlignment = .right
             self.type.textAlignment = .right
         } else {
-            self.price.text = "\(price) EGP"
             self.name.textAlignment = .left
             self.type.textAlignment = .left
         }
+        
+        if isWishlist{
+            self.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+        }else{
+            self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+        }
+        
+      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.resturantImage.kf.setImage(with: imageURL)
+        
+    }
+    
+    func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int) {
+        
+        self.name.text = name
+        self.type.text = type.parseHtml
+        self.quantityTF.text = "\(quantity)"
+        
+        let p1 = Double(price) ?? 0
+        let total =  Int(p1) * quantity
+        self.price.text = String(total) + " " + "EGP".localized
+        
+        if "lang".localized == "ar" {
+            self.name.textAlignment = .right
+            self.type.textAlignment = .right
+        } else {
+            self.name.textAlignment = .left
+            self.type.textAlignment = .left
+        }
+        
+      self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
+      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.resturantImage.kf.setImage(with: imageURL)
+        
     }
     
     @IBAction func AddToFavorite(_ sender: Any) {

@@ -280,8 +280,11 @@
                     <connections>
                         <outlet property="TableHeight" destination="jKQ-bA-EvN" id="DIp-GU-Bvt"/>
                         <outlet property="cartTableView" destination="jkC-62-95J" id="AW0-zD-PaU"/>
+                        <outlet property="deliveryLbl" destination="ImP-09-684" id="kXH-bv-f9N"/>
+                        <outlet property="discreption" destination="e0b-6Y-aU4" id="RRN-Cp-Ms0"/>
                         <outlet property="emptyView" destination="sfC-Qu-2rf" id="Djf-c2-zet"/>
                         <outlet property="noProduct" destination="bsU-rI-XQP" id="v1c-eT-9IT"/>
+                        <outlet property="totalLbl" destination="vSw-4B-qYi" id="H7g-5p-72C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOm-rK-GYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

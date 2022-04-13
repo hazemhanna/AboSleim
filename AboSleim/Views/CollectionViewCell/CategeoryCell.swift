@@ -17,14 +17,15 @@ class CategeoryCell: UICollectionViewCell {
         self.sectionName.adjustsFontSizeToFitWidth = true
         self.sectionName.minimumScaleFactor = 0.5
     }
-    func config( imagePath: UIImage , name: String){
-
-        //if imagePath != "" {
-        //  guard let imageURL = URL(string: imagePath) else { return }
-        self.sectionImage.image = imagePath //.kf.setImage(with: imageURL)
-         // }
-        
+ 
+    
+    func config( imagePath: String , name: String){
         self.sectionName.text = name
+        guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.sectionImage.kf.setImage(with: imageURL)
+        
        }
+
+    
 
 }

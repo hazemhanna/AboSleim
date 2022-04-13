@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class FavoriteMealsVC: UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
@@ -14,10 +17,13 @@ class FavoriteMealsVC: UIViewController {
     @IBOutlet weak var favoriteMealsTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var noProduct: UILabel!
+
     
     fileprivate let cellIdentifier = "ValiableResturantCell"
-
-    var meals = [RestaurantMeal]() {
+    private let homeViewModel = HomeViewModel()
+    var disposeBag = DisposeBag()
+    
+    var products = [Product]() {
         didSet{
             DispatchQueue.main.async {
                 self.favoriteMealsTableView.reloadData()
@@ -31,15 +37,9 @@ class FavoriteMealsVC: UIViewController {
         favoriteMealsTableView.dataSource = self
         favoriteMealsTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         titleLbl.text =  "Favorite Meals".localized
-    
-        meals.append(RestaurantMeal(nameAr: "ربع ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كفتة ضاني", image: #imageLiteral(resourceName: "image3"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع مشكل", image: #imageLiteral(resourceName: "image4"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "كيلو كفتة ضاني", image: #imageLiteral(resourceName: "image6"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "نص ريش ضاني", image: #imageLiteral(resourceName: "image1"), descriptionAr: "مشويات"))
-        meals.append(RestaurantMeal(nameAr: "ربع كباب ضاني", image: #imageLiteral(resourceName: "image2"), descriptionAr: "مشويات"))
         
+        homeViewModel.showIndicator()
+        getWishList()
     }
     
     @IBAction func menu(_ sender: Any) {
@@ -51,18 +51,16 @@ class FavoriteMealsVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
-
     }
     
-    
     func show () {
-        if meals.count > 0 {
+        if products.count > 0 {
             favoriteMealsTableView.isHidden = false
             self.emptyView.isHidden = true
         }else{
@@ -75,37 +73,43 @@ class FavoriteMealsVC: UIViewController {
 
 extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meals.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        
-        cell.config(name: meals[indexPath.row].nameAr ?? "",price: 12.2, imagePath: meals[indexPath.row].image  , type: meals[indexPath.row].descriptionAr ?? "")
-
          cell.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
         
+        if "lang".localized == "ar" {
+        cell.config(name: products[indexPath.row].title?.ar ?? ""
+                    , price: products[indexPath.row].variants?[0].price ?? ""
+                    , imagePath: products[indexPath.row].images?[0].image ?? ""
+                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+        }else{
+            cell.config(name: products[indexPath.row].title?.en ?? ""
+                        , price: products[indexPath.row].variants?[0].price ?? ""
+                        , imagePath: products[indexPath.row].images?[0].image ?? "",
+                        type: products[indexPath.row].desc?.en ?? ""
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+
+        }
+        
         cell.goToFavorites = {
-            self.meals.remove(at: indexPath.row)
-            self.show()
-         }
+            self.homeViewModel.showIndicator()
+            self.reomveWishlist(id: self.products[indexPath.row].id ?? 0)
+        }
         
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
+
             self.navigationController?.pushViewController(details, animated: true)
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-            details.meals = self.meals[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
             
-        }
-        
-        
-        cell.addToCart = {
-            displayMessage(title: "", message: "تم الاضافة الي السلة بنجاح".localized, status:.success, forController: self)
         }
         
         return cell
@@ -114,14 +118,39 @@ extension FavoriteMealsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-        details.meals = self.meals[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
-        
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+   
+    
+    
+  
+
+
+}
+extension FavoriteMealsVC {
+    func getWishList() {
+            self.homeViewModel.getWishList().subscribe(onNext: { (data) in
+                 self.homeViewModel.dismissIndicator()
+                self.products = data.data?.products ?? []
+                self.show()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
+    
+
+    func reomveWishlist(id : Int) {
+            self.homeViewModel.addWishList(id: id, isWishList: true).subscribe(onNext: { (data) in
+                self.getWishList()
+            }, onError: { (error) in
+                self.homeViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+        }
     
     
 }

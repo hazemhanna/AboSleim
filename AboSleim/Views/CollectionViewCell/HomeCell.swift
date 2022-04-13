@@ -33,23 +33,54 @@ class HomeCell: UICollectionViewCell {
         resturantImage.setRounded()
     }
     
-      func config(name: String,price: Double, imagePath: UIImage, type: String) {
-
-          //if imagePath != "" {
-          //  guard let imageURL = URL(string: imagePath) else { return }
-        self.resturantImage.image = imagePath //.kf.setImage(with: imageURL)
-           // }
-
+    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool) {
+        
         self.name.text = name
-        self.type.text = type
-
+        self.type.text = type.parseHtml
+        self.price.text = price + " " + "EGP".localized
+        
         if "lang".localized == "ar" {
-            self.price.text = "السعر :\(price) جنية"
+            self.name.textAlignment = .right
+            self.type.textAlignment = .right
         } else {
-            self.price.text = " price :\(price) EGP"
+            self.name.textAlignment = .left
+            self.type.textAlignment = .left
         }
+        
+        if isWishlist{
+            self.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
+        }else{
+            self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+        }
+        
+      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.resturantImage.kf.setImage(with: imageURL)
+        
     }
     
+    func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int) {
+        
+        self.name.text = name
+        self.type.text = type.parseHtml
+        self.quantityTF.text = "\(quantity)"
+        
+        let p1 = Double(price) ?? 0
+        let total =  Int(p1) * quantity
+        self.price.text = String(total) + " " + "EGP".localized
+        
+        if "lang".localized == "ar" {
+            self.name.textAlignment = .right
+            self.type.textAlignment = .right
+        } else {
+            self.name.textAlignment = .left
+            self.type.textAlignment = .left
+        }
+        
+      self.FavoriteBN.setImage(UIImage(named: "remove"), for: .normal)
+      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+        self.resturantImage.kf.setImage(with: imageURL)
+        
+    }
     @IBAction func AddToFavorite(_ sender: Any) {
         goToFavorites?()
     }

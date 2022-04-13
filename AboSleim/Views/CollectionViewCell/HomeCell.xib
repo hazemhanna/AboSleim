@@ -56,20 +56,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oHy-nI-73E">
-                                        <rect key="frame" x="24.5" y="104" width="136.5" height="85"/>
+                                        <rect key="frame" x="16" y="104" width="153" height="85"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ربع كفتة ضاني " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9R-Hg-prd">
-                                                <rect key="frame" x="0.0" y="0.0" width="136.5" height="37.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ربع كفتة ضاني " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9R-Hg-prd">
+                                                <rect key="frame" x="8.5" y="0.0" width="136.5" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المشاوي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-Rt-C5e">
-                                                <rect key="frame" x="40" y="37.5" width="56" height="28.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المشاوي" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-Rt-C5e">
+                                                <rect key="frame" x="48.5" y="37.5" width="56" height="28.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="السعر : ٤٠ جنية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-J8-cQf">
-                                                <rect key="frame" x="38.5" y="66" width="59.5" height="19"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="السعر : ٤٠ جنية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhb-J8-cQf">
+                                                <rect key="frame" x="47" y="66" width="59.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -150,11 +150,12 @@
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.44" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="TcV-9w-Npg" firstAttribute="leading" secondItem="3kg-JD-qyb" secondAttribute="leading" constant="8" id="115-dO-QQI"/>
-                                    <constraint firstItem="oHy-nI-73E" firstAttribute="centerX" secondItem="3kg-JD-qyb" secondAttribute="centerX" id="2wV-0N-6LH"/>
                                     <constraint firstItem="X3a-aa-j43" firstAttribute="centerX" secondItem="3kg-JD-qyb" secondAttribute="centerX" id="CMt-Tq-X0a"/>
                                     <constraint firstItem="X3a-aa-j43" firstAttribute="leading" secondItem="3kg-JD-qyb" secondAttribute="leading" constant="16" id="Hyx-Tq-OIQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="oHy-nI-73E" secondAttribute="trailing" constant="16" id="KW6-W5-soV"/>
                                     <constraint firstAttribute="trailing" secondItem="X3a-aa-j43" secondAttribute="trailing" constant="16" id="OqY-xd-a1U"/>
                                     <constraint firstItem="yb5-FY-pkI" firstAttribute="centerX" secondItem="3kg-JD-qyb" secondAttribute="centerX" id="PO4-CT-oh2"/>
+                                    <constraint firstItem="oHy-nI-73E" firstAttribute="leading" secondItem="3kg-JD-qyb" secondAttribute="leading" constant="16" id="cyU-Pm-z0O"/>
                                     <constraint firstItem="TcV-9w-Npg" firstAttribute="top" secondItem="3kg-JD-qyb" secondAttribute="top" constant="8" id="qTz-wF-Wgg"/>
                                     <constraint firstItem="oHy-nI-73E" firstAttribute="top" secondItem="yb5-FY-pkI" secondAttribute="bottom" constant="8" id="qd6-R6-Tri"/>
                                     <constraint firstItem="X3a-aa-j43" firstAttribute="top" secondItem="oHy-nI-73E" secondAttribute="bottom" constant="16" id="xa1-T2-qEu"/>

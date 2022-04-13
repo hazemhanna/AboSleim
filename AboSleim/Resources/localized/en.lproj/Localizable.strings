@@ -223,3 +223,21 @@
 "email" = "email";
 "userName" = "user Name";
 "search" = "search";
+
+"phone" =  "phone";
+"small" = "small";
+"large" = "large";
+"medium" = "medium";
+"othetnotes" = "othet notes";
+"size" = "size";
+"EGP" = "EGP";
+"please select size" =  "please select size";
+"total cost" = "total cost";
+"Contact Send Done" = "Contact Send Done";
+"please select time" =  "please select time";
+"please select date" =  "please select date";
+"resdone" = "resdone";
+"We not have a free table now " = "We not have a free table now ";
+"not valid now" = "not valid now";
+"delivery fees" = "delivery fees";
+"price" = "price :";

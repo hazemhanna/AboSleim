@@ -153,16 +153,6 @@ class ProductDetails: UIViewController {
     }
     
     @IBAction func Increase(_ sender: UIButton) {
-        if self.productCounter > 1 {
-            self.productCounter -= 1
-            quantityLbl.text = "\(self.productCounter)"
-            let price = ((self.sizePrice) * Double(self.productCounter)) + optionPrice
-            self.total = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
-            self.price.text = "\(price)" + "" + "EGP".localized
-        }
-    }
-    
-    @IBAction func decreaseBN(_ sender: UIButton) {
         self.productCounter += 1
         quantityLbl.text = "\(self.productCounter)"
         let price = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
@@ -170,6 +160,16 @@ class ProductDetails: UIViewController {
         self.price.text = "\(price)" + "" + "EGP".localized
     }
     
+    @IBAction func decreaseBN(_ sender: UIButton) {
+        if self.productCounter > 1 {
+            self.productCounter -= 1
+            quantityLbl.text = "\(self.productCounter)"
+            let price = ((self.sizePrice) * Double(self.productCounter)) + optionPrice
+            self.total = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
+            self.price.text = "\(price)" + "" + "EGP".localized
+        }
+
+    }
     
     @IBAction func confirm(_ sender: UIButton) {
         if Helper.getApiToken() ?? ""  == ""  {

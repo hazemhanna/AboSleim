@@ -11,11 +11,16 @@ import UIKit
 
 class ProfileChangePasswordVC: UIViewController {
     
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
     @IBOutlet weak var titleLbl  : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "Password changed".localized
+         newPassword.placeholder = "new password".localized
+         confirmPassword.placeholder = "confirm password".localized
     }
     
     

@@ -30,12 +30,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="MSz-Al-kce" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="I7T-8I-SE0"/>
                     <constraint firstItem="MSz-Al-kce" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RlP-Q6-4Jk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="titleLbl" destination="MSz-Al-kce" id="8j6-Tk-ReP"/>
             </connections>

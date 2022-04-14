@@ -859,7 +859,10 @@
                     <connections>
                         <outlet property="TableHeight" destination="hIg-ZH-fj2" id="x48-vO-mPo"/>
                         <outlet property="cartTableView" destination="gtx-8Z-592" id="IW7-IF-sd5"/>
+                        <outlet property="deliveryLbl" destination="AFK-Se-XXM" id="59v-w9-bii"/>
+                        <outlet property="discreption" destination="0jJ-wj-D3h" id="reH-U3-Kgh"/>
                         <outlet property="titleLbl" destination="JEI-Ss-vXa" id="wNV-Lm-oYJ"/>
+                        <outlet property="totalLbl" destination="MEm-h6-isv" id="Agq-9k-h8V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etw-OI-djA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

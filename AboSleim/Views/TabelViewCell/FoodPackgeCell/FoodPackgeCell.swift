@@ -11,13 +11,11 @@ import UIKit
 class FoodPackgeCell: UITableViewCell {
 
     @IBOutlet weak var resturantImage : UIImageView!
-    
     @IBOutlet weak var packageLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var PriceLbl: UILabel!
     @IBOutlet weak var validLbl: UILabel!
-
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,14 +26,14 @@ class FoodPackgeCell: UITableViewCell {
 
     }
     
-    func config(imagePath: String ,date: String ,price: Double, time: String,pakageName : String ) {
-        
- 
+    func config(imagePath: String ,date: String ,price: String, time: String,pakageName : String ) {
         packageLbl.text = pakageName
         validLbl.text = date
-        PriceLbl.text = " السعر \(price) جنية" 
+        PriceLbl.text = price + "" + "EGP".localized
         timeLbl.text = time
-
+        guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+          self.resturantImage.kf.setImage(with: imageURL)
+          
     }
     
 }

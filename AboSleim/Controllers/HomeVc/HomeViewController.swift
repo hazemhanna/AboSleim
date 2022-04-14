@@ -228,7 +228,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == homeSectionsCollectionView {
+            
+            
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductsVc") as? ProductsVc else { return }
+            details.catId = self.category[indexPath.row].id ?? 0
+            if "lang".localized == "ar" {
+                details.catTitle = self.category[indexPath.row].title?.ar ?? ""
+            }else{
+                details.catTitle = self.category[indexPath.row].title?.en ?? ""
+            }
         self.navigationController?.pushViewController(details, animated: true)
         }else if collectionView == mealsCollectionView {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }

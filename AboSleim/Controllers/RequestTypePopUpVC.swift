@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 enum PayType {
     case visa,cash,wallet
@@ -23,17 +26,21 @@ class RequestTypePopUpVC: UIViewController {
     @IBOutlet weak var visa: UIButton!
     @IBOutlet weak var cach: UIButton!
     @IBOutlet weak var wallet: UIButton!
-    @IBOutlet weak var titleLbl : UILabel!
+    @IBOutlet weak var titleLbl  : UILabel!
 
-    
+    var notes: String?
+    var phone: String?
+    var address: String?
+    var order_place = 0
+
+    private let cartViewModel = CartViewModel()
+    var disposeBag = DisposeBag()
     var pay : PayType?
     var OrderType : orderType = .sefry
-
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLbl.text = "Payment".localized
-
+        titleLbl.text = "payment".localized
     }
     
     @IBAction func RadioButtonAction(_ sender:UIButton) {
@@ -42,11 +49,12 @@ class RequestTypePopUpVC: UIViewController {
             OrderType = .sefry
             safarytBN.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             deliveryButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            self.order_place = 0
         case 1:
             OrderType = .delivery
             deliveryButton.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             safarytBN.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-
+            self.order_place = 1
         default:
             break
         }
@@ -61,33 +69,25 @@ class RequestTypePopUpVC: UIViewController {
             wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         case 1:
             pay = .visa
-            visa.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
-            cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            displayMessage(title: "", message: "not valid now".localized, status: .error, forController: self)
+            //visa.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
+           // cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            //wallet.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         case 2:
             pay = .wallet
-            wallet.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
-            cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            visa.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            displayMessage(title: "", message: "not valid now".localized, status: .error, forController: self)
+            //wallet.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
+            //cach.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
+            //visa.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
         default:
             break
         }
     }
     
     @IBAction func confirm(_ sender: Any) {
-        if pay == nil  {
-            displayMessage(title: "", message: "Choose payment method".localized, status: .error, forController: self)
-        } else {
-            CreateOrder()
-           }
-       }
-    
-  
-
-    func CreateOrder() {
-       navigateTOReceptPage()
+        self.cartViewModel.showIndicator()
+        createOrder(phoneNumber: self.phone ?? "" , address: self.address ?? "" , notes: notes ?? "" , order_place: order_place)
     }
-    
     
     func navigateTOReceptPage() {
     guard let window = UIApplication.shared.keyWindow else { return }
@@ -105,18 +105,16 @@ class RequestTypePopUpVC: UIViewController {
         self.setupSideMenu()
     }
     
-    
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-    }
-
-    @IBAction func notificationhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
-        self.navigationController?.pushViewController(details, animated: true)
-
-    }
-    
+    func createOrder(phoneNumber : String,address : String,notes : String,order_place : Int) {
+        self.cartViewModel.createOrder(phoneNumber: phoneNumber, address: address, notes: notes, order_place: order_place).subscribe(onNext: { (data) in
+            self.cartViewModel.dismissIndicator()
+                if data.value ?? false {
+                    self.navigateTOReceptPage()
+                }
+            }, onError: { (error) in
+                self.cartViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
 }
 
 

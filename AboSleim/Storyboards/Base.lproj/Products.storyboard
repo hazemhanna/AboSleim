@@ -162,6 +162,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bestSellerTableView" destination="reU-ui-Otf" id="aUe-2s-Dok"/>
+                        <outlet property="titleLbl" destination="B7t-Yx-BDq" id="mCf-ne-Po0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deb-JX-wnQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -171,7 +172,6 @@
         <!--Navigation Controller-->
         <scene sceneID="FaA-OM-QI4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9wz-ld-k8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="RestaurantDetailsNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Iey-mI-MfJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PiF-0x-QFx">
@@ -187,6 +187,7 @@
                         <segue destination="zO8-B2-SGf" kind="relationship" relationship="rootViewController" id="g0h-vX-Ww7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9wz-ld-k8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="-634"/>
         </scene>
@@ -375,7 +376,6 @@
         <!--Navigation Controller-->
         <scene sceneID="EJY-IS-9kg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cFw-VS-P70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Tbu-Hb-kbj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gyP-q1-nwE">
@@ -390,13 +390,13 @@
                         <segue destination="Y3K-Ht-I19" kind="relationship" relationship="rootViewController" id="5Z8-hw-Xv8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFw-VS-P70" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="503" y="-634"/>
         </scene>
         <!--Product Details-->
         <scene sceneID="nTu-qM-cVj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jAC-ug-NrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ProductDetails" id="Jxz-nb-Kc0" customClass="ProductDetails" customModule="Shnp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qho-Ab-qAV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -797,13 +797,13 @@
                         <outlet property="slidercollectionView" destination="lq2-bB-CSb" id="KEE-bS-gYr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAC-ug-NrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1947.826086956522" y="158.70535714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yoF-8r-J8e">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kRf-AU-IaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="MakeOrderNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="v1W-kv-1WP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EJf-uu-QrT">
@@ -816,6 +816,7 @@
                         <segue destination="Jxz-nb-Kc0" kind="relationship" relationship="rootViewController" id="TPa-Al-kTb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRf-AU-IaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1948" y="-634"/>
         </scene>
@@ -1295,7 +1296,6 @@
         <!--Navigation Controller-->
         <scene sceneID="rsD-Qw-0ca">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IaC-OW-CRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="OffersNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="UWq-Wr-gSp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ra7-Eq-0QZ">
@@ -1311,6 +1311,7 @@
                         <segue destination="u3i-hB-eaP" kind="relationship" relationship="rootViewController" id="TDj-PS-saY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IaC-OW-CRb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2674" y="-634"/>
         </scene>

@@ -8,31 +8,39 @@
 
 
 import UIKit
+import RxSwift
+import RxCocoa
+
 
 class ChangeProfileVC: UIViewController {
     
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var uploadedImage: UIImageView!
-    @IBOutlet weak var newPassword: UITextField!
-    @IBOutlet weak var confirmPassword: UITextField!
-
     @IBOutlet weak var usenName: UITextField!
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Phone: UITextField!
     @IBOutlet weak var Address: UITextField!
 
+    private let AuthViewModel = AuthenticationViewModel()
+    var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "changeProfile".localized
-        newPassword.placeholder = "new password".localized
-        confirmPassword.placeholder = "confirm password".localized
         usenName.placeholder = "userName".localized
         Email.placeholder = "email".localized
         Phone.placeholder = "phone number".localized
         Address.placeholder = "address".localized
-        
+        AuthViewModel.showIndicator()
+        getProfile()
     }
     
+    func DataBinding() {
+        _ = usenName.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.name).disposed(by: disposeBag)
+        _ = Email.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.email).disposed(by: disposeBag)
+        _ = Address.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.address).disposed(by: disposeBag)
+        _ = Phone.rx.text.map({$0 ?? ""}).bind(to: AuthViewModel.phone).disposed(by: disposeBag)
+    }
     
     @IBAction func backBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -58,7 +66,8 @@ class ChangeProfileVC: UIViewController {
     }
   
     @IBAction func saveBtn(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.AuthViewModel.showIndicator()
+        updateProfile()
     }
     
 }
@@ -100,6 +109,28 @@ extension ChangeProfileVC : UIImagePickerControllerDelegate, UINavigationControl
     }
 }
 
-
-
+extension ChangeProfileVC {
+    
+    func getProfile() {
+        self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+            self.usenName.text = data.data?.name ?? ""
+            self.Phone.text = data.data?.phone ?? ""
+            self.Email.text = data.data?.email ?? ""
+            self.Address.text = data.data?.address ?? ""
+            self.DataBinding()
+            }, onError: { (error) in
+                self.AuthViewModel.dismissIndicator()
+            }).disposed(by: disposeBag)
+     }
+    
+    func updateProfile() {
+        self.AuthViewModel.updateProfile().subscribe(onNext: { (data) in
+          self.getProfile()
+        }, onError: { (error) in
+            self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
+}
 

@@ -583,11 +583,11 @@
 		0450BF1A27BB648400ABE2DD /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				047512292712418200D884D4 /* WalletVc.swift */,
+				048A086027CBDB6600C49D1A /* MainProfileVC.swift */,
 				041A2C3B27BC9E01000FAFE2 /* ChangeProfileVC.swift */,
 				041A2C3D27BC9ED1000FAFE2 /* ProfileChangePasswordVC.swift */,
-				048A086027CBDB6600C49D1A /* MainProfileVC.swift */,
 				FA04BFDE24308BF200791CD5 /* notificationProfileVC.swift */,
+				047512292712418200D884D4 /* WalletVc.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";

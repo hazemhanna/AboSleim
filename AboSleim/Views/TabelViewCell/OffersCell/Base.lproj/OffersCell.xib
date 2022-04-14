@@ -74,7 +74,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-Af-NrJ">
-                                <rect key="frame" x="136" y="0.0" width="75.5" height="94"/>
+                                <rect key="frame" x="136" y="0.0" width="167" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3o-El-CPx">
                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="37.5"/>
@@ -122,7 +122,7 @@
                                                 <rect key="frame" x="24" y="0.0" width="18.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-j8-W0w" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="-1.5" y="0.0" width="21.5" height="30.5"/>
+                                                        <rect key="frame" x="5.5" y="5" width="7.5" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -200,6 +200,7 @@
                             <constraint firstItem="U5c-23-ukH" firstAttribute="top" secondItem="1EM-bW-3QO" secondAttribute="top" id="iNN-jn-McK"/>
                             <constraint firstAttribute="trailing" secondItem="I4I-uT-hl7" secondAttribute="trailing" constant="16" id="kZq-Zl-KBl"/>
                             <constraint firstItem="EYv-pV-Atn" firstAttribute="top" secondItem="1EM-bW-3QO" secondAttribute="top" constant="8" id="lba-fJ-owV"/>
+                            <constraint firstAttribute="trailing" secondItem="HMN-Af-NrJ" secondAttribute="trailing" constant="32" id="t1S-ny-BID"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -244,7 +245,7 @@
         <image name="add-to-cart" width="22" height="22"/>
         <image name="heart" width="35" height="37"/>
         <namedColor name="backGround">
-            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="button">
             <color red="0.99607843137254903" green="0.97254901960784312" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

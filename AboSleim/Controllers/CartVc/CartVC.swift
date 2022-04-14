@@ -70,7 +70,7 @@ class CartVC: UIViewController {
     
     @IBAction func confirmBtn(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "LocationDetailsVC") as? LocationDetailsVC else { return }
-       // Details.notes = self.discreption.text ?? ""
+        Details.notes = self.discreption.text ?? ""
         self.navigationController?.pushViewController(Details, animated: true)
         
     }

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,7 +29,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-Hz-j69">
                                 <rect key="frame" x="0.0" y="18" width="71.5" height="20"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnSelected" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-JG-QUq">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UNSelected" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-JG-QUq">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="X8E-Yu-utB"/>
@@ -73,7 +72,7 @@
                                         <rect key="frame" x="38" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="navigation"/>
+                                        <color key="textColor" name="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -105,7 +104,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d0z-Hz-j69" firstAttribute="leading" secondItem="tnH-rX-ESa" secondAttribute="leading" id="Cct-QN-e4h"/>
                             <constraint firstAttribute="trailing" secondItem="45U-oZ-xr8" secondAttribute="trailing" constant="64" id="UsI-G5-HpZ"/>
@@ -114,6 +113,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tnH-rX-ESa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="5to-WU-I7T"/>
                     <constraint firstAttribute="bottom" secondItem="tnH-rX-ESa" secondAttribute="bottom" id="CjU-eM-Sr6"/>
@@ -122,6 +122,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="quantityLbl" destination="ymM-g2-coi" id="Glm-eD-fwY"/>
                 <outlet property="selectedImageView" destination="TO5-JG-QUq" id="bFz-j0-diR"/>
@@ -141,15 +142,9 @@
     <resources>
         <image name="Group 492" width="23" height="23"/>
         <image name="Group 493" width="23" height="23"/>
-        <image name="UnSelected" width="10" height="10"/>
-        <namedColor name="navigation">
-            <color red="0.92156862745098034" green="0.65490196078431373" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="UNSelected" width="10" height="10"/>
         <namedColor name="textColor">
             <color red="0.0078431372549019607" green="0.10196078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

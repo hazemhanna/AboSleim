@@ -25,9 +25,9 @@ class OptionsTableViewCell: UITableViewCell {
     func confic(title : String , selected : Bool){
         self.titleLbl.text = title
         if selected{
-            selectedImageView.image = UIImage(named: "Selected")
+            selectedImageView.image = UIImage(named: "Ellipse 333")
         }else{
-            selectedImageView.image = UIImage(named: "UnSelected")
+            selectedImageView.image = UIImage(named: "Ellipse 348-1")
         }
     }
 

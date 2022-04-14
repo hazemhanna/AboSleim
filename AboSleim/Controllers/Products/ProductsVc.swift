@@ -29,7 +29,6 @@ class ProductsVc : UIViewController {
             }
         }
     }
-
     
     var catId = Int()
     var catTitle = String()
@@ -39,7 +38,9 @@ class ProductsVc : UIViewController {
         bestSellerTableView.delegate = self
         bestSellerTableView.dataSource = self
         bestSellerTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
-
+        homeViewModel.showIndicator()
+        self.getProduct(id : self.catId)
+        self.titleLbl.text = catTitle
 
     }
       
@@ -118,6 +119,7 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
+        details.product = self.products[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
         
     }

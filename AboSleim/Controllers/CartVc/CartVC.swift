@@ -161,7 +161,7 @@ extension CartVC {
           self.cartViewModel.dismissIndicator()
           self.cart = data.data?.cart ?? []
             
-            var total = 10
+            var total = 0
             for t in  self.cart {
                 let price = Double(t.price ?? "") ?? 0.0
                 total +=  Int(price) * (t.quantity ?? 0)

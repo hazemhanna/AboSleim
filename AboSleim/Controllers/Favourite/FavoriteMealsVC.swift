@@ -146,6 +146,9 @@ extension FavoriteMealsVC {
 
     func reomveWishlist(id : Int) {
             self.homeViewModel.addWishList(id: id, isWishList: true).subscribe(onNext: { (data) in
+                if data.value ?? false {
+                displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
+                }
                 self.getWishList()
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()

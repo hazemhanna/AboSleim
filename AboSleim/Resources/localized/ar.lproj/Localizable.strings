@@ -243,7 +243,9 @@
 "please select time" =  "من فضلك اختر الوقت";
 "please select date" =  "من فضلك اختر التاريخ";
 "resdone" = "تم تاكيدالحجز بنجاح";
-"We not have a free table now " = "لا يوجد طربيزات الان";
+"We not have a free table now " = "عذرا لا يوجد طاولات متاحة الان يرجى المحاولة لاحقا";
 "not valid now" = "غير متاح الان";
 "delivery fees" = "رسوم التوصيل";
 "price" = "السعر :";
+"Add to favourite" = "تم الاضافة الي المفضلة بنجاح";
+"remove to favourite" = "تم الحذف من المفضلة بنجاح";

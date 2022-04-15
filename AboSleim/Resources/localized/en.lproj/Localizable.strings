@@ -241,3 +241,5 @@
 "not valid now" = "not valid now";
 "delivery fees" = "delivery fees";
 "price" = "price :";
+"Add to favourite" = "Add to favourite successfully";
+"remove to favourite" = "remove from favourite successfully";

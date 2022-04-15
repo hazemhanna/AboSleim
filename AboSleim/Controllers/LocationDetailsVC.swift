@@ -80,9 +80,8 @@ extension LocationDetailsVC {
     func getProfile() {
         self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
             self.AuthViewModel.dismissIndicator()
-            self.phoneTF.text = data.data?.phone ?? ""
-            self.addressTF.text = data.data?.address ?? ""
-            
+            //self.phoneTF.text = data.data?.phone ?? ""
+            //self.addressTF.text = data.data?.address ?? ""
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

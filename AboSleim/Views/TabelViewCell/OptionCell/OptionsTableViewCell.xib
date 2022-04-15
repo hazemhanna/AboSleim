@@ -44,8 +44,14 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYQ-6s-Lci">
+                                <rect key="frame" x="181.5" y="14" width="8.5" height="28.5"/>
+                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="15"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="45U-oZ-xr8">
-                                <rect key="frame" x="150" y="13" width="106" height="30"/>
+                                <rect key="frame" x="198" y="13" width="106" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0c-gJ-vqj" customClass="CustomButtons" customModule="Shnp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -106,9 +112,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GYQ-6s-Lci" firstAttribute="centerY" secondItem="tnH-rX-ESa" secondAttribute="centerY" id="AkA-JU-EGA"/>
                             <constraint firstItem="d0z-Hz-j69" firstAttribute="leading" secondItem="tnH-rX-ESa" secondAttribute="leading" id="Cct-QN-e4h"/>
-                            <constraint firstAttribute="trailing" secondItem="45U-oZ-xr8" secondAttribute="trailing" constant="64" id="UsI-G5-HpZ"/>
+                            <constraint firstAttribute="trailing" secondItem="45U-oZ-xr8" secondAttribute="trailing" constant="16" id="UsI-G5-HpZ"/>
                             <constraint firstItem="d0z-Hz-j69" firstAttribute="centerY" secondItem="tnH-rX-ESa" secondAttribute="centerY" id="jqr-du-0Om"/>
+                            <constraint firstItem="45U-oZ-xr8" firstAttribute="leading" secondItem="GYQ-6s-Lci" secondAttribute="trailing" constant="8" id="wa4-iR-HVf"/>
                             <constraint firstItem="45U-oZ-xr8" firstAttribute="centerY" secondItem="tnH-rX-ESa" secondAttribute="centerY" id="y2R-1m-Nck"/>
                         </constraints>
                     </view>
@@ -124,6 +132,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="priceLbl" destination="GYQ-6s-Lci" id="qdL-cg-9XS"/>
                 <outlet property="quantityLbl" destination="ymM-g2-coi" id="Glm-eD-fwY"/>
                 <outlet property="selectedImageView" destination="TO5-JG-QUq" id="bFz-j0-diR"/>
                 <outlet property="titleLbl" destination="1lS-dY-4Z6" id="1XF-do-XDZ"/>

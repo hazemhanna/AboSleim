@@ -39,8 +39,8 @@ class ProductDetails: UIViewController {
     var isFavourite = false
     var variant_id = Int()
     var productCounter = 1
-    var optionCounter = 1
-    var options : [[String : Int]] = [[:]]
+    var optionQua  = 1
+
     var optionPrice = 0.0
     var sizePrice = 0.0
     
@@ -171,14 +171,25 @@ class ProductDetails: UIViewController {
 
     }
     
+    
     @IBAction func confirm(_ sender: UIButton) {
+        var selectedOptions : [[String : Int]] = [[:]]
         if Helper.getApiToken() ?? ""  == ""  {
             displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
        }else{
         self.cartViewModel.showIndicator()
-        self.addToCart(product_id: self.product?.id ?? 0, variant_id: self.variant_id, message: self.noteTF.text ?? "", quantity: self.productCounter, options: self.options)
+           for collection in product?.productCollections ?? [] {
+               for options in collection.options ?? [] {
+                   if options.selected{
+                       let option = ["product_option_id" : collection.id ?? 0,
+                                     "quantity" : options.quantity ] as [String: Int]
+                       selectedOptions.append(option)
+                   }
+               }
+           }
+           
+        self.addToCart(product_id: self.product?.id ?? 0, variant_id: self.variant_id, message: self.noteTF.text ?? "", quantity: self.productCounter, options: selectedOptions)
        }
-        
     }
     
     @IBAction func favourit(_ sender: UIButton) {
@@ -190,10 +201,12 @@ class ProductDetails: UIViewController {
                self.isFavourite = false
                 self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
                self.addWishList(id: self.product?.id ?? 0 , isWishList: self.isFavourite)
+               displayMessage(title: "", message: "remove to favourite".localized, status:.success, forController: self)
               }else{
                   self.isFavourite = true
                   self.FavoriteBN.setImage(UIImage(named: "222"), for: .normal)
                   self.addWishList(id: self.product?.id ?? 0 , isWishList: self.isFavourite)
+                  displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
               }
         }
     }
@@ -271,26 +284,30 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierTableView, for: indexPath) as? OptionsTableViewCell else {return UITableViewCell()}
         let options =  self.product?.productCollections?[indexPath.section].options?[indexPath.row]
+        var quantity =  (options?.quantity ?? 0)
 
         if "lang".localized == "ar" {
-          cell.confic(title: options?.title?.ar ?? "" , selected: options?.selected ?? false)
+            cell.confic(title: options?.title?.ar ?? "", price: options?.variants?[0].price ?? "" , selected: options?.selected ?? false, quantity: options?.quantity ?? 1)
         }else{
-          cell.confic(title: options?.title?.en ?? "" , selected: options?.selected ?? false)
+            cell.confic(title: options?.title?.en ?? "", price: options?.variants?[0].price ?? "" , selected: options?.selected ?? false, quantity: options?.quantity ?? 1)
         }
         
         cell.Increase = {
-            self.optionCounter += 1
-            cell.quantityLbl.text = "\(self.optionCounter)"
+            quantity += 1
+            cell.quantityLbl.text = "\(quantity)"
         }
+        
         cell.Dicrease = {
-            if self.optionCounter > 1 {
-                self.optionCounter -= 1
-                cell.quantityLbl.text = "\(self.optionCounter)"
+            if quantity > 1 {
+                 quantity -= 1
+                cell.quantityLbl.text = "\(quantity)"
             }
         }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+        
     if self.product?.productCollections?[indexPath.section].options?.count ?? 0 > 0 {
         let options =  self.product?.productCollections?[indexPath.section].options?[indexPath.row]
         DispatchQueue.main.async {
@@ -299,11 +316,11 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
          self.optionPrice = Double(self.product?.productCollections?[indexPath.section].options?[indexPath.row].variants?[0].price ?? "") ?? 0.0
             var price = 0.0
             if selectedFilter {
-                price = self.total + (self.optionPrice * Double(self.optionCounter))
+                price = self.total + (self.optionPrice * Double(Int(cell.quantityLbl.text ?? "0") ?? 0))
                 self.price.text = "\(price)" + "" + "EGP".localized
                 self.total = price
             }else{
-                price = (self.total) - (self.optionPrice * Double(self.optionCounter))
+                price = (self.total) - (self.optionPrice * Double(Int(cell.quantityLbl.text ?? "0" ) ?? 0 ))
                 self.price.text = "\(price)" + "" + "EGP".localized
                 self.total = price
                 self.optionPrice = 0.0
@@ -332,9 +349,12 @@ extension ProductDetails{
     
 func addWishList(id : Int,isWishList : Bool) {
     self.cartViewModel.addWishList(id: id,isWishList :isWishList).subscribe(onNext: { (data) in
-        self.cartViewModel.dismissIndicator()
-        if data.value ?? false{
+        
+        if data.value ?? false {
+         
+            
         }
+        self.cartViewModel.dismissIndicator()
     }, onError: { (error) in
             self.cartViewModel.dismissIndicator()
         }).disposed(by: disposeBag)

@@ -243,3 +243,11 @@
 "price" = "price :";
 "Add to favourite" = "Add to favourite successfully";
 "remove to favourite" = "remove from favourite successfully";
+"optionPrice" = "options Price :";
+"totalPrice" = "total Price :";
+"totalDiscount" = "total discount :";
+"discount" = "discount";
+"save" = "save";
+"inside" = "person";
+"outside" = "family";
+"ordercancel" = "order canceled successfully";

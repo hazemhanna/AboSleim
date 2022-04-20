@@ -73,8 +73,9 @@ class LoginVC: UIViewController {
 extension LoginVC{
     func AttemptToLogin() {
             self.AuthViewModel.attemptToLogin().subscribe(onNext: { (data) in
-                if data.token != nil {
+                if let token = data.token {
                  self.AuthViewModel.dismissIndicator()
+                 Helper.saveToken(token: token)
                   if "lang".localized == "ar" {
                     displayMessage(title: "", message: "تم تسجيل الدخول بنجاح", status: .success, forController: self)
                     }else{

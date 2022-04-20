@@ -1506,6 +1506,7 @@
                         <outlet property="Address" destination="f44-6M-OLe" id="Sro-hS-bqh"/>
                         <outlet property="Email" destination="91X-v1-YD3" id="dBe-sE-mhC"/>
                         <outlet property="Phone" destination="K6a-SG-PwQ" id="XWS-c6-Kkq"/>
+                        <outlet property="saveBtn" destination="rce-TT-lsX" id="jRc-p7-YOA"/>
                         <outlet property="titleLbl" destination="mzS-OV-xGZ" id="B9m-LD-Qy3"/>
                         <outlet property="uploadedImage" destination="b3S-X9-b6g" id="GNq-xR-s3g"/>
                         <outlet property="usenName" destination="9FZ-dv-gbJ" id="hbs-GZ-HVi"/>

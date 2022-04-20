@@ -249,3 +249,11 @@
 "price" = "السعر :";
 "Add to favourite" = "تم الاضافة الي المفضلة بنجاح";
 "remove to favourite" = "تم الحذف من المفضلة بنجاح";
+"optionPrice" = "سعر الاضافات :";
+"totalPrice" = "اجمالي المبلغ :";
+"totalDiscount" = "اجمالي الخصم :";
+"discount" = "خصم";
+"save" = "حفظ";
+"inside" = "افراد";
+"outside" = "عاِئلات";
+"ordercancel" = "تم الغاء الطلب بنجاح";

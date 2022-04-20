@@ -26,11 +26,6 @@ class Authentication {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let loginData = try JSONDecoder().decode(LoginModel.self, from: response.data!)
-                        if let data = loginData.user {
-                            
-                        Helper.saveApiToken(token: loginData.token ?? "", email: data.email ?? "",user_id: data.id ?? 0)
-                        
-                        }
                         observer.onNext(loginData)
                     } catch {
                         print(error)
@@ -50,9 +45,6 @@ class Authentication {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let loginData = try JSONDecoder().decode(RegisterModel.self, from: response.data!)
-                        if let data = loginData.user {
-                        Helper.saveApiToken(token: loginData.token ?? "", email: data.email ?? "",user_id: data.id ?? 0)
-                        }
                         observer.onNext(loginData)
                     } catch {
                         print(error)

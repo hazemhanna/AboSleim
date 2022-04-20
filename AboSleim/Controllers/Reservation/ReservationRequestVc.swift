@@ -70,10 +70,13 @@ class ReservationRequestVc : UIViewController {
         if sender.tag == 0 {
             familyImage.image = UIImage(named: "family2")
             personImageImage.image = UIImage(named: "family")
-            
+        type = "inside"
+
         }else {
             familyImage.image = UIImage(named: "family")
             personImageImage.image = UIImage(named: "family2")
+            type = "outside"
+
         }
     }
     

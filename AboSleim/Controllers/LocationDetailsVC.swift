@@ -55,7 +55,7 @@ class LocationDetailsVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -63,7 +63,6 @@ class LocationDetailsVC: UIViewController {
         self.navigationController?.pushViewController(details, animated: true)
 
     }
-    
     
     @IBAction func Confirm(_ sender: UIButton) {
         guard let sb = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "RequestTypePopUpVC") as? RequestTypePopUpVC else { return }

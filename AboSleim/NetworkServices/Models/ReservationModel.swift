@@ -36,5 +36,27 @@ struct TableReservations: Codable {
 
 struct Reservations: Codable {
     let id: Int?
-    
+    let table: Table?
+    let reservationDate, dateFrom: String?
+    let notes: String?
+    let status: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, table
+        case reservationDate = "reservation_date"
+        case dateFrom = "date_from"
+        case notes, status
+    }
+}
+struct Table: Codable {
+    let id: Int?
+    let tableNumber, type, createdAt, updatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case tableNumber = "table_number"
+        case type
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }

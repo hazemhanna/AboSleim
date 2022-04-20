@@ -40,7 +40,7 @@ class RequestTypePopUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLbl.text = "payment".localized
+        titleLbl.text = "Payment".localized
     }
     
     @IBAction func RadioButtonAction(_ sender:UIButton) {

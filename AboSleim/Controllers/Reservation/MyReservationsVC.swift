@@ -32,7 +32,6 @@ class MyReservationsVC : UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLBL.text = "MyReservations".localized
@@ -54,7 +53,7 @@ class MyReservationsVC : UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     @IBAction func notificationhButtonPressed(_ sender: Any) {
@@ -72,10 +71,12 @@ extension MyReservationsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ReservationCell else { return UITableViewCell()}
+        
+        cell.config(date: self.reservations[indexPath.row].reservationDate ?? "" , orderNumber: self.reservations[indexPath.row].id ?? 0)
         cell.goToDetails = {
             guard let Details = UIStoryboard(name: "Reservation", bundle: nil).instantiateViewController(withIdentifier: "MyReservationsDetailsVC") as? MyReservationsDetailsVC else { return }
+            Details.reservations = self.reservations[indexPath.row]
             self.navigationController?.pushViewController(Details, animated: true)
-            
         }
         return cell
     }
@@ -86,6 +87,7 @@ extension MyReservationsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let Details = UIStoryboard(name: "Reservation", bundle: nil).instantiateViewController(withIdentifier: "MyReservationsDetailsVC") as? MyReservationsDetailsVC else { return }
+        Details.reservations =  reservations[indexPath.row]
         self.navigationController?.pushViewController(Details, animated: true)
     }
     

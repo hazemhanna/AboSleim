@@ -18,7 +18,8 @@ class FiltterResaultVC: UIViewController {
     @IBOutlet weak var empyView : UIView!
     @IBOutlet weak var titleLbl  : UILabel!
 
-    private let cellIdentifier = "ValiableResturantCell"
+    fileprivate let cellIdentifier = "OffersCell"
+    
     var products = [Product]() {
         didSet{
             DispatchQueue.main.async {
@@ -26,7 +27,6 @@ class FiltterResaultVC: UIViewController {
             }
         }
     }
-    
     let token = Helper.getApiToken() ?? ""
     private let homeViewModel = HomeViewModel()
     var disposeBag = DisposeBag()
@@ -34,12 +34,14 @@ class FiltterResaultVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLbl.text = "fillter".localized
-
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.tableFooterView = UIView()
         searchTableView.register(UINib(nibName: cellIdentifier, bundle: nil), forCellReuseIdentifier: cellIdentifier)
         self.navigationController?.navigationBar.isHidden = true
+        self.homeViewModel.showIndicator()
+        getOffers()
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -51,7 +53,7 @@ class FiltterResaultVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -68,69 +70,63 @@ class FiltterResaultVC: UIViewController {
     }
 }
 extension FiltterResaultVC: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
-        cell.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! OffersCell
         
         if "lang".localized == "ar" {
         cell.config(name: products[indexPath.row].title?.ar ?? ""
                     , price: products[indexPath.row].variants?[0].price ?? ""
                     , imagePath: products[indexPath.row].images?[0].image ?? ""
                     , type: products[indexPath.row].desc?.ar ?? ""
-                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+                    , isWishlist: products[indexPath.row].isWishlist ?? false, discount: products[indexPath.row].discount ?? "" )
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
                         , price: products[indexPath.row].variants?[0].price ?? ""
                         , imagePath: products[indexPath.row].images?[0].image ?? "",
                         type: products[indexPath.row].desc?.en ?? ""
-                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false, discount: products[indexPath.row].discount ?? "")
 
         }
         cell.goToFavorites = {
-            if Helper.getApiToken() ?? ""  == ""  {
-                displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
-           }else{
             self.homeViewModel.showIndicator()
             self.addWishList(id: self.products[indexPath.row].id ?? 0 , isWishList: self.products[indexPath.row].isWishlist ?? false)
-           }
         }
+        
         cell.increase = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
-           details.product = self.products[indexPath.row]
+            details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
-            
         }
         
         cell.decrease = {
             guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
             details.product = self.products[indexPath.row]
             self.navigationController?.pushViewController(details, animated: true)
-            
         }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 150
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let details = UIStoryboard(name: "Products", bundle: nil).instantiateViewController(withIdentifier: "ProductDetails") as? ProductDetails else { return }
         details.product = self.products[indexPath.row]
         self.navigationController?.pushViewController(details, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }
 
 
 
 extension FiltterResaultVC{
-    func getProduct() {
-            self.homeViewModel.getProduct().subscribe(onNext: { (data) in
+    func getOffers() {
+            self.homeViewModel.getOffers().subscribe(onNext: { (data) in
                  self.homeViewModel.dismissIndicator()
                     self.products = data.data?.products ?? []
                 
@@ -149,9 +145,13 @@ extension FiltterResaultVC{
                 displayMessage(title: "", message: "Add to favourite".localized, status:.success, forController: self)
                 }
             }
-            self.getProduct()
+
+                self.getOffers()
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()
             }).disposed(by: disposeBag)
         }
+    
 }
+
+

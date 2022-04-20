@@ -76,7 +76,7 @@ class CartVC: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -162,14 +162,17 @@ extension CartVC {
           self.cart = data.data?.cart ?? []
             
             var total = 0
+            var dissss = 0.0
             for t in  self.cart {
                 let price = Double(t.price ?? "") ?? 0.0
                 total +=  Int(price) * (t.quantity ?? 0)
+                if t.product?.discount ?? "" != "0.00"{
+                    let dic = (Double(t.product?.discount ?? "") ?? 0.0) * (Double((t.quantity ?? 0)))
+                    dissss += dic
+                }
             }
-            
-            self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
-            self.deliveryLbl.text = "delivery fees".localized + " " + String(10) + " " + "EGP".localized
-            
+            self.totalLbl.text = "totalPrice".localized + " " + String(total) + " " + "EGP".localized
+            self.deliveryLbl.text = "totalDiscount".localized + " " + String(dissss) + " " + "EGP".localized
             self.show ()
           }, onError: { (error) in
           self.cartViewModel.dismissIndicator()

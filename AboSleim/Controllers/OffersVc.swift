@@ -60,13 +60,13 @@ extension OffersVc: UITableViewDelegate, UITableViewDataSource {
                     , price: products[indexPath.row].variants?[0].price ?? ""
                     , imagePath: products[indexPath.row].images?[0].image ?? ""
                     , type: products[indexPath.row].desc?.ar ?? ""
-                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+                    , isWishlist: products[indexPath.row].isWishlist ?? false, discount: products[indexPath.row].discount ?? "" )
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
                         , price: products[indexPath.row].variants?[0].price ?? ""
                         , imagePath: products[indexPath.row].images?[0].image ?? "",
                         type: products[indexPath.row].desc?.en ?? ""
-                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false, discount: products[indexPath.row].discount ?? "")
 
         }
         cell.goToFavorites = {
@@ -101,7 +101,7 @@ extension OffersVc: UITableViewDelegate, UITableViewDataSource {
     
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     

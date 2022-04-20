@@ -1110,6 +1110,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Table Reservation" id="zKm-K0-kPE"/>
                     <connections>
+                        <outlet property="reservationDate" destination="RIf-Bq-1hC" id="7aH-Xr-UY1"/>
+                        <outlet property="reservationId" destination="HqW-ww-V6U" id="6jD-Il-8hs"/>
+                        <outlet property="reservationNote" destination="ZsS-li-XK9" id="EX3-kD-E35"/>
+                        <outlet property="reservationNum" destination="JrW-0Y-QpE" id="Wg8-Iw-CML"/>
+                        <outlet property="reservationType" destination="dje-Da-Rqk" id="txn-vc-o3w"/>
                         <outlet property="titleLBL" destination="F6U-Xt-5Th" id="626-Gd-Mz9"/>
                     </connections>
                 </viewController>

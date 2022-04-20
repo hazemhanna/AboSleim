@@ -24,7 +24,7 @@ class ReservationCell : UITableViewCell {
         detailstn.setTitle("details".localized, for: .normal)
     }
     
-    func config( date: String, status: String, orderNumber: Int) {
+    func config( date: String,orderNumber: Int) {
         
         self.date.text = date
         self.orderNum.text = "\(orderNumber)"

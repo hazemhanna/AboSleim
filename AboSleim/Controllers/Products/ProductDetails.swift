@@ -15,21 +15,21 @@ import RxCocoa
 class ProductDetails: UIViewController {
     
     @IBOutlet weak var slidercollectionView: UICollectionView!
-    
     @IBOutlet weak var sizecollectionView: UICollectionView!
-    
     @IBOutlet weak var RestaurantName: UILabel!
     @IBOutlet weak var FavoriteBN : UIButton!
     @IBOutlet weak var optionbleView: UITableView!
     @IBOutlet weak var OptionTableHeight: NSLayoutConstraint!
     @IBOutlet weak var sizeStackHeight: NSLayoutConstraint!
     @IBOutlet weak var pageView: UIPageControl!
-    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var size: UILabel!
     @IBOutlet weak var quantityLbl: UILabel!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var othrtNote: UILabel!
     @IBOutlet weak var noteTF: UITextField!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var optionsPrice: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
     
     fileprivate let sliderCell = "SliderCell"
     fileprivate let cellIdentifierTableView = "OptionsTableViewCell"
@@ -40,16 +40,14 @@ class ProductDetails: UIViewController {
     var variant_id = Int()
     var productCounter = 1
     var optionQua  = 1
-
     var optionPrice = 0.0
     var sizePrice = 0.0
-    
     var total = 0.0
+    var totalOptionPrice = 0.0
     
     var product: Product?
     var timer = Timer()
     var counter = 0
-    
     
     private let cartViewModel = CartViewModel()
     var disposeBag = DisposeBag()
@@ -84,6 +82,7 @@ class ProductDetails: UIViewController {
         
         let header  = 40 * Int(self.product?.productCollections?.count ?? 0)
         OptionTableHeight.constant = CGFloat(header + size + 20)
+        
         if "lang".localized == "ar" {
        self.RestaurantName.text = self.product?.title?.ar ?? ""
             self.desc.text = self.product?.desc?.ar?.parseHtml ?? ""
@@ -143,7 +142,7 @@ class ProductDetails: UIViewController {
     }
     
     @IBAction func scanhButtonPressed(_ sender: Any) {
-        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "ScanVc") as? ScanVc else { return }
+        guard let details = UIStoryboard(name: "SearchProducts", bundle: nil).instantiateViewController(withIdentifier: "SearchVC") as? SearchVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
     }
     
@@ -155,39 +154,37 @@ class ProductDetails: UIViewController {
     @IBAction func Increase(_ sender: UIButton) {
         self.productCounter += 1
         quantityLbl.text = "\(self.productCounter)"
-        let price = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
-        self.total = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
-        self.price.text = "\(price)" + "" + "EGP".localized
+        let price = ((self.sizePrice) * Double(self.productCounter))
+        self.total = ((self.sizePrice) * Double(self.productCounter))
+        self.price.text = "price".localized + " " +  "\(price)" + "" + "EGP".localized
     }
     
     @IBAction func decreaseBN(_ sender: UIButton) {
         if self.productCounter > 1 {
             self.productCounter -= 1
             quantityLbl.text = "\(self.productCounter)"
-            let price = ((self.sizePrice) * Double(self.productCounter)) + optionPrice
-            self.total = ((self.sizePrice) * Double(self.productCounter))  + optionPrice
-            self.price.text = "\(price)" + "" + "EGP".localized
+            let price = ((self.sizePrice) * Double(self.productCounter))
+            self.total = ((self.sizePrice) * Double(self.productCounter))
+            self.price.text = "price".localized + " " +  "\(price)" + "" + "EGP".localized
         }
-
     }
     
-    
     @IBAction func confirm(_ sender: UIButton) {
-        var selectedOptions : [[String : Int]] = [[:]]
+        var selectedOptions : [[String : Any]] = [[:]]
         if Helper.getApiToken() ?? ""  == ""  {
             displayMessage(title: "", message: "You should login first".localized, status:.warning, forController: self)
        }else{
         self.cartViewModel.showIndicator()
+           selectedOptions.removeAll()
            for collection in product?.productCollections ?? [] {
                for options in collection.options ?? [] {
                    if options.selected{
-                       let option = ["product_option_id" : collection.id ?? 0,
-                                     "quantity" : options.quantity ] as [String: Int]
+                       let option = ["product_option_id" : options.id ?? 0,
+                                     "quantity" : options.quantity ] as [String: Any]
                        selectedOptions.append(option)
                    }
                }
            }
-           
         self.addToCart(product_id: self.product?.id ?? 0, variant_id: self.variant_id, message: self.noteTF.text ?? "", quantity: self.productCounter, options: selectedOptions)
        }
     }
@@ -249,7 +246,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
                 self.product?.variants?[indexPath.row].selected = selectedFilter
                 self.sizePrice = Double(self.product?.variants?[indexPath.row].price ?? "") ?? 0
                 self.total = Double(self.product?.variants?[indexPath.row].price ?? "") ?? 0
-                self.price.text = (self.product?.variants?[indexPath.row].price ?? "") + " " + "EGP".localized
+                self.price.text =  "price".localized + " " + (self.product?.variants?[indexPath.row].price ?? "") + " " + "EGP".localized
                 self.sizecollectionView.reloadData()
               }
             }
@@ -284,8 +281,7 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifierTableView, for: indexPath) as? OptionsTableViewCell else {return UITableViewCell()}
         let options =  self.product?.productCollections?[indexPath.section].options?[indexPath.row]
-        var quantity =  (options?.quantity ?? 0)
-
+        
         if "lang".localized == "ar" {
             cell.confic(title: options?.title?.ar ?? "", price: options?.variants?[0].price ?? "" , selected: options?.selected ?? false, quantity: options?.quantity ?? 1)
         }else{
@@ -293,37 +289,50 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.Increase = {
-            quantity += 1
+            let q = cell.quantityLbl.text ?? ""
+            let qu =  Int(q) ?? 0
+            let quantity = qu + 1
             cell.quantityLbl.text = "\(quantity)"
+            self.totalOptionPrice += (Double(options?.variants?[0].price ?? "" ) ?? 0  * Double(quantity))
+            self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
+            self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
+            options?.quantity = quantity
         }
         
         cell.Dicrease = {
-            if quantity > 1 {
-                 quantity -= 1
+            let q = cell.quantityLbl.text ?? ""
+            let qu =  Int(q) ?? 0
+            
+            if qu > 1 {
+                let quantity = qu - 1
                 cell.quantityLbl.text = "\(quantity)"
+                self.totalOptionPrice -= (Double(options?.variants?[0].price ?? "") ?? 0 * Double(quantity))
+                self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
+                self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
+                options?.quantity = quantity
             }
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
-        
     if self.product?.productCollections?[indexPath.section].options?.count ?? 0 > 0 {
         let options =  self.product?.productCollections?[indexPath.section].options?[indexPath.row]
         DispatchQueue.main.async {
             let selectedFilter = (options?.selected ?? false) == false ? true : false
             options?.selected = selectedFilter
          self.optionPrice = Double(self.product?.productCollections?[indexPath.section].options?[indexPath.row].variants?[0].price ?? "") ?? 0.0
-            var price = 0.0
+            
             if selectedFilter {
-                price = self.total + (self.optionPrice * Double(Int(cell.quantityLbl.text ?? "0") ?? 0))
-                self.price.text = "\(price)" + "" + "EGP".localized
-                self.total = price
+                self.totalOptionPrice += (self.optionPrice  * Double(options?.quantity ?? 0))
+                self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
+                self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
+
             }else{
-                price = (self.total) - (self.optionPrice * Double(Int(cell.quantityLbl.text ?? "0" ) ?? 0 ))
-                self.price.text = "\(price)" + "" + "EGP".localized
-                self.total = price
-                self.optionPrice = 0.0
+                self.totalOptionPrice -= (self.optionPrice  * Double(options?.quantity ?? 0))
+                self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
+                self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
+
             }
             self.optionbleView.reloadData()
           }
@@ -360,7 +369,7 @@ func addWishList(id : Int,isWishList : Bool) {
         }).disposed(by: disposeBag)
     }
     
-    func addToCart(product_id : Int,variant_id : Int,message : String,quantity : Int,options : [[String : Int]]) {
+    func addToCart(product_id : Int,variant_id : Int,message : String,quantity : Int,options : [[String : Any]]) {
         self.cartViewModel.addToCart(product_id: product_id, variant_id: variant_id, message: message, quantity: quantity, options: options).subscribe(onNext: { (data) in
             self.cartViewModel.dismissIndicator()
             if data.value ?? false{

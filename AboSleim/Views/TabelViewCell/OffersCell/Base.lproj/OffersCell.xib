@@ -122,7 +122,7 @@
                                                 <rect key="frame" x="24" y="0.0" width="18.5" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIe-j8-W0w" customClass="CustomLabel" customModule="Shnp" customModuleProvider="target">
-                                                        <rect key="frame" x="5.5" y="5" width="7.5" height="20.5"/>
+                                                        <rect key="frame" x="-1.5" y="0.0" width="21.5" height="30.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -221,6 +221,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="FavoriteBN" destination="EYv-pV-Atn" id="3w1-t4-EUK"/>
+                <outlet property="discountLbl" destination="N2e-Ny-VAh" id="8GG-jY-J4A"/>
                 <outlet property="name" destination="B3o-El-CPx" id="ySA-4v-bct"/>
                 <outlet property="price" destination="Ugb-kJ-7p9" id="Xry-Hn-tbc"/>
                 <outlet property="resturantImage" destination="GNp-at-JEB" id="nz1-Bd-QRA"/>

@@ -20,7 +20,7 @@ class ChangeProfileVC: UIViewController {
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Phone: UITextField!
     @IBOutlet weak var Address: UITextField!
-
+    @IBOutlet weak var saveBtn : UIButton!
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
     
@@ -31,6 +31,8 @@ class ChangeProfileVC: UIViewController {
         Email.placeholder = "email".localized
         Phone.placeholder = "phone number".localized
         Address.placeholder = "address".localized
+        saveBtn.setTitle("save".localized, for: .normal)
+        
         AuthViewModel.showIndicator()
         getProfile()
     }

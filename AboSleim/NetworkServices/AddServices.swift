@@ -49,7 +49,6 @@ struct AddServices {
             let headers = [
                 "Authorization": "Bearer \(self.token)"
             ]
-            
             Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .validate(statusCode: 200..<300)
                 .responseJSON { (response: DataResponse<Any>) in
@@ -64,8 +63,6 @@ struct AddServices {
             return Disposables.create()
         }
     }//END of POST Login
-    
-    
     
     func updateCart(params: [String: Any]) -> Observable<BaseModel> {
         return Observable.create { (observer) -> Disposable in

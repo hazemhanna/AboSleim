@@ -20,6 +20,7 @@ class CancelOrder : UIViewController {
     
     @IBAction func Confirm(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+        displayMessage(title: "", message: "ordercancel".localized, status:.success, forController: self)
     }
     
     

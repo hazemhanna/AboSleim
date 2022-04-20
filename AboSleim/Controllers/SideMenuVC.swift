@@ -18,7 +18,8 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var walletValue : UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
     @IBOutlet weak var walletView : UIView!
-    
+    @IBOutlet weak var logoImage : UIImageView!
+
     fileprivate let cellIdentifier = "SideMenuCell"
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
@@ -44,8 +45,10 @@ class SideMenuVC: UIViewController {
       if token != "" {
         AuthViewModel.showIndicator()
         getProfile()
+          logoImage.isHidden = true
+      }else{
+          logoImage.isHidden = false
       }
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,6 +126,8 @@ class SideMenuVC: UIViewController {
         case "logOut":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
             Helper.LogOutUser()
+            Helper.saveToken(token: "")
+           // Helper.saveToken(token: nil)
         case "login":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
             

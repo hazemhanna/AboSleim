@@ -101,11 +101,14 @@ extension ChangeProfileVC : UIImagePickerControllerDelegate, UINavigationControl
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            AuthViewModel.showIndicator()
             self.uploadedImage.image = editedImage
-            
+            updateAvatar(image: editedImage)
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            AuthViewModel.showIndicator()
             self.uploadedImage.image = originalImage
-        
+            updateAvatar(image: originalImage)
+
         }
         dismiss(animated: true, completion: nil)
     }
@@ -120,6 +123,9 @@ extension ChangeProfileVC {
             self.Phone.text = data.data?.phone ?? ""
             self.Email.text = data.data?.email ?? ""
             self.Address.text = data.data?.address ?? ""
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
+            
             self.DataBinding()
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
@@ -133,6 +139,17 @@ extension ChangeProfileVC {
             self.AuthViewModel.dismissIndicator()
         }).disposed(by: disposeBag)
      }
+    
+    
+    func updateAvatar(image : UIImage) {
+        self.AuthViewModel.updateAvatar(image: image).subscribe(onNext: { (data) in
+            self.AuthViewModel.dismissIndicator()
+        }, onError: { (error) in
+            self.AuthViewModel.dismissIndicator()
+        }).disposed(by: disposeBag)
+     }
+    
+    
     
 }
 

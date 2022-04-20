@@ -78,7 +78,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="status" destination="gCr-wY-038" id="Im3-7t-v2q"/>
+                <outlet property="dateLbl" destination="gCr-wY-038" id="DxB-nq-vpP"/>
+                <outlet property="notificationName" destination="hbt-3M-gfD" id="UZ3-VS-wt4"/>
             </connections>
             <point key="canvasLocation" x="212" y="88"/>
         </tableViewCell>

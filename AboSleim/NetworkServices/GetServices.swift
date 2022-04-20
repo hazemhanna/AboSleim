@@ -14,7 +14,6 @@ import SwiftyJSON
 class GetServices {
     
     static let shared = GetServices()
-    let token = Helper.getApiToken() ?? ""
 
     
     func getCategeory() -> Observable<CategoriesModelJson> {
@@ -62,8 +61,10 @@ class GetServices {
     func getProducts() -> Observable<ProductModelJson> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getProducts
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -86,8 +87,10 @@ class GetServices {
     func getWishList() -> Observable<ProductModelJson> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getWishlist
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -109,8 +112,10 @@ class GetServices {
     func getCart() -> Observable<CartModelJson> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getCart
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -132,8 +137,10 @@ class GetServices {
     func getOffers() -> Observable<ProductModelJson> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getOffers
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -156,8 +163,10 @@ class GetServices {
     func getCategeoruProducts(id : Int) -> Observable<ProductModelJson> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getCategeoryProducts + "\(id)"
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -179,8 +188,10 @@ class GetServices {
     func getProfile() -> Observable<ProfileModel> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getProfile
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
                 .validate(statusCode: 200..<300)
@@ -220,8 +231,10 @@ class GetServices {
     func getOrders() -> Observable<OrderModelJSON> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getOrders
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -242,8 +255,10 @@ class GetServices {
     func getReservation() -> Observable<ReservationModelJSON> {
         return Observable.create { (observer) -> Disposable in
             let url = ConfigURLs.getReservation
+            let token = Helper.getApiToken() ?? ""
+
             let headers = [
-                "Authorization": "Bearer \(self.token)"
+                "Authorization": "Bearer \(token)"
             ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
@@ -251,6 +266,30 @@ class GetServices {
                 .responseJSON { (response: DataResponse<Any>) in
                     do {
                         let jobsData = try JSONDecoder().decode(ReservationModelJSON.self, from: response.data!)
+                        observer.onNext(jobsData)
+                    } catch {
+                        print(error)
+                        observer.onError(error)
+                    }
+            }
+          return Disposables.create()
+        }
+    }
+    
+    func getNotification() -> Observable<NotificationModelJSON> {
+        return Observable.create { (observer) -> Disposable in
+            let url = ConfigURLs.getNotification
+            let token = Helper.getApiToken() ?? ""
+
+            let headers = [
+                "Authorization": "Bearer \(token)"
+            ]
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers)
+                .validate(statusCode: 200..<300)
+                .responseJSON { (response: DataResponse<Any>) in
+                    do {
+                        let jobsData = try JSONDecoder().decode(NotificationModelJSON.self, from: response.data!)
                         observer.onNext(jobsData)
                     } catch {
                         print(error)

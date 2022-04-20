@@ -1162,6 +1162,7 @@
                         <outlet property="nameLbl" destination="I6u-df-Bca" id="5aD-aA-xf1"/>
                         <outlet property="phoneLbl" destination="sq3-gs-QAI" id="qGy-YV-KQY"/>
                         <outlet property="titleLbl" destination="lg3-Iu-Ztc" id="b5k-P1-Abw"/>
+                        <outlet property="uploadedImage" destination="j2E-2T-26C" id="3SE-cJ-7dd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2F-aC-LHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

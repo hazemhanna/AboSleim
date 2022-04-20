@@ -26,5 +26,4 @@ target 'AboSleim' do
   pod 'FSCalendar'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-
 end

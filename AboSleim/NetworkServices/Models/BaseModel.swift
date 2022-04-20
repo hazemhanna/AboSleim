@@ -36,13 +36,13 @@ struct LoginModel:  Codable {
 struct UserModel: Codable {
     let id: Int?
     let name, email, address, phone: String?
-  //  let verificationCode: Int?
+   let avatar: String?
     let isVerified: Int?
     let role, status, createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, email, address, phone
-       // case verificationCode = "verification_code"
+        case avatar = "avatar"
         case isVerified = "is_verified"
         case role, status
         case createdAt = "created_at"

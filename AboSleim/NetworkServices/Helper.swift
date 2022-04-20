@@ -15,44 +15,36 @@ import FirebaseMessaging
 import IQKeyboardManagerSwift
 import MOLH
 class Helper {
+    
     class func restartApp() {
         guard let window = UIApplication.shared.keyWindow else { return }
-        var vc = UIViewController()
-        if let api_token = Helper.getApiToken() {
-            print("api_token: \(api_token)")
-            switch Helper.getUserRole() {
-            case "customer":
-                print("true")
-                    
-            default:
-                break
-                
-            }
-        } else {
-            vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar")
-            Singletone.instance.appUserType = .Customer
-            window.rootViewController = vc
-            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
-        }
+        let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+       sb.selectedIndex = 0
+       window.rootViewController = sb
+       UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
     }
     
     class func saveApiToken(token: String, email: String, user_id: Int) {
         let def = UserDefaults.standard
-        def.setValue(token, forKey: "api_token")
+        def.setValue(token, forKey: "token")
         def.set(user_id, forKey: "user_id")
         def.set(email, forKey: "email")
+        def.synchronize()
         restartApp()
     }
     
     class func saveToken(token: String) {
         let def = UserDefaults.standard
-        def.set(token, forKey: "api_token")
+        def.set(token, forKey: "token")
+        def.synchronize()
+
     }
     
     class func getApiToken() -> String? {
         let def = UserDefaults.standard
-        return  def.object(forKey: "api_token") as? String
-        
+        return  def.object(forKey: "token") as? String
+        def.synchronize()
+
     }
     class func saveUserRole(role: String) {
         let def = UserDefaults.standard
@@ -65,10 +57,11 @@ class Helper {
     
     class func LogOutUser() {
         let def = UserDefaults.standard
-        def.removeObject(forKey: "api_token")
+        def.removeObject(forKey: "token")
         def.removeObject(forKey: "role")
         def.removeObject(forKey: "user_id")
         def.removeObject(forKey: "email")
+        def.synchronize()
     }
   
     class func getemail() -> String? {

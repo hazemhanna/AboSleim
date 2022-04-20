@@ -75,17 +75,12 @@ extension LoginVC{
             self.AuthViewModel.attemptToLogin().subscribe(onNext: { (data) in
                 if let token = data.token {
                  self.AuthViewModel.dismissIndicator()
-                 Helper.saveToken(token: token)
                   if "lang".localized == "ar" {
                     displayMessage(title: "", message: "تم تسجيل الدخول بنجاح", status: .success, forController: self)
                     }else{
                     displayMessage(title: "", message: "You have Loged in successfully", status: .success, forController: self)
                     }
-                 guard let window = UIApplication.shared.keyWindow else { return }
-                 let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
-                sb.selectedIndex = 0
-                window.rootViewController = sb
-                UIView.transition(with: window, duration: 0.5, options: .curveEaseInOut, animations: nil, completion: nil)
+          
                 }else{
                  self.AuthViewModel.dismissIndicator()
                 if "lang".localized == "ar" {

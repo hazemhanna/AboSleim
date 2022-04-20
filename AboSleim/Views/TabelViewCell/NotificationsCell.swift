@@ -10,7 +10,7 @@ import UIKit
 
 class NotificationsCell: UITableViewCell {
     @IBOutlet weak var notificationName: UILabel!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var dateLbl : UILabel!
 
     var pay : (() ->Void)? = nil
     
@@ -25,7 +25,10 @@ class NotificationsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(name: String, status:String,body:String,title:String){
+    
+    func config( date: String,title: String) {
+        self.dateLbl.text = date
+        self.notificationName.text = title
         
     }
 

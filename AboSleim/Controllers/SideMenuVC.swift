@@ -126,11 +126,8 @@ class SideMenuVC: UIViewController {
         case "logOut":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
             Helper.LogOutUser()
-            Helper.saveToken(token: "")
-           // Helper.saveToken(token: nil)
         case "login":
             pushSideMenu(StoryboardName: "Authentications", ForController: "LoginVC")
-            
         default:
             break
         }
@@ -172,7 +169,6 @@ extension SideMenuVC: UITableViewDelegate,UITableViewDataSource {
 }
 
 extension SideMenuVC {
-    
     func getProfile() {
         self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
             self.AuthViewModel.dismissIndicator()

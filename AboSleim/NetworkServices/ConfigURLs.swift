@@ -20,6 +20,8 @@ struct ConfigURLs {
     static var logout = BASE_URL  + "logout"
     static var updateProfile = BASE_URL  + "update-profile"
     static var updatePassword = BASE_URL  + "update-password"
+    static var updateAvatar = BASE_URL  + "update-avatar"
+
     //general
     static var getSliders = BASE_URL  + "sliders"
     static var getCategories = BASE_URL  + "categories"
@@ -46,7 +48,8 @@ struct ConfigURLs {
     static var getReservation = BASE_URL  + "user-tables"
     static var createReservation = BASE_URL  + "user-tables/create"
     static var cancelReservation = BASE_URL  + "user-tables/"
+
     
-    
+    static var getNotification = BASE_URL  + "notifications"
 
 }

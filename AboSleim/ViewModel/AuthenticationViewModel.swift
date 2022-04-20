@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import SVProgressHUD
+import UIKit
 
 struct AuthenticationViewModel {
     
@@ -81,7 +82,11 @@ struct AuthenticationViewModel {
         return observer
     }
 
-
+    func updateAvatar(image : UIImage) -> Observable<BaseModel> {
+       let observer = Authentication.shared.updateAvatar(image: image)
+        return observer
+    }
+    
     func POSTChangePassowrd() -> Observable<BaseModel> {
         
         let binedOldPass = (try? self.oldPassword.value()) ?? ""

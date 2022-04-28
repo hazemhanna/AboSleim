@@ -6,14 +6,8 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Cairo-Bold.ttf">
-            <string>Cairo-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Side MenuVC-->
         <scene sceneID="gfj-Hi-9Cf">
@@ -27,77 +21,41 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENG-Ay-PbN">
-                                        <rect key="frame" x="207" y="90" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="207" y="164" width="0.0" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="g2z-25-RUb">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="g2z-25-RUb">
                                         <rect key="frame" x="167" y="50" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Wef-oO-DQz"/>
                                             <constraint firstAttribute="width" constant="80" id="m71-Kc-93j"/>
                                         </constraints>
                                     </imageView>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzh-db-c1O" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
-                                        <rect key="frame" x="107" y="101" width="200" height="71"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-1k-hv8">
-                                                <rect key="frame" x="74.5" y="8" width="51.5" height="55"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ki-N4-eZT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="23.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="120 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHH-XG-n9v">
-                                                        <rect key="frame" x="0.5" y="31.5" width="50.5" height="23.5"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEi-hI-URT">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="71"/>
-                                                <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="17"/>
-                                                <state key="normal">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="editProfileBn:" destination="qLR-4n-FYT" eventType="touchUpInside" id="hFc-kO-HlW"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="dZu-eM-DlV" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                        <rect key="frame" x="172" y="78" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="DEi-hI-URT" secondAttribute="trailing" id="0uZ-uo-5TJ"/>
-                                            <constraint firstItem="D7h-1k-hv8" firstAttribute="centerX" secondItem="Tzh-db-c1O" secondAttribute="centerX" id="7oF-Yb-ycu"/>
-                                            <constraint firstAttribute="bottom" secondItem="D7h-1k-hv8" secondAttribute="bottom" constant="8" id="CBv-P1-yqo"/>
-                                            <constraint firstAttribute="bottom" secondItem="DEi-hI-URT" secondAttribute="bottom" id="PgF-oM-Gho"/>
-                                            <constraint firstItem="DEi-hI-URT" firstAttribute="top" secondItem="Tzh-db-c1O" secondAttribute="top" id="T9K-Tb-HY9"/>
-                                            <constraint firstAttribute="width" constant="200" id="WAl-2l-MIE"/>
-                                            <constraint firstItem="DEi-hI-URT" firstAttribute="leading" secondItem="Tzh-db-c1O" secondAttribute="leading" id="ml3-v3-fRk"/>
-                                            <constraint firstItem="D7h-1k-hv8" firstAttribute="top" secondItem="Tzh-db-c1O" secondAttribute="top" constant="8" id="wpR-FN-hfD"/>
+                                            <constraint firstAttribute="width" constant="70" id="Rg9-cA-S5c"/>
+                                            <constraint firstAttribute="height" constant="70" id="n8p-iB-6By"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="16"/>
+                                                <real key="value" value="35"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="navigation"/>
                                 <constraints>
-                                    <constraint firstItem="Tzh-db-c1O" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="AwD-wW-V7z"/>
-                                    <constraint firstItem="ENG-Ay-PbN" firstAttribute="centerY" secondItem="Bge-Rn-XIG" secondAttribute="centerY" id="B5n-V7-B9i"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tzh-db-c1O" secondAttribute="bottom" constant="8" id="EOr-uo-Dpi"/>
+                                    <constraint firstItem="ENG-Ay-PbN" firstAttribute="top" secondItem="dZu-eM-DlV" secondAttribute="bottom" constant="16" id="B8l-db-y2i"/>
                                     <constraint firstItem="g2z-25-RUb" firstAttribute="centerY" secondItem="Bge-Rn-XIG" secondAttribute="centerY" id="NYM-QD-JSH"/>
                                     <constraint firstItem="ENG-Ay-PbN" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="WK1-lQ-KLq"/>
                                     <constraint firstItem="g2z-25-RUb" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="kBI-AO-bFF"/>
+                                    <constraint firstItem="dZu-eM-DlV" firstAttribute="centerX" secondItem="Bge-Rn-XIG" secondAttribute="centerX" id="kVO-LP-WTX"/>
                                     <constraint firstAttribute="height" constant="180" id="omy-zJ-MgT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ENG-Ay-PbN" secondAttribute="bottom" constant="16" id="s5V-yj-RY2"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dtQ-5k-ydh">
@@ -125,12 +83,9 @@
                     <navigationItem key="navigationItem" id="SQp-OB-m3P"/>
                     <connections>
                         <outlet property="SideMenuTableView" destination="dtQ-5k-ydh" id="jD6-G4-mFC"/>
-                        <outlet property="editBN" destination="DEi-hI-URT" id="JYC-vV-3B4"/>
                         <outlet property="logoImage" destination="g2z-25-RUb" id="7df-nW-dYv"/>
                         <outlet property="name" destination="ENG-Ay-PbN" id="e2K-7g-VjI"/>
-                        <outlet property="wallet" destination="0Ki-N4-eZT" id="dyF-IP-pYw"/>
-                        <outlet property="walletValue" destination="rHH-XG-n9v" id="Z4F-xO-hzB"/>
-                        <outlet property="walletView" destination="Tzh-db-c1O" id="739-cz-7BT"/>
+                        <outlet property="uploadedImage" destination="dZu-eM-DlV" id="BbA-lm-sX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hp-nH-3zx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,6 +111,11 @@
             <point key="canvasLocation" x="11.594202898550726" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dZu-eM-DlV">
+            <size key="intrinsicContentSize" width="1024" height="1024"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Abo Sleim" width="1024" height="1024"/>
         <namedColor name="button">

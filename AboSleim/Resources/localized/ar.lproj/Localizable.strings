@@ -28,15 +28,15 @@
 "login" = "نسجيل دخول";
 "logOut" = "نسجيل خروج";
 
-"new" = "جديد";
-"preparing" = "جاري التحضير";
+"NEW" = "جديد";
+"PREPARED" = "جاري التحضير";
 "delivering" = "في الطريق";
 "delivered" = "تم التوصيل";
-"competed" = "منتهي";
+"COMPLETED" = "منتهي";
 
 "preparing order" = "طلبات قيد التحضير";
 
-"on_way" = "طلبات قيد التوصيل";
+"ON_THE_WAY" = "طلبات قيد التوصيل";
 "completed" = "طلبات منتهية";
 "arrived" = "طلبات تم التوصيل";
 
@@ -102,7 +102,7 @@
 
 "phone or password wrong" = "كلمة المرور أو رقم الهاتف غير صحيحين";
 
-"Add to cart" = "أضافة إلى السلة";
+"Add to cart" = "تم الاضافة الى السلة";
 
 "Password changed" = "تغيير كلمة المرور";
 
@@ -257,3 +257,6 @@
 "inside" = "افراد";
 "outside" = "عاِئلات";
 "ordercancel" = "تم الغاء الطلب بنجاح";
+"setLocation" = "حدد موقعك من الخريطة";
+"Enter your address" = " ادخل العنوان الخاص بك";
+"product in cart already"= "المنتج موجود في السلة";

@@ -15,8 +15,8 @@ class ProductsVc : UIViewController {
     
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var bestSellerTableView: UITableView!
-
     fileprivate let cellIdentifier = "ValiableResturantCell"
+   
     var productCounter = Int()
 
     private let homeViewModel = HomeViewModel()
@@ -79,13 +79,15 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
                     , price: products[indexPath.row].variants?[0].price ?? ""
                     , imagePath: products[indexPath.row].images?[0].image ?? ""
                     , type: products[indexPath.row].desc?.ar ?? ""
-                    , isWishlist: products[indexPath.row].isWishlist ?? false )
+                    , isWishlist: products[indexPath.row].isWishlist ?? false
+                    , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
                         , price: products[indexPath.row].variants?[0].price ?? ""
                         , imagePath: products[indexPath.row].images?[0].image ?? "",
                         type: products[indexPath.row].desc?.en ?? ""
-                        ,isWishlist: products[indexPath.row].isWishlist ?? false)
+                        ,isWishlist: products[indexPath.row].isWishlist ?? false
+                        , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
 
         }
         

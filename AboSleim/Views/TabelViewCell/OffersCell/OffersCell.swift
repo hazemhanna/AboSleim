@@ -38,13 +38,11 @@ class OffersCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool,discount : String) {
+    func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool,discount : Double) {
         self.name.text = name
         self.type.text = type.parseHtml
-        var ppp = Double(price)!
-        var ddd = Double(discount)!
-        let dicsount =  Int(ppp/ddd)
-        self.discountLbl.text =  "discount".localized  +  " "  + String(dicsount) + "%"
+        self.discountLbl.text =  "discount".localized  +  " "  + String(Int(discount)) + "%"
+        
         if "lang".localized == "ar" {
             self.price.text = "\(price) جنية"
             self.name.textAlignment = .right

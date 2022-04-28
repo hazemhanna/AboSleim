@@ -28,7 +28,12 @@ struct Order: Codable {
     let notes: String?
     let logs: [Log]?
     let orderItems: [OrderItem]?
+    let delivery_price: String?
+    let order_place: Int?
+    let created_at: String?
 
+    
+    
     enum CodingKeys: String, CodingKey {
         case id
         case orderType = "order_type"
@@ -36,6 +41,10 @@ struct Order: Codable {
         case orderDate = "order_date"
         case notes, logs
         case orderItems = "order_items"
+        case delivery_price = "fixed_delivery_price"
+        case order_place = "order_place"
+        case created_at = "created_at"
+
     }
 }
 

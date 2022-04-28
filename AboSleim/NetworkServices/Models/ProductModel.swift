@@ -44,7 +44,7 @@ struct Product: Codable {
     let category: Category?
     let images: [Category]?
     var variants: [Variant]?
-    let productCollections: [ProductCollection]?
+    var productCollections: [ProductCollection]?
     var isWishlist: Bool?
     
     enum CodingKeys: String, CodingKey {

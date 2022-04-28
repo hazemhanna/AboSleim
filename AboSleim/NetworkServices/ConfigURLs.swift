@@ -8,7 +8,7 @@
 
 import Foundation
 
-var BASE_URL = "https://livia.dtagdev.com/api/"
+var BASE_URL = "https://abosleim.dtagdev.com/api/"
 
 struct ConfigURLs {
     // Auth
@@ -21,7 +21,6 @@ struct ConfigURLs {
     static var updateProfile = BASE_URL  + "update-profile"
     static var updatePassword = BASE_URL  + "update-password"
     static var updateAvatar = BASE_URL  + "update-avatar"
-
     //general
     static var getSliders = BASE_URL  + "sliders"
     static var getCategories = BASE_URL  + "categories"

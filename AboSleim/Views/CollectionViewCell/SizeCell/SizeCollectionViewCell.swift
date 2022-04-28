@@ -23,12 +23,7 @@ class SizeCollectionViewCell: UICollectionViewCell {
         if selected{
             selectedImage.image = UIImage(named: "Selected")
         }else{
-            selectedImage.image = UIImage(named: "UnSelected")
+            selectedImage.image = UIImage(named: "UNSelected")
         }
-        
-        
-        
-        
-        
     }
 }

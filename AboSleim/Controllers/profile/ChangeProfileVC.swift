@@ -20,7 +20,9 @@ class ChangeProfileVC: UIViewController {
     @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var Phone: UITextField!
     @IBOutlet weak var Address: UITextField!
+    @IBOutlet weak var nameLbl  : UILabel!
     @IBOutlet weak var saveBtn : UIButton!
+    
     private let AuthViewModel = AuthenticationViewModel()
     var disposeBag = DisposeBag()
     
@@ -64,7 +66,6 @@ class ChangeProfileVC: UIViewController {
     @IBAction func notificationhButtonPressed(_ sender: Any) {
         guard let details = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "NotificationsVC") as? NotificationsVC else { return }
         self.navigationController?.pushViewController(details, animated: true)
-
     }
   
     @IBAction func saveBtn(_ sender: Any) {
@@ -123,6 +124,8 @@ extension ChangeProfileVC {
             self.Phone.text = data.data?.phone ?? ""
             self.Email.text = data.data?.email ?? ""
             self.Address.text = data.data?.address ?? ""
+            self.nameLbl.text =  data.data?.name ?? ""
+            
             guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
               self.uploadedImage.kf.setImage(with: imageURL)
             
@@ -140,7 +143,6 @@ extension ChangeProfileVC {
         }).disposed(by: disposeBag)
      }
     
-    
     func updateAvatar(image : UIImage) {
         self.AuthViewModel.updateAvatar(image: image).subscribe(onNext: { (data) in
             self.AuthViewModel.dismissIndicator()
@@ -148,8 +150,5 @@ extension ChangeProfileVC {
             self.AuthViewModel.dismissIndicator()
         }).disposed(by: disposeBag)
      }
-    
-    
-    
 }
 

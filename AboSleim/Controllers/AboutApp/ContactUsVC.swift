@@ -25,9 +25,8 @@ class ContactUsVC: UIViewController {
     var disposeBag = DisposeBag()
     
     fileprivate let  cellIdentifeir = "SettingCell"
-    let TypeArr = ["problem".localized, "suggestion".localized]
+    let TypeArr = ["Complain".localized, "Proposal".localized]
     var MailType = ""
-    
     var facebook  = ""
     var whatsapp  = ""
     var twitter  = ""

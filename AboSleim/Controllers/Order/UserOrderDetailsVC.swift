@@ -42,8 +42,9 @@ class UserOrderDetailsVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         TableHeight.constant = CGFloat(40 * (order?.orderItems?.count ?? 0))
         detailsTableView.reloadData()
-        
-        
+    
+        oredrId.text = "\(order?.id ?? 0 )"
+
         var total = 0
         for t in  self.order?.orderItems ?? [] {
             let price = Double(t.price ?? "") ?? 0.0
@@ -51,8 +52,11 @@ class UserOrderDetailsVC: UIViewController{
         }
         
         self.orderPrice.text = String(total) + " " + "EGP".localized
-        self.totalPriceLB.text = String(total + 40) + " " + "EGP".localized
-        oredrId.text = "\(order?.id ?? 0 )"
+        if order?.order_place == 1{
+          self.totalPriceLB.text = String(total + 10) + " " + "EGP".localized
+        }else{
+            self.totalPriceLB.text = String(total) + " " + "EGP".localized
+        }
     }
     
    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

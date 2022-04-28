@@ -12,13 +12,10 @@ import RxCocoa
 
 class SideMenuVC: UIViewController {
     
-    @IBOutlet weak var editBN: UIButton!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var wallet : UILabel!
-    @IBOutlet weak var walletValue : UILabel!
     @IBOutlet weak var SideMenuTableView: UITableView!
-    @IBOutlet weak var walletView : UIView!
     @IBOutlet weak var logoImage : UIImageView!
+    @IBOutlet weak var uploadedImage: UIImageView!
 
     fileprivate let cellIdentifier = "SideMenuCell"
     private let AuthViewModel = AuthenticationViewModel()
@@ -46,8 +43,11 @@ class SideMenuVC: UIViewController {
         AuthViewModel.showIndicator()
         getProfile()
           logoImage.isHidden = true
+          uploadedImage.isHidden = false
       }else{
           logoImage.isHidden = false
+          uploadedImage.isHidden = true
+
       }
     }
     
@@ -173,6 +173,8 @@ extension SideMenuVC {
         self.AuthViewModel.getProfile().subscribe(onNext: { (data) in
             self.AuthViewModel.dismissIndicator()
             self.name.text = data.data?.name ?? ""
+            guard let imageURL = URL(string: (data.data?.avatar ?? "" ).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
+              self.uploadedImage.kf.setImage(with: imageURL)
             }, onError: { (error) in
                 self.AuthViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

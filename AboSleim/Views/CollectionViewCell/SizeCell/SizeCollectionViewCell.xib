@@ -26,7 +26,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-By-Aap">
                         <rect key="frame" x="21" y="23.5" width="81.5" height="20"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UnSelected" translatesAutoresizingMaskIntoConstraints="NO" id="0rI-g6-Awc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UNSelected" translatesAutoresizingMaskIntoConstraints="NO" id="0rI-g6-Awc">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="fxG-5O-DO6"/>
@@ -57,7 +57,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="UnSelected" width="10" height="10"/>
+        <image name="UNSelected" width="10" height="10"/>
         <namedColor name="textColor">
             <color red="0.0078431372549019607" green="0.10196078431372549" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

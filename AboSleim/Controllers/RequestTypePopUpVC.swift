@@ -31,7 +31,7 @@ class RequestTypePopUpVC: UIViewController {
     var notes: String?
     var phone: String?
     var address: String?
-    var order_place = 0
+    var order_place = 2
 
     private let cartViewModel = CartViewModel()
     var disposeBag = DisposeBag()
@@ -49,7 +49,7 @@ class RequestTypePopUpVC: UIViewController {
             OrderType = .sefry
             safarytBN.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)
             deliveryButton.setImage(#imageLiteral(resourceName: "checked"), for: .normal)
-            self.order_place = 0
+            self.order_place = 2
         case 1:
             OrderType = .delivery
             deliveryButton.setImage(#imageLiteral(resourceName: "checked-green"), for: .normal)

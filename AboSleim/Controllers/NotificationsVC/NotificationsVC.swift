@@ -78,9 +78,13 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NotificationsCell else {return UITableViewCell()}
         
         if "lang".localized == "ar" {
-            cell.config(date: self.notification[indexPath.row].createdAt ?? "" ,title: self.notification[indexPath.row].data?.body?.ar ?? "")
+            cell.config(id: self.notification[indexPath.row].data?.body?.id ?? 0
+                        ,status: self.notification[indexPath.row].data?.name?.ar ?? ""
+                        ,title: self.notification[indexPath.row].data?.body?.ar ?? "")
         }else{
-            cell.config(date: self.notification[indexPath.row].createdAt ?? "" ,title: self.notification[indexPath.row].data?.body?.en ?? "")
+            cell.config(id: self.notification[indexPath.row].data?.body?.id ?? 0
+                        ,status: self.notification[indexPath.row].data?.name?.en ?? ""
+                        ,title: self.notification[indexPath.row].data?.body?.en ?? "")
 
         }
             
@@ -88,7 +92,7 @@ extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90.0
+        return 120
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -34,7 +34,7 @@ class OptionsTableViewCell: UITableViewCell {
         }else{
             selectedImageView.image = UIImage(named: "Ellipse 348-1")
         }
-        //quantityLbl.text = String(quantity)
+        quantityLbl.text = String(quantity)
     }
 
 

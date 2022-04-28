@@ -717,7 +717,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="OCE-Q8-DL1" secondAttribute="trailing" constant="16" id="fuq-Cp-kHo"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="nl3-W2-Xys" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="nl3-W2-Xys" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                                                         <rect key="frame" x="132" y="90" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="150" id="Laq-Lu-7lC"/>
@@ -1043,7 +1043,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="j2E-2T-26C" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="j2E-2T-26C" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                                                 <rect key="frame" x="157" y="98" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="3gB-af-A4p"/>
@@ -1192,7 +1192,7 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhatsApp Image 2022-03-11 at 9.35.06 PM" translatesAutoresizingMaskIntoConstraints="NO" id="YbT-j0-LrK">
                                                         <rect key="frame" x="0.0" y="-16" width="414" height="346"/>
                                                     </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic" translatesAutoresizingMaskIntoConstraints="NO" id="b3S-X9-b6g" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="b3S-X9-b6g" customClass="CustomImageView" customModule="Shnp" customModuleProvider="target">
                                                         <rect key="frame" x="132" y="98" width="150" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="150" id="ABf-T0-GUq"/>
@@ -1507,6 +1507,7 @@
                         <outlet property="Address" destination="f44-6M-OLe" id="Sro-hS-bqh"/>
                         <outlet property="Email" destination="91X-v1-YD3" id="dBe-sE-mhC"/>
                         <outlet property="Phone" destination="K6a-SG-PwQ" id="XWS-c6-Kkq"/>
+                        <outlet property="nameLbl" destination="eWG-e6-8Tj" id="ftd-ly-i42"/>
                         <outlet property="saveBtn" destination="rce-TT-lsX" id="jRc-p7-YOA"/>
                         <outlet property="titleLbl" destination="mzS-OV-xGZ" id="B9m-LD-Qy3"/>
                         <outlet property="uploadedImage" destination="b3S-X9-b6g" id="GNq-xR-s3g"/>
@@ -1544,7 +1545,7 @@
             <size key="intrinsicContentSize" width="210" height="34"/>
         </designable>
         <designable name="b3S-X9-b6g">
-            <size key="intrinsicContentSize" width="400" height="257.5"/>
+            <size key="intrinsicContentSize" width="1024" height="1024"/>
         </designable>
         <designable name="dWS-ti-LKa">
             <size key="intrinsicContentSize" width="28" height="28"/>
@@ -1556,10 +1557,10 @@
             <size key="intrinsicContentSize" width="34" height="30"/>
         </designable>
         <designable name="j2E-2T-26C">
-            <size key="intrinsicContentSize" width="400" height="257.5"/>
+            <size key="intrinsicContentSize" width="1024" height="1024"/>
         </designable>
         <designable name="nl3-W2-Xys">
-            <size key="intrinsicContentSize" width="400" height="257.5"/>
+            <size key="intrinsicContentSize" width="1024" height="1024"/>
         </designable>
         <designable name="rL8-Z5-BtF">
             <size key="intrinsicContentSize" width="123" height="34"/>
@@ -1573,6 +1574,7 @@
     </designables>
     <resources>
         <image name="391686-PCPEP5-182" width="360" height="640"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
         <image name="Group 397" width="360" height="76"/>
         <image name="Group 412" width="79" height="79"/>
         <image name="Line 41" width="2" height="66"/>

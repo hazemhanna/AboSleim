@@ -17,6 +17,7 @@ class OrderListVC : UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var noProduct: UILabel!
 
     
     fileprivate let cellIdentifier = "ListCell"
@@ -99,13 +100,16 @@ extension OrderListVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension OrderListVC {
-    
     func getOrder() {
         self.orderViewModel.getOrders().subscribe(onNext: { (data) in
           self.orderViewModel.dismissIndicator()
            self.list = data.data?.orders ?? []
-            //self.show()
-          }, onError: { (error) in
+            if self.list.count > 0 {
+                self.emptyView.isHidden = true
+            }else{
+                self.emptyView.isHidden = false
+            }
+        }, onError: { (error) in
           self.orderViewModel.dismissIndicator()
          }).disposed(by: disposeBag)
     }

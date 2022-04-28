@@ -134,16 +134,45 @@
                                 <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGg-IU-KGj">
+                                <rect key="frame" x="0.0" y="76" width="414" height="820"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="0iI-nH-vgC">
+                                        <rect key="frame" x="107" y="100" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="rq9-pE-anQ"/>
+                                            <constraint firstAttribute="width" constant="200" id="wy2-yc-eg8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsO-v1-EQQ">
+                                        <rect key="frame" x="179.5" y="332" width="55.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="rsO-v1-EQQ" firstAttribute="top" secondItem="0iI-nH-vgC" secondAttribute="bottom" constant="32" id="9Za-1s-AS9"/>
+                                    <constraint firstItem="0iI-nH-vgC" firstAttribute="centerX" secondItem="pGg-IU-KGj" secondAttribute="centerX" id="bQF-Mv-3FJ"/>
+                                    <constraint firstItem="rsO-v1-EQQ" firstAttribute="centerX" secondItem="pGg-IU-KGj" secondAttribute="centerX" id="jOl-CI-jaW"/>
+                                    <constraint firstItem="0iI-nH-vgC" firstAttribute="top" secondItem="pGg-IU-KGj" secondAttribute="top" constant="100" id="kMa-RA-es2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lzr-6x-7te"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pGg-IU-KGj" secondAttribute="bottom" id="ApJ-pS-aGS"/>
+                            <constraint firstAttribute="trailing" secondItem="pGg-IU-KGj" secondAttribute="trailing" id="BtI-Ol-M6r"/>
                             <constraint firstItem="rix-u4-Y3l" firstAttribute="top" secondItem="p2v-68-H6v" secondAttribute="bottom" constant="8" id="Dca-A5-MCO"/>
                             <constraint firstItem="Lzr-6x-7te" firstAttribute="bottom" secondItem="HcJ-SX-pv3" secondAttribute="bottom" id="XhK-Sd-WWl"/>
                             <constraint firstItem="rix-u4-Y3l" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="ajQ-1D-of1"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="width" secondItem="aLa-T4-nrR" secondAttribute="width" id="ih0-K1-yVg"/>
                             <constraint firstItem="HcJ-SX-pv3" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="j9N-3G-hK6"/>
                             <constraint firstItem="Lzr-6x-7te" firstAttribute="bottom" secondItem="rix-u4-Y3l" secondAttribute="bottom" id="jQG-24-a05"/>
+                            <constraint firstItem="pGg-IU-KGj" firstAttribute="top" secondItem="p2v-68-H6v" secondAttribute="bottom" id="kQs-oV-dgX"/>
+                            <constraint firstItem="pGg-IU-KGj" firstAttribute="leading" secondItem="Lzr-6x-7te" secondAttribute="leading" id="lPQ-DU-tg9"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="top" secondItem="aLa-T4-nrR" secondAttribute="top" id="q8b-jG-3kF"/>
                             <constraint firstItem="Lzr-6x-7te" firstAttribute="trailing" secondItem="rix-u4-Y3l" secondAttribute="trailing" id="rDA-2o-qwf"/>
                             <constraint firstItem="p2v-68-H6v" firstAttribute="centerX" secondItem="Lzr-6x-7te" secondAttribute="centerX" id="rnb-l3-y3Y"/>
@@ -158,7 +187,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyView" destination="pGg-IU-KGj" id="CAa-nF-1bG"/>
                         <outlet property="listTableView" destination="rix-u4-Y3l" id="3kw-dJ-oXg"/>
+                        <outlet property="noProduct" destination="rsO-v1-EQQ" id="2vD-S3-zrS"/>
                         <outlet property="titleLbl" destination="chs-MV-WEU" id="bNA-nd-HHW"/>
                     </connections>
                 </viewController>
@@ -858,6 +889,7 @@
                     <navigationItem key="navigationItem" title="Cart" id="CSW-qL-pN8"/>
                     <connections>
                         <outlet property="TableHeight" destination="hIg-ZH-fj2" id="x48-vO-mPo"/>
+                        <outlet property="canceBtn" destination="ZPK-UI-jKG" id="awr-h1-5js"/>
                         <outlet property="cartTableView" destination="gtx-8Z-592" id="IW7-IF-sd5"/>
                         <outlet property="deliveryLbl" destination="AFK-Se-XXM" id="59v-w9-bii"/>
                         <outlet property="discreption" destination="0jJ-wj-D3h" id="reH-U3-Kgh"/>

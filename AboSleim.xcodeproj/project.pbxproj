@@ -79,6 +79,7 @@
 		04CBBA3E27BC867D00CBD10D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CBBA3C27BC867D00CBD10D /* Main.storyboard */; };
 		04D81336270FE1C0004BEC39 /* FoodPackgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */; };
 		04D81337270FE1C0004BEC39 /* FoodPackgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */; };
+		04E5ECF728110BA800C49E52 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5ECF628110BA800C49E52 /* LocationVC.swift */; };
 		04FCE4E627C0280900805FD9 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCE4E527C0280900805FD9 /* CartVC.swift */; };
 		04FCE4E827C0283E00805FD9 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCE4E727C0283E00805FD9 /* NotificationsVC.swift */; };
 		5EC9EAB9899A225146665617 /* Pods_AboSleim.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE1FF4B65CD9F481EBEC0B1 /* Pods_AboSleim.framework */; };
@@ -290,6 +291,7 @@
 		04CBBA3D27BC867D00CBD10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../ShnpNew/Shanab/Storyboards/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04D81334270FE1C0004BEC39 /* FoodPackgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPackgeCell.swift; sourceTree = "<group>"; };
 		04D81335270FE1C0004BEC39 /* FoodPackgeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodPackgeCell.xib; sourceTree = "<group>"; };
+		04E5ECF628110BA800C49E52 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		04FCE4E527C0280900805FD9 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		04FCE4E727C0283E00805FD9 /* NotificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
 		7F1A6C552559461D00A799E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -861,6 +863,7 @@
 				04659A6027CD84BF00CC9FF1 /* MyAddressesVC.swift */,
 				04659A6227CD89E700CC9FF1 /* LocationDetailsVC.swift */,
 				04659A6427CD92D300CC9FF1 /* RequestTypePopUpVC.swift */,
+				04E5ECF628110BA800C49E52 /* LocationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1314,6 +1317,7 @@
 				0418A85C2806262A00CE8F55 /* CartModel.swift in Sources */,
 				0401A96027C18873009082B8 /* ReservationRequestVc.swift in Sources */,
 				FADBB15024279F200044936E /* BasicBarEntry.swift in Sources */,
+				04E5ECF728110BA800C49E52 /* LocationVC.swift in Sources */,
 				FADBB14F24279F200044936E /* BasicBarChart.swift in Sources */,
 				042A538827CB4BD000009C21 /* MYFoodPackagesCartVC.swift in Sources */,
 				FADBB14A24279F200044936E /* BeautifulBarEntry.swift in Sources */,
@@ -1768,7 +1772,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AboSleim/AppFiles/Info.plist";
@@ -1797,7 +1801,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 5R2Z9F2376;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/AboSleim/AppFiles/Info.plist";

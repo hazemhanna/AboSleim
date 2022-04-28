@@ -25,19 +25,14 @@
 "truck" = "truck";
 "family" = "family";
 "new order" = "new orders";
-"new" = "new";
-"preparing" = "preparing";
-"delivering" = "delivering";
-"delivered" = "delivered";
-"competed" = "competed";
 
-"on_way" = "Onway";
-"preparing order" = "preparing";
-"completed" = "completed";
-"arrived" = "Arrived";
+"NEW" = "NEW";
+"PREPARED" = "PREPARED";
+"ON_THE_WAY" = "ON THE WAY";
+"COMPLETED" = "COMPLETED";
+
 "login" = "login";
 "logOut" = "logOut";
-
 "S.R" = "SAR";
 "You should login first" = "You should login first";
 "Add favourite" = "Add favourite";
@@ -82,14 +77,9 @@
 "Please enter a deposit of " = "Please enter a deposit of ";
 
 "S.R to confirm reservation" = "SAR to confirm reservation";
-
 "Reserve Table" = "Reserve Table";
-
 "People Number" = "People Number";
-
-
 "Item deleted from cart" = "Item deleted from cart";
-
 "Order added successfully" = "Order added successfully";
 
 "You logged out now" = "You logged out now";
@@ -251,3 +241,6 @@
 "inside" = "person";
 "outside" = "family";
 "ordercancel" = "order canceled successfully";
+"setLocation" = "set Location from map";
+"Enter your address" = "Enter your address";
+"product in cart already"= "product in cart already";

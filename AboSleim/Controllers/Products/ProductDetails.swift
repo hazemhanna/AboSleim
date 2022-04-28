@@ -75,6 +75,7 @@ class ProductDetails: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         slidercollectionView.reloadData()
         optionbleView.reloadData()
+
         var size = 0
         for i in self.product?.productCollections ?? [] {
             size += 60 * (i.options?.count ?? 0)
@@ -116,6 +117,7 @@ class ProductDetails: UIViewController {
         DispatchQueue.main.async {
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
+        
     }
     
     @objc func changeImage() {
@@ -209,7 +211,6 @@ class ProductDetails: UIViewController {
     }
 }
 
-
 extension ProductDetails: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -228,8 +229,6 @@ extension ProductDetails: UICollectionViewDelegate, UICollectionViewDataSource {
      }else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifierCollectionView, for: indexPath) as! SizeCollectionViewCell
          cell.confic(title: self.product?.variants?[indexPath.row].productSize?.localized ?? "",selected: self.product?.variants?[indexPath.row].selected ?? false)
-         self.variant_id = product?.variants?[indexPath.row].id ?? 0
-
          return cell
         }
     }
@@ -239,7 +238,6 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
             self.product?.variants?.forEach { model in
                 model.selected = false
             }
-            
             if self.product?.variants?.count ?? 0 > 0 {
             DispatchQueue.main.async {
                 let selectedFilter = (self.product?.variants?[indexPath.row].selected ?? false) == false ? true : false
@@ -247,6 +245,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
                 self.sizePrice = Double(self.product?.variants?[indexPath.row].price ?? "") ?? 0
                 self.total = Double(self.product?.variants?[indexPath.row].price ?? "") ?? 0
                 self.price.text =  "price".localized + " " + (self.product?.variants?[indexPath.row].price ?? "") + " " + "EGP".localized
+                self.variant_id = self.product?.variants?[indexPath.row].id ?? 0
                 self.sizecollectionView.reloadData()
               }
             }
@@ -289,6 +288,7 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.Increase = {
+            if  options?.selected ?? false {
             let q = cell.quantityLbl.text ?? ""
             let qu =  Int(q) ?? 0
             let quantity = qu + 1
@@ -297,6 +297,8 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
             self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
             self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
             options?.quantity = quantity
+            self.optionbleView.reloadData()
+            }
         }
         
         cell.Dicrease = {
@@ -310,12 +312,17 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
                 self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
                 self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
                 options?.quantity = quantity
+                self.optionbleView.reloadData()
             }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
+
+
     if self.product?.productCollections?[indexPath.section].options?.count ?? 0 > 0 {
         let options =  self.product?.productCollections?[indexPath.section].options?[indexPath.row]
         DispatchQueue.main.async {
@@ -324,14 +331,17 @@ extension ProductDetails: UITableViewDelegate, UITableViewDataSource {
          self.optionPrice = Double(self.product?.productCollections?[indexPath.section].options?[indexPath.row].variants?[0].price ?? "") ?? 0.0
             
             if selectedFilter {
+                options?.quantity = 1
+                cell.quantityLbl.text = "\(options?.quantity ?? 0)"
                 self.totalOptionPrice += (self.optionPrice  * Double(options?.quantity ?? 0))
                 self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
                 self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
-
+                
             }else{
                 self.totalOptionPrice -= (self.optionPrice  * Double(options?.quantity ?? 0))
                 self.optionsPrice.text = "optionPrice".localized + " " + String(self.totalOptionPrice) + " " + "EGP".localized
                 self.totalPrice.text = "totalPrice".localized + " " + String(self.totalOptionPrice + self.total) + " " + "EGP".localized
+                options?.quantity = 1
 
             }
             self.optionbleView.reloadData()
@@ -375,7 +385,7 @@ func addWishList(id : Int,isWishList : Bool) {
             if data.value ?? false{
             displayMessage(title: "", message: "Add to cart".localized , status: .success, forController: self)
             }else {
-                displayMessage(title: "", message: data.msg ?? "" , status: .error, forController: self)
+                displayMessage(title: "", message: data.msg?.localized ?? "" , status: .error, forController: self)
             }
         }, onError: { (error) in
                 self.cartViewModel.dismissIndicator()

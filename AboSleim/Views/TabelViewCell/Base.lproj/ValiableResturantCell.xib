@@ -13,6 +13,9 @@
         <array key="Cairo-Bold.ttf">
             <string>Cairo-Bold</string>
         </array>
+        <array key="Cairo-Light.ttf">
+            <string>Cairo-Light</string>
+        </array>
         <array key="Cairo-Regular.ttf">
             <string>Cairo-Regular</string>
         </array>
@@ -36,14 +39,34 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Jy-oZD">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Om-Ly-6nP">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خصم ٢٠٪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXH-sF-7sX">
+                                                <rect key="frame" x="7" y="3" width="46" height="14"/>
+                                                <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="button"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="CUs-ZI-8cg"/>
+                                            <constraint firstAttribute="width" constant="60" id="kTM-AX-VSE"/>
+                                            <constraint firstItem="JXH-sF-7sX" firstAttribute="centerX" secondItem="0Om-Ly-6nP" secondAttribute="centerX" id="oNM-oh-dGR"/>
+                                            <constraint firstItem="JXH-sF-7sX" firstAttribute="centerY" secondItem="0Om-Ly-6nP" secondAttribute="centerY" id="xhF-pM-iKa"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cMy-Jy-oZD" secondAttribute="trailing" id="0gt-z0-1HH"/>
                                     <constraint firstAttribute="width" constant="120" id="4xR-PL-htI"/>
+                                    <constraint firstItem="0Om-Ly-6nP" firstAttribute="top" secondItem="Y1e-Nd-2eb" secondAttribute="top" id="Jnd-Wn-2bJ"/>
                                     <constraint firstAttribute="bottom" secondItem="cMy-Jy-oZD" secondAttribute="bottom" id="NvI-n5-auS"/>
                                     <constraint firstItem="cMy-Jy-oZD" firstAttribute="leading" secondItem="Y1e-Nd-2eb" secondAttribute="leading" id="bjY-FY-q0o"/>
                                     <constraint firstItem="cMy-Jy-oZD" firstAttribute="top" secondItem="Y1e-Nd-2eb" secondAttribute="top" id="jxR-Q7-Iq3"/>
+                                    <constraint firstItem="0Om-Ly-6nP" firstAttribute="leading" secondItem="Y1e-Nd-2eb" secondAttribute="leading" id="wVW-Ot-t26"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -55,19 +78,19 @@
                                 <rect key="frame" x="136" y="16" width="276" height="118"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-Ab-TGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="23.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-0n-Gph">
-                                        <rect key="frame" x="0.0" y="45.5" width="28" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="31.5" width="29.5" height="66.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="price : 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-VD-rsK">
-                                        <rect key="frame" x="0.0" y="99" width="58" height="19"/>
+                                        <rect key="frame" x="0.0" y="106" width="65" height="12"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -202,6 +225,8 @@
                 <outlet property="FavoriteBN" destination="HTI-g0-Cwx" id="kIY-KE-bPN"/>
                 <outlet property="cartBtn" destination="FgY-hb-tpr" id="26D-27-ehH"/>
                 <outlet property="contentStackView" destination="8OF-g7-dCC" id="jWk-qS-aQF"/>
+                <outlet property="discountLbl" destination="JXH-sF-7sX" id="spm-3N-yIW"/>
+                <outlet property="discountView" destination="0Om-Ly-6nP" id="VFe-tC-fm2"/>
                 <outlet property="name" destination="sWK-Ab-TGl" id="FDB-h9-s0v"/>
                 <outlet property="price" destination="PBD-VD-rsK" id="mJG-cd-R54"/>
                 <outlet property="quantityTF" destination="iFZ-zI-HXr" id="VEw-1T-uCs"/>
@@ -227,7 +252,10 @@
         <image name="add-to-cart" width="22" height="22"/>
         <image name="heart" width="35" height="37"/>
         <namedColor name="backGround">
-            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92156862745098034" green="0.65098039215686276" blue="0.29411764705882354" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button">
+            <color red="0.99607843137254903" green="0.97254901960784312" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="navigation">
             <color red="0.92156862745098034" green="0.65490196078431373" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

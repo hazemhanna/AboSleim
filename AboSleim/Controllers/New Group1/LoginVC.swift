@@ -80,7 +80,11 @@ extension LoginVC{
                     }else{
                     displayMessage(title: "", message: "You have Loged in successfully", status: .success, forController: self)
                     }
-          
+                    
+                    guard let window = UIApplication.shared.keyWindow else { return }
+                    let sb = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeTabBar") as! UITabBarController
+                   sb.selectedIndex = 0
+                   window.rootViewController = sb
                 }else{
                  self.AuthViewModel.dismissIndicator()
                 if "lang".localized == "ar" {

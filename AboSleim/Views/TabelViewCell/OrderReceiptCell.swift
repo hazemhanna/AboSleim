@@ -26,7 +26,7 @@ class OrderReceiptCell: UITableViewCell {
     
     func config(name: String, number: Int, price: String) {
         self.name.text = name
-        self.price.text = price + "" + "EGP".localized
+        self.price.text = price + " " + "EGP".localized
         quantity.text = "\(number)"
         
         if "lang".localized == "ar" {

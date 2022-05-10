@@ -110,14 +110,14 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
         cell.configCart(name: product?.title?.ar ?? ""
                      ,price: cart[indexPath.row].price ?? ""
                     , imagePath: product?.images?[0].image ?? ""
-                    , type: product?.desc?.ar ?? ""
+                    , type: product?.category?.title?.ar ?? ""
                     , quantity: cart[indexPath.row].quantity ?? 0
                     , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
         }else{
             cell.configCart(name: product?.title?.en ?? ""
                          ,price: (cart[indexPath.row].price ?? "")
                          ,imagePath: product?.images?[0].image ?? ""
-                         ,type: product?.desc?.en ?? ""
+                         ,type: product?.category?.title?.en ?? ""
                          ,quantity: cart[indexPath.row].quantity ?? 0
                          , discount: Double(cart[indexPath.row].product?.discount ?? "") ?? 0)
         }

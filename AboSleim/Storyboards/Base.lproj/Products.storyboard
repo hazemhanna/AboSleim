@@ -138,13 +138,40 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" systemColor="systemOrangeColor"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MuK-NK-JKo">
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="806.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="qKv-jN-HZe">
+                                        <rect key="frame" x="107" y="100" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="j5R-HQ-kKZ"/>
+                                            <constraint firstAttribute="width" constant="200" id="p4g-y7-8Fd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لا يوجد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzK-n9-Uwq">
+                                        <rect key="frame" x="181.5" y="332" width="51" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" name="navigation"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="qKv-jN-HZe" firstAttribute="top" secondItem="MuK-NK-JKo" secondAttribute="top" constant="100" id="6pU-Uc-MVk"/>
+                                    <constraint firstItem="dzK-n9-Uwq" firstAttribute="top" secondItem="qKv-jN-HZe" secondAttribute="bottom" constant="32" id="Dvd-Zg-4Qy"/>
+                                    <constraint firstItem="qKv-jN-HZe" firstAttribute="centerX" secondItem="MuK-NK-JKo" secondAttribute="centerX" id="IMe-Mq-Igq"/>
+                                    <constraint firstItem="dzK-n9-Uwq" firstAttribute="centerX" secondItem="MuK-NK-JKo" secondAttribute="centerX" id="O2K-wS-tOG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ID9-1L-1aC"/>
                         <color key="backgroundColor" red="0.90944904694097295" green="0.90944904694097295" blue="0.90944904694097295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nYX-nU-9Dr" firstAttribute="leading" secondItem="ID9-1L-1aC" secondAttribute="leading" id="2VN-ON-ltC"/>
+                            <constraint firstItem="MuK-NK-JKo" firstAttribute="top" secondItem="jFU-56-cZr" secondAttribute="bottom" id="Fpa-bh-IHg"/>
                             <constraint firstItem="jFU-56-cZr" firstAttribute="centerX" secondItem="ID9-1L-1aC" secondAttribute="centerX" id="HRA-Nm-efu"/>
                             <constraint firstItem="jFU-56-cZr" firstAttribute="width" secondItem="5Fg-K3-1TJ" secondAttribute="width" id="KNT-Oh-eHO"/>
+                            <constraint firstAttribute="bottom" secondItem="MuK-NK-JKo" secondAttribute="bottom" id="Tbd-XB-6nJ"/>
                             <constraint firstItem="jFU-56-cZr" firstAttribute="height" secondItem="5Fg-K3-1TJ" secondAttribute="height" multiplier="0.1" id="Uuv-Bg-lYR"/>
                             <constraint firstItem="reU-ui-Otf" firstAttribute="leading" secondItem="ID9-1L-1aC" secondAttribute="leading" id="Vv9-MI-wzZ"/>
                             <constraint firstAttribute="bottom" secondItem="reU-ui-Otf" secondAttribute="bottom" id="XXe-pH-Yyr"/>
@@ -153,7 +180,9 @@
                             <constraint firstItem="jFU-56-cZr" firstAttribute="top" secondItem="5Fg-K3-1TJ" secondAttribute="top" id="dGp-yD-zG1"/>
                             <constraint firstItem="reU-ui-Otf" firstAttribute="top" secondItem="jFU-56-cZr" secondAttribute="bottom" constant="8" id="dMr-GP-5hK"/>
                             <constraint firstItem="ID9-1L-1aC" firstAttribute="bottom" secondItem="nYX-nU-9Dr" secondAttribute="bottom" id="hQY-ri-4T7"/>
+                            <constraint firstAttribute="trailing" secondItem="MuK-NK-JKo" secondAttribute="trailing" id="ijd-l6-SXQ"/>
                             <constraint firstItem="nYX-nU-9Dr" firstAttribute="top" secondItem="ID9-1L-1aC" secondAttribute="top" id="kE2-5B-syc"/>
+                            <constraint firstItem="MuK-NK-JKo" firstAttribute="leading" secondItem="ID9-1L-1aC" secondAttribute="leading" id="mxS-LQ-X89"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Restaurant Details" id="gyg-yA-fxi">
@@ -162,6 +191,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bestSellerTableView" destination="reU-ui-Otf" id="aUe-2s-Dok"/>
+                        <outlet property="emptyView" destination="MuK-NK-JKo" id="seI-HT-Nwb"/>
                         <outlet property="titleLbl" destination="B7t-Yx-BDq" id="mCf-ne-Po0"/>
                     </connections>
                 </viewController>

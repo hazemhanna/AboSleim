@@ -58,7 +58,8 @@ class ProductDetails: UIViewController {
         slidercollectionView.delegate = self
         slidercollectionView.dataSource = self
          slidercollectionView.register(UINib(nibName: sliderCell, bundle: nil), forCellWithReuseIdentifier: sliderCell)
-
+        
+        
         sizecollectionView.delegate = self
         sizecollectionView.dataSource = self
         sizecollectionView.register(UINib(nibName: cellIdentifierCollectionView, bundle: nil), forCellWithReuseIdentifier: cellIdentifierCollectionView)
@@ -92,11 +93,13 @@ class ProductDetails: UIViewController {
             self.desc.text = self.product?.desc?.en?.parseHtml ?? ""
         }
         
+        if self.product?.variants?.count ?? 0 > 0 {
         self.sizePrice =  Double(self.product?.variants?[0].price ?? "") ?? 0
         self.total = Double(self.product?.variants?[0].price ?? "") ?? 0
         self.price.text = "price".localized + " " + String(self.total) + " " + "EGP".localized
-        
         self.variant_id = product?.variants?[0].id ?? 0
+        }
+        
         if product?.type == "simple"{
             sizeStackHeight.constant = 0
         }else{
@@ -111,13 +114,14 @@ class ProductDetails: UIViewController {
             self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
         }
       
+        if product?.images?.count ?? 0 > 0 {
         self.pageView.numberOfPages = self.product?.images?.count ?? 0
         self.pageView.currentPage = 0
-        
         DispatchQueue.main.async {
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
         }
-        
+    }
+    
     }
     
     @objc func changeImage() {

@@ -16,7 +16,8 @@ class ProductsVc : UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var bestSellerTableView: UITableView!
     fileprivate let cellIdentifier = "ValiableResturantCell"
-   
+    @IBOutlet weak var emptyView: UIView!
+
     var productCounter = Int()
 
     private let homeViewModel = HomeViewModel()
@@ -73,19 +74,29 @@ extension ProductsVc: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ValiableResturantCell else {return UITableViewCell()}
     
+        var price =  ""
+        var image = ""
+
+        if products[indexPath.row].variants?.count ?? 0 > 0 {
+            price = products[indexPath.row].variants?[0].price ?? ""
+        }
+    
+        if products[indexPath.row].images?.count ?? 0 > 0 {
+            image = products[indexPath.row].images?[0].image ?? ""
+        }
         
         if "lang".localized == "ar" {
         cell.config(name: products[indexPath.row].title?.ar ?? ""
-                    , price: products[indexPath.row].variants?[0].price ?? ""
-                    , imagePath: products[indexPath.row].images?[0].image ?? ""
-                    , type: products[indexPath.row].desc?.ar ?? ""
+                    , price: price
+                    , imagePath:  image
+                    , type: products[indexPath.row].category?.title?.ar ?? ""
                     , isWishlist: products[indexPath.row].isWishlist ?? false
                     , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
         }else{
             cell.config(name: products[indexPath.row].title?.en ?? ""
-                        , price: products[indexPath.row].variants?[0].price ?? ""
-                        , imagePath: products[indexPath.row].images?[0].image ?? "",
-                        type: products[indexPath.row].desc?.en ?? ""
+                        , price:  price
+                        , imagePath: image
+                        ,type: products[indexPath.row].category?.title?.en ?? ""
                         ,isWishlist: products[indexPath.row].isWishlist ?? false
                         , discount: Double(products[indexPath.row].discount ?? "") ?? 0)
 
@@ -137,11 +148,11 @@ extension ProductsVc{
             self.homeViewModel.getCategoryProduct(id : id).subscribe(onNext: { (data) in
                 self.homeViewModel.dismissIndicator()
                 self.products = data.data?.products ?? []
-//                if self.products.count > 0 {
-//                    self.empyView.isHidden = true
-//                }else{
-//                   self.empyView.isHidden = false
-//                }
+                if self.products.count > 0 {
+                    self.emptyView.isHidden = true
+                }else{
+                   self.emptyView.isHidden = false
+                }
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

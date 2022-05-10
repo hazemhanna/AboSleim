@@ -18,7 +18,10 @@ class OrderDetailsVC : UIViewController {
     @IBOutlet weak var titleLbl  : UILabel!
     @IBOutlet weak var deliveryLbl   : UILabel!
     @IBOutlet weak var totalLbl  : UILabel!
-    @IBOutlet weak var canceBtn  : UIButton!    
+    @IBOutlet weak var canceBtn  : UIButton!
+    @IBOutlet weak var followBtn  : UIButton!
+    @IBOutlet weak var billBtn  : UIButton!
+    
     fileprivate let cellIdentifier = "FoodPackgeCell"
     var order: Order?
     
@@ -51,12 +54,20 @@ class OrderDetailsVC : UIViewController {
             self.totalLbl.text = "total cost".localized + " " + String(total) + " " + "EGP".localized
             deliveryLbl.isHidden = true
         }
-    
+        if order?.logs?.last?.status == "CANCELED"{
+            canceBtn.isHidden = true
+            followBtn.isHidden = true
+            billBtn.isHidden = true
+        }else{
+            followBtn.isHidden = false
+            billBtn.isHidden = false
         if(getDateTimeDiff(dateStr: order?.created_at ?? "" )){
             canceBtn.isHidden = false
         }else{
             canceBtn.isHidden = true
         }
+      }
+
     }
     
     @IBAction func menu(_ sender: Any) {
@@ -71,6 +82,7 @@ class OrderDetailsVC : UIViewController {
     
     @IBAction func cancelButton(_ sender: Any) {
         guard let Details = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "CancelOrder") as? CancelOrder else { return }
+        Details.orderId = order?.id ?? 0
         self.navigationController?.pushViewController(Details, animated: true)
     }
     

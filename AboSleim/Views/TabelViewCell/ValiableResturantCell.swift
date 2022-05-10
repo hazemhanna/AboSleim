@@ -36,7 +36,7 @@ class ValiableResturantCell: UITableViewCell {
     
     func config(name: String,price: String, imagePath: String, type: String,isWishlist : Bool,discount : Double) {
         self.name.text = name
-        self.type.text = type.parseHtml
+        self.type.text = type
         self.price.text = price + " " + "EGP".localized
         
         if discount == 0.00 {
@@ -60,15 +60,16 @@ class ValiableResturantCell: UITableViewCell {
             self.FavoriteBN.setImage(UIImage(named: "heart"), for: .normal)
         }
         
-      guard let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { return }
-        self.resturantImage.kf.setImage(with: imageURL)
+      if let imageURL = URL(string: (imagePath).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") {
+          self.resturantImage.kf.setImage(with: imageURL)
+      }
         
     }
     
     func configCart(name: String,price: String, imagePath: String, type: String,quantity : Int,discount : Double) {
         
         self.name.text = name
-        self.type.text = type.parseHtml
+        self.type.text = type
         self.quantityTF.text = "\(quantity)"
         
         if discount == 0.00 {

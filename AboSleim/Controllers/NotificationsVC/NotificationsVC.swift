@@ -14,6 +14,7 @@ class NotificationsVC: UIViewController {
     
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var titleLbl  : UILabel!
+    @IBOutlet weak var emptyView: UIView!
 
     fileprivate let cellIdentifier = "NotificationsCell"
     let user = Helper.getUserRole() ?? ""
@@ -108,6 +109,12 @@ extension NotificationsVC{
             self.homeViewModel.getNotification().subscribe(onNext: { (data) in
                  self.homeViewModel.dismissIndicator()
                  self.notification = data.data?.notifications ?? []
+                if self.notification.count > 0 {
+                    self.emptyView.isHidden = true
+                }else{
+                   self.emptyView.isHidden = false
+                }
+                
             }, onError: { (error) in
                 self.homeViewModel.dismissIndicator()
             }).disposed(by: disposeBag)

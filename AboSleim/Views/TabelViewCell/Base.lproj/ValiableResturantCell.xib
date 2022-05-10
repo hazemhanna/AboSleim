@@ -36,14 +36,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1e-Nd-2eb" customClass="CustomView" customModule="Shnp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2022-02-11 at 4.19.53 AM" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Jy-oZD">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Abo Sleim" translatesAutoresizingMaskIntoConstraints="NO" id="cMy-Jy-oZD">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Om-Ly-6nP">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خصم ٢٠٪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXH-sF-7sX">
-                                                <rect key="frame" x="7" y="3" width="46" height="14"/>
+                                                <rect key="frame" x="9" y="-1" width="42.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-Light" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -78,19 +78,19 @@
                                 <rect key="frame" x="136" y="16" width="276" height="118"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWK-Ab-TGl">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSN-0n-Gph">
-                                        <rect key="frame" x="0.0" y="31.5" width="29.5" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="45.5" width="28" height="45.5"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="price : 40 EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-VD-rsK">
-                                        <rect key="frame" x="0.0" y="106" width="65" height="12"/>
+                                        <rect key="frame" x="0.0" y="99" width="58" height="19"/>
                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="10"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -248,7 +248,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="Screen Shot 2022-02-11 at 4.19.53 AM" width="294" height="266"/>
+        <image name="Abo Sleim" width="1024" height="1024"/>
         <image name="add-to-cart" width="22" height="22"/>
         <image name="heart" width="35" height="37"/>
         <namedColor name="backGround">
